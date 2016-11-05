@@ -437,10 +437,22 @@
 							</div>
 						</li>
 					</ul>
-				</div>
+				</div><!--楼层中间内容结束-->
 
-				<!--楼层右部内容-->
-				<div class="fr"></div>
+				<!--楼层右部内容开始-->
+				<div class="rightFloor fr">
+					<div class="rgFloorTop">
+						<ul class="">
+							<li>手机</li>
+							<li>手机配件</li>
+						</ul>
+					</div>
+					<div class="rgFloorRank">
+						<ul>
+							<li></li>
+						</ul>
+					</div>
+				</div>
 			</div>	
 		</div>
 
