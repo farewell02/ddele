@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-      layout(true);
+      layout('layout/layout');
       $this -> display();
     }
 }
