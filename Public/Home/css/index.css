@@ -1,0 +1,283 @@
+
+.hot_tag li{
+	float:left;
+	margin-right:10px;
+	margin-left:20px;
+	line-height:30px;
+	margin-right:10px;
+}
+.hot_tag{
+	height:30px;
+	background:#F5F5F5;
+}
+.hot_tag_ul{
+	width:1200px;
+	margin:0 auto;
+}
+#main_content{
+	width:1200px;
+	margin:0 auto;
+}
+
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clearFix:after{
+	content:'.';
+	width:0;
+	height:0;
+	display:block;
+	clear:both;
+}
+
+/*主要内容顶部的各个标签内容（当当电子商城）*/	
+.ele_top>div>ul li{
+	float:left;
+	margin-right:25px;
+	font-size: 16px;
+	height:40px;
+	line-height:40px;
+}
+.ele_top>div>ul li a{
+	color:black;
+	font-weight:bold;
+}
+.ele_top>div>div{
+	width:330px;
+	height:40px;
+	line-height:40px;
+}
+.ele_top>div>div span:nth-of-type(1){
+	color: #286ad7;
+	font-size:25px;
+	font-weight:bold;
+}
+.ele_top>div>div span:nth-of-type(2){
+	color: #286ad7;
+}
+a{
+	text-decoration:none;
+}
+
+/*分类ul盒子样式*/
+.cat_box{
+	width: 162px;
+	height:583px;
+    background: #1c87ed;
+    overflow: hidden;
+    position: relative;
+}
+.cat_box>ul>li{
+	height: 51px;
+    overflow: hidden;
+    border-top: 1px solid #2e92f1;
+    border-bottom: 1px solid #187ad7;
+}
+.cat_box>ul>li>a{
+	color: #fff;
+    font-size: 14px;
+    line-height:53px;
+    font-family: 'Microsoft Yahei'; 
+}
+
+/*最右侧的服务保障样式*/
+.service_insure{
+	width:212px;
+}
+
+.middleNav>div:nth-of-type(1){
+	width:142px;
+}
+.middleNav>div:nth-of-type(2){
+	width:640px;
+}
+.showImg{
+	width: 212px;
+    height: 294px;
+    overflow: hidden
+}
+/*中间导航样式*/
+.LmiddleNav dd a{
+	display:inline-block;
+	width:70px;
+	float:left;
+	height:28px;
+	line-height:28px;
+}
+.LmiddleNav a:hover{
+	text-decoration:underline;
+}
+.LmiddleNav{
+	padding-left:18px;
+	padding-right:18px;
+	background:#FBFBFB;
+}
+.LmiddleNav a{
+	font-family: arial,'Hiragino Sans GB','Microsoft Yahei','simsun';
+	font-size:12px;
+	color: #666;
+}
+.LmiddleNav dt{	
+	margin-top:15px;
+	width:146px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	background:#67B4FD;
+}
+.LmiddleNav dt a{
+	color:white;
+}
+.hideNow{
+	display:none;
+}
+/*中间轮播图片下面的四个小图片*/
+.img_behind_nav a{
+	float:left;
+	width:320px;
+	height:147px;
+	overflow:hidden;
+}
+
+/*中间全部分类的盒子的样式*/
+.AllCat .LmiddleNav>ul{
+	width:160px;
+}
+.AllCat .LmiddleNav>ul:nth-of-type(1) li{
+	float: left;
+    height: 20px;
+    line-height: 20px;
+    font-family: 'Microsoft Yahei';
+    padding: 17px 10px 15px 0;
+    font-weight: bold;
+    width: 70px;
+    overflow: hidden;
+}
+.AllCat .LmiddleNav>ul:nth-of-type(1)  li a{
+	font-size:14px;
+	color:#5f3c0e;;
+}
+.hot_keys{
+    border-top: 1px solid #dcdcdc;
+    padding-top: 10px;
+    height: 210px;
+    overflow: hidden;
+    width: 156px;
+    margin-right: -10px;
+}
+.hot_keys li{
+	height: 30px;
+    line-height: 30px;
+    font-family: 'Microsoft Yahei';
+    color: #000;
+    width: 60px;
+    overflow: hidden;
+    float: left;
+    margin-right: 16px;
+}
+.hot_keys li a{
+	color: #000;
+}
+
+/*轮播图样式*/
+/*#wrapper .slider-wrapper {
+    width: 640px;
+}*/
+#wrapper .top-banner{
+    background-color: #333;
+}
+.nivo-controlNav{
+	position:absolute;
+	bottom:0;
+	right:0;
+	z-index:10000;
+}
+.nivo-controlNav a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #8c8c8c;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-family: "arial";
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+}
+.nivo-controlNav .active{
+	background:#fa5000;
+}
+#showImg .slider-wrapper{
+	width: 212px;
+}
+
+/*楼层展示*/
+.brandUl li{
+	padding:5px;
+	float:left;
+	margin-right:5px;
+
+}
+.brandUl a{
+	color: #666;
+}
+.leftFloor{
+	width: 235px;
+    height: 500px;
+    padding-top:5px;
+    border-top: 2px solid black;
+    border-right: 1px solid #ededed;
+    overflow: hidden;	
+}
+.price span{
+	color: #fa5000;
+    font-size: 20px;
+    font-weight:bold;
+}
+.price{
+	position:absolute;
+	bottom:10px;
+	left:10px;
+}
+
+.name{
+	width: 160px;
+    position: absolute;
+    bottom: 50px;
+    left: 12px;
+    overflow: hidden;
+    line-height: 18px;
+    height: 35px;
+    text-align:left;
+}
+.middleFloor{
+	border-top:2px solid #288CDC;
+	text-align:left;
+    width: 728px;
+    height: 506px;
+}
+.middleFloor li{
+	float:left;
+	width:182px;
+	border-right: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+	height:252px;
+}
+.floorGoods{
+	position:relative;
+}
+.icon_pop span{
+	position:absolute;
+	top:0;
+	right:0;
+	display:block;
+	width:52px;
+	height:52px;
+}

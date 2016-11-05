@@ -8,11 +8,12 @@
 	<meta name="description" content="当当电器城" />
 	<meta name="keywords" content="当当电器城" />
 	<meta name="ddclick_guan" content="1" />
-
+	
 	<!--引入头部css样式-->
-	<link rel="stylesheet" href="/ddEle/Public/Home/css/index.css">
-
 	<link rel="Stylesheet" type="text/css" href="/ddEle/Public/Home/css/header_150803.css" />
+
+	<!--引入头部index样式-->
+	<link rel="stylesheet" href="/ddEle/Public/Home/css/index.css">
 
 	<!--引入尾部css样式-->
 	<link href="/ddEle/Public/Home/css/footer_150526.css" rel="stylesheet" type="text/css">
@@ -127,7 +128,6 @@
 	</div>
 	</div><!--最顶部的头文件结束-->
 <div id="header_end"></div>
-
 	
 	<div style="position:relative;" class="logo_line_out"><!--CreateDate  2016-11-03 22:00:02--><!--logo_line_out开始-->
 		<div class="logo_line" dd_name="搜索框">
@@ -136,8 +136,8 @@
 		                         <area shape="rect" coords="200,18,320,93" href="http://www.dangdang.com/" title="" target="_blank" onfocus="this.blur();"></map></div>
 		    <div class="search">
 		        <form action="http://search.dangdang.com" name="searchform"  id="form_search_new" onsubmit="return searchsubmit();"  method="GET">
-		            <label  for="key_S" class="label_search" id="label_key" onclick="this.style.color='rgb(255, 255, 255)';" style="visibility: visible; color: rgb(102, 102, 102);" >三星65英寸液晶电视</label>
-		            <input type="text" class="text gray"  name="key" ID="key_S" autocomplete="off" onclick="key_onclick(event);" onfocus="key_onfocus(event);"  onblur="key_onblur();" onbeforepaste="onpaste_search();"/><a href="javascript:void(0);" onclick="clearkeys();" class="del-keywords"></a><span class="select"  onmouseover="allCategoryShow();"  onmouseleave="allCategoryHide();" onmouseout='if("\v"!="v"){ allCategoryHide();}'><span id="Show_Category_Name" dd_name="全部分类">全部分类</span><span class="icon"></span>
+		            <label  for="key_S" class="label_search" id="label_key" >三星65英寸液晶电视</label>
+		            <input type="text" class="text gray"  name="key" ID="key_S" autocomplete="off" /><a href="javascript:void(0);" onclick="clearkeys();" class="del-keywords"></a><span class="select"><span id="Show_Category_Name" dd_name="全部分类">全部分类</span><span class="icon"></span>
 		                <div id="search_all_category" class="select_pop" style="height:0px;padding: 0px;border-width: 0px;" dd_name="搜索分类">
 			                <a href="javascript:void(0);" onclick="selectCategory('',this);" >
 			                <span id="Show_Category_Name" dd_name="全部分类">全部分类</span>
@@ -177,8 +177,277 @@
 		</div>
 		
 	</div><!--全部商品分类结束-->
+	<div class="hot_tag">
+		<ul class="hot_tag_ul">
+			<li><a href="">豆浆机</a></li>
+			<li><a href="">豆浆机</a></li>
+			<li><a href="">豆浆机</a></li>
+			<li><a href="">豆浆机</a></li>
+		</ul>
+	</div>
 </div><!--头部文件结束-->
 
+
+<!--引入轮播图插件-->
+<link rel="stylesheet" href="/ddEle/Public/component/nivo-slider/themes/dark/dark.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/ddEle/Public/component/nivo-slider/themes/bar/bar.css" type="text/css" media="screen" /> 
+<link rel="stylesheet" href="/ddEle/Public/component/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/ddEle/Public/component/nivo-slider/style.css" type="text/css" media="screen" />
+    	<!--轮播图js插件-->
+<script type="text/javascript" src="/ddEle/Public/component/nivo-slider/jquery.nivo.slider.js"></script>
+
+<script src="/ddEle/Public/Home/js/index.js"></script>
+
+<div id="main_content"><!--首页主要内容结束-->
+
+	<!--头部标签页-->
+	<div class="ele_top clearFix">
+		<div class="">
+			<div class="fl">
+				<span>当当电器城</span>
+				<span>|</span>
+				<span>放心购</span>
+			</div>
+			<ul class="fl">
+				<li><a href="">手机馆</a></li>
+				<li><a href="">手机馆</a></li>
+				<li><a href="">手机馆</a></li>
+				<li><a href="">手机馆</a></li>
+				<li><a href="">手机馆</a></li>
+			</ul>		
+		</div>
+	</div><!--头部标签页结束-->
+
+	<!--中间分类和分类显示大盒子-->
+	<div class="clearFix">
+		<div class="cat_box fl clearFix">
+			<ul>
+				<!--全分类永远存在-->
+				<li><a href="">全分类</a></li>
+				<li><a href="">手机适配</a></li>
+				<!-- <li><a href="">电脑/平板</a></li> -->
+			</ul>
+		</div>
+
+		<!--中间开始详细分类变化层开始--><!--全分类层-->
+			<!--全分类层对应的middleNav是永远存在的-->
+		<div class="middleNav fl clearFix AllCat">
+			<div class="fl LmiddleNav clearFix">
+				<ul class="clearFix">
+					<li><a href="">手机/配件</a></li>
+					<li><a href="">电脑办公</a></li>
+					<li><a href="">手机/配件</a></li>
+					<li><a href="">手机/配件</a></li>
+					<li><a href="">手机/配件</a></li>
+					<li><a href="">手机/配件</a></li>
+				</ul>
+				<ul class="hot_keys clearFix">
+					<li><a href="">苹果7</a></li>
+					<li><a href="">阅读器</a></li>
+					<li><a href="">苹果7</a></li>
+					<li><a href="">阅读器</a></li>
+					<li><a href="">苹果7</a></li>
+					<li><a href="">阅读器</a></li>
+					<li><a href="">苹果7</a></li>
+					<li><a href="">阅读器</a></li>	
+				</ul>
+			</div>
+			<div class="fr">
+				<div class="img_nav">
+					<!-- <img src="/ddEle/Public/Home/img/17991-640x280-10.24.jpg" alt=""> -->
+					<div id="wrapper">
+				        <div class="slider-wrapper theme-default">
+				        	<!--轮播图-->
+				            <div id="slider" class="nivoSlider">
+				            	<a href=""> <img src="/ddEle/Public/Home/img/nav1.jpg" data-thumb="/ddEle/Public/Home/img/nav1.jpg" alt="" /></a>
+				     			<a href=""> <img src="/ddEle/Public/Home/img/nav2.jpg" data-thumb="/ddEle/Public/Home/img/nav2.jpg" alt="" /></a>
+				     			<a href=""> <img src="/ddEle/Public/Home/img/nav3.jpg" data-thumb="/ddEle/Public/Home/img/nav3.jpg" alt="" /></a>
+				     			<a href=""> <img src="/ddEle/Public/Home/img/nav5.jpg" data-thumb="/ddEle/Public/Home/img/nav5.jpg" alt="" /></a>
+				            </div>
+				            <!-- <div id="htmlcaption" class="nivo-html-caption">
+				                1
+				            </div> -->
+				        </div>
+				        <div class="footer-banner" style="width:728px; margin:0 auto"></div>
+	   				 </div>
+				</div>
+				<!--轮播图下方的图片-->
+				<div class="img_behind_nav">
+					<a href=""><img src="/ddEle/Public/Home/img/4-1-160929-zw.jpg" alt=""></a>
+					<a href=""><img src="/ddEle/Public/Home/img/4-1-160929-zw.jpg" alt=""></a>
+					<a href=""><img src="/ddEle/Public/Home/img/4-1-160929-zw.jpg" alt=""></a>
+					<a href=""><img src="/ddEle/Public/Home/img/4-1-160929-zw.jpg" alt=""></a>
+				</div>
+			</div>
+		</div><!--中间开始详细分类变化层结束-->
+
+		<!--中间开始详细分类变化层开始--><!--各个分类层-->
+		<div class="middleNav fl clearFix  hideNow ">
+			<div class="fl LmiddleNav">
+				<dl>
+					<!--分类名和左侧相同-->
+					<dt><a href="">摄影摄像</a></dt>
+					<!--具体分类-->
+					<dd>
+						<a href="">单反相机</a>
+						<a href="">单反相机</a>
+						<a href="">单反相机</a>
+						<a href="">单反相机</a>
+						<a href="">单反相机</a>
+						<a href="">单反相机</a>
+					</dd>
+				</dl>
+			</div>
+			<div class="fr">
+				<div class="img_nav">
+					<img src="/ddEle/Public/Home/img/17991-640x280-10.24.jpg" alt="">
+				</div>
+				<!--全部分类的轮播图-->
+				<div class="img_behind_nav">
+					<a href=""><img src="/ddEle/Public/Home/img/4-1-160929-zw.jpg" alt=""></a>
+					<a href=""><img src="/ddEle/Public/Home/img/4-1-160929-zw.jpg" alt=""></a>
+					<a href=""><img src="/ddEle/Public/Home/img/4-1-160929-zw.jpg" alt=""></a>
+					<a href=""><img src="/ddEle/Public/Home/img/4-1-160929-zw.jpg" alt=""></a>
+				</div>
+			</div>
+		</div><!--中间开始详细分类变化层结束-->
+
+		<!--最右侧服务保障开始-->
+		<div class="service_insure fr clearFix">
+			<div>
+				<img src="/ddEle/Public/Home/img/2014.9.9_fuwu.jpg" alt="">
+			</div>
+			<!--轮播图-->
+			<div class="showImg">
+				<div id="wrapper">
+				        <div class="slider-wrapper theme-default">
+				        	<!--轮播图-->
+				            <div id="showImg" class="nivoSlider">
+				            	<a href=""> <img src="/ddEle/Public/Home/img/1-160811-zw123.jpg" data-thumb="/ddEle/Public/Home/img/1-160811-zw123.jpg" alt="" /></a>
+				     			<a href=""> <img src="/ddEle/Public/Home/img/navsm.jpg" data-thumb="/ddEle/Public/Home/img/navsm.jpg" alt="" /></a>
+				            </div>
+				            <div id="htmlcaption" class="nivo-html-caption">
+				                1
+				            </div>
+				        </div>
+				        <div class="footer-banner" style="width:728px; margin:0 auto"></div>
+	   			</div>
+			</div>
+		</div><!--最右侧服务保障结束-->
+	</div><!--中间分类和分类显示大盒子结束-->
+	
+	<!--楼层展示-->
+	<div class="floor">
+		<div><h3>1F手机/配件</h3></div>
+
+		<!--楼层具体内容-->
+		<div>
+			<div class="clearFix">
+
+				<!--楼层左部内容-->
+				<div class="leftFloor fl">
+					<div>
+						<img src="/ddEle/Public/Home/img/4949-7m.jpg" alt="">
+					</div>
+					<ul class="brandUl clearFix">
+						<li><a href="">苹果</a></li>
+						<li><a href="">苹果</a></li>
+						<li><a href="">苹果</a></li>
+						<li><a href="">苹果</a></li>
+						<li><a href="">苹果</a></li>
+						<li><a href="">苹果</a></li>
+						<li><a href="">苹果</a></li>
+						<li><a href="">苹果</a></li>
+					</ul>
+				</div>
+
+				<!--楼层中间内容-->
+				<div class="middleFloor fl">
+					<ul>
+						<li class="floorGoods">
+							<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
+							</a>
+							<div class="name">
+								Apple 苹果 iPhone6S iPhone6S Plus 
+							</div>
+							<p class="price">
+								<span class="sign">¥</span>
+								<span class="number">3869</span>
+							</p>
+							<div class="icon_pop">
+								<span style="background: url(/ddEle/Public/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
+								</span>
+							</div>
+						</li>
+						<li class="floorGoods">
+							<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
+							</a>
+							<div class="name">
+								Apple 苹果 iPhone6S iPhone6S Plus 
+							</div>
+							<p class="price">
+								<span class="sign">¥</span>
+								<span class="number">3869</span>
+							</p>
+						</li>
+						<li class="floorGoods">
+							<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
+							</a>
+							<div class="name">
+								Apple 苹果 iPhone6S iPhone6S Plus 
+							</div>
+							<p class="price">
+								<span class="sign">¥</span>
+								<span class="number">3869</span>
+							</p>
+						</li>
+						<li class="floorGoods">
+							<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
+							</a>
+							<div class="name">
+								Apple 苹果 iPhone6S iPhone6S Plus 
+							</div>
+							<p class="price">
+								<span class="sign">¥</span>
+								<span class="number">3869</span>
+							</p>
+						</li>
+						<li class="floorGoods">
+							<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
+							</a>
+							<div class="name">
+								Apple 苹果 iPhone6S iPhone6S Plus 
+							</div>
+							<p class="price">
+								<span class="sign">¥</span>
+								<span class="number">3869</span>
+							</p>
+						</li>
+						<li class="floorGoods">  
+							<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
+							</a>
+							<div class="name">
+								Apple 苹果 iPhone6S iPhone6S Plus 
+							</div>
+							<p class="price">
+								<span class="sign">¥</span>
+								<span class="number">3869</span>
+							</p>
+							<div class="icon_pop"><span style="background: url(http://img4.ddimg.cn/00035/pic/xsq.png) no-repeat 0px 0px; _background-image: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img4.ddimg.cn/00035/pic/xsq.png',sizingMethod='noscale');" class="product_tags"></span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<!--楼层右部内容-->
+				<div class="fr"></div>
+			</div>	
+		</div>
+
+		<!--logo展示-->
+		<div class="logo"></div>
+	</div>
+</div><!--首页主要内容结束
 <!--网页尾部文件-->
 <div id="footer">
 		<div class="footer" dd_name="页尾">

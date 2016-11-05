@@ -8,11 +8,12 @@
 	<meta name="description" content="当当电器城" />
 	<meta name="keywords" content="当当电器城" />
 	<meta name="ddclick_guan" content="1" />
-
+	
 	<!--引入头部css样式-->
-	<link rel="stylesheet" href="__PUBLIC__/Home/css/index.css">
-
 	<link rel="Stylesheet" type="text/css" href="__PUBLIC__/Home/css/header_150803.css" />
+
+	<!--引入头部index样式-->
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/index.css">
 
 	<!--引入尾部css样式-->
 	<link href="__PUBLIC__/Home/css/footer_150526.css" rel="stylesheet" type="text/css">
@@ -127,7 +128,6 @@
 	</div>
 	</div><!--最顶部的头文件结束-->
 <div id="header_end"></div>
-
 	
 	<div style="position:relative;" class="logo_line_out"><!--CreateDate  2016-11-03 22:00:02--><!--logo_line_out开始-->
 		<div class="logo_line" dd_name="搜索框">
@@ -136,8 +136,8 @@
 		                         <area shape="rect" coords="200,18,320,93" href="http://www.dangdang.com/" title="" target="_blank" onfocus="this.blur();"></map></div>
 		    <div class="search">
 		        <form action="http://search.dangdang.com" name="searchform"  id="form_search_new" onsubmit="return searchsubmit();"  method="GET">
-		            <label  for="key_S" class="label_search" id="label_key" onclick="this.style.color='rgb(255, 255, 255)';" style="visibility: visible; color: rgb(102, 102, 102);" >三星65英寸液晶电视</label>
-		            <input type="text" class="text gray"  name="key" ID="key_S" autocomplete="off" onclick="key_onclick(event);" onfocus="key_onfocus(event);"  onblur="key_onblur();" onbeforepaste="onpaste_search();"/><a href="javascript:void(0);" onclick="clearkeys();" class="del-keywords"></a><span class="select"  onmouseover="allCategoryShow();"  onmouseleave="allCategoryHide();" onmouseout='if("\v"!="v"){ allCategoryHide();}'><span id="Show_Category_Name" dd_name="全部分类">全部分类</span><span class="icon"></span>
+		            <label  for="key_S" class="label_search" id="label_key" >三星65英寸液晶电视</label>
+		            <input type="text" class="text gray"  name="key" ID="key_S" autocomplete="off" /><a href="javascript:void(0);" onclick="clearkeys();" class="del-keywords"></a><span class="select"><span id="Show_Category_Name" dd_name="全部分类">全部分类</span><span class="icon"></span>
 		                <div id="search_all_category" class="select_pop" style="height:0px;padding: 0px;border-width: 0px;" dd_name="搜索分类">
 			                <a href="javascript:void(0);" onclick="selectCategory('',this);" >
 			                <span id="Show_Category_Name" dd_name="全部分类">全部分类</span>
@@ -177,4 +177,13 @@
 		</div>
 		
 	</div><!--全部商品分类结束-->
+	<div class="hot_tag">
+		<ul class="hot_tag_ul">
+			<li><a href="">豆浆机</a></li>
+			<li><a href="">豆浆机</a></li>
+			<li><a href="">豆浆机</a></li>
+			<li><a href="">豆浆机</a></li>
+		</ul>
+	</div>
 </div><!--头部文件结束-->
+
