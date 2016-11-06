@@ -1,4 +1,6 @@
-
+li{
+	list-style:none;
+}
 .hot_tag li{
 	float:left;
 	margin-right:10px;
@@ -27,6 +29,7 @@
 }
 .clearFix:after{
 	content:'.';
+	visibility:hidden;
 	width:0;
 	height:0;
 	display:block;
@@ -232,7 +235,6 @@ a{
 	width: 235px;
     height: 500px;
     padding-top:5px;
-    border-top: 2px solid black;
     border-right: 1px solid #ededed;
     overflow: hidden;	
 }
@@ -258,10 +260,10 @@ a{
     text-align:left;
 }
 .middleFloor{
-	border-top:2px solid #288CDC;
 	text-align:left;
     width: 728px;
     height: 506px;
+    overflow:hidden;
 }
 .middleFloor li{
 	float:left;
@@ -280,4 +282,95 @@ a{
 	display:block;
 	width:52px;
 	height:52px;
+}
+.floorName{
+	font-size:18px;
+}
+.floor>div>h1{
+	font-size:30px;
+}
+.floor{
+	margin-top:50px;
+	
+}
+/*.mainFloor{
+	border-top:2px solid #288CDC;
+}*/
+.rgFloorTop ul li{
+	float:left;
+	text-align:center;
+}
+.rgFloorTop ul li:hover{
+	cursor:default;
+}
+.rgFloorTop ul li:nth-of-type(1){
+	width:85px;
+}
+.rgFloorTop ul li:nth-of-type(2){
+	width:70px;
+}
+.on{
+	border-bottom: 2px solid #fff;
+	border-left: 2px solid #ededed;
+	border-right: 2px solid #ededed;
+	font-weight: bold;
+	margin: 0 -1px -1px;
+	position: relative;
+}
+.rgFloorRank{
+	margin-top:8px;
+}
+.topFloor h1{
+	width:230px;
+	border-bottom:2px solid black;
+}
+.topFloor>div{
+	width:970px;
+	border-bottom:2px solid #288CDC;
+	height:36px;
+}
+.rankNumber{
+	color:orange;
+	font: 16px/38px Arial;
+	float: left;
+	padding: 0 5px;
+	width: 20px;
+}
+.briefItem>p{
+	float:left;
+	line-height:38px;
+}
+
+.briefItem,.DetailItem{
+	border-bottom:1px dotted #c0c0c0;
+}
+.briefItem a,.DetailItem a{
+	color: #666
+}
+.briefItem a:hover,.DetailItem a:hover{
+	text-decoration:underline;
+}
+.DetailItem{
+	position:relative;
+	padding:17px 0 18px 0;
+}
+.DetailItem>a{
+	float:left;
+}
+.DetailItem>p{
+	position:absolute;
+	left:132px;
+	top:32px;
+	word-break:break-all;
+
+}
+.DetailItem p.detailPrice{
+	width: 90px;
+	position: absolute;
+	top: 73px;
+	left: 135px;
+	margin-top: 5px;
+	color:orange;
+	font-size:16px;
+	font-weight:bold;
 }

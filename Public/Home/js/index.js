@@ -21,4 +21,13 @@ $(function(){
      		directionNav:false,
             effect:'sliceUpLeft'
      });
+
+     //楼层展示最右侧商品排名
+     $('.briefItem').mouseover(function(){
+     	var index = $(this).parent().find('.briefItem').index($(this));
+     	// console.log(index);
+     	$(this).parent().find('.briefItem').show().eq(index).hide().end().end().find('.DetailItem').hide().eq(index).show();
+     	console.log($(this).parent().find('.briefItem').show().eq(index).hide().end().end().find('.DetailItem').hide().eq(index).show());
+     })
+
 })
