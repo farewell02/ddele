@@ -30,4 +30,10 @@ $(function(){
      	console.log($(this).parent().find('.briefItem').show().eq(index).hide().end().end().find('.DetailItem').hide().eq(index).show());
      })
 
+     $('.rgFloorTop li').mouseover(function(){
+     	var index = $(this).parent().find('li').index($(this));
+     	console.log(index);
+     	$('.rgFloorTop li').removeClass('on').eq(index).addClass('on').closest('.rightFloor').find('.rgFloorRank').hide().eq(index).show();
+     })
+
 })
