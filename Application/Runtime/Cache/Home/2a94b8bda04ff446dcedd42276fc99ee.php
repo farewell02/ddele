@@ -11,10 +11,7 @@
 	
 	<!--引入头部css样式-->
 	<link rel="Stylesheet" type="text/css" href="/ddEle/Public/Home/css/header_150803.css" />
-
-	<!--引入头部index样式-->
-	<link rel="stylesheet" href="/ddEle/Public/Home/css/index.css">
-
+	
 	<!--引入尾部css样式-->
 	<link href="/ddEle/Public/Home/css/footer_150526.css" rel="stylesheet" type="text/css">
 
@@ -188,6 +185,8 @@
 </div><!--头部文件结束-->
 
 
+<!--引入头部index样式-->
+<link rel="stylesheet" href="/ddEle/Public/Home/css/index.css">
 <!--引入轮播图插件-->
 <link rel="stylesheet" href="/ddEle/Public/component/nivo-slider/themes/bar/bar.css" type="text/css" media="screen" /> 
 <link rel="stylesheet" href="/ddEle/Public/component/nivo-slider/nivo-slider.css" type="text/css" media="screen" />

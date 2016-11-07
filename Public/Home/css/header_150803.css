@@ -263,4 +263,11 @@ _padding: 9px 15px 8px;}
 
 .new_pub_nav .point { background: url(../images/point.png) 0 8px no-repeat; display:inline-block; width:2px; margin:0 4px; height:14px; *background-position:0 4px; _height:28px;_background-position:0 17px; _display:inline; _zoom:1;}
 .new_pub_nav .on .point { background-image:url(../images/point2.png);}
-
+.clearFix:after{
+	content:'.';
+	visibility:hidden;
+	width:0;
+	height:0;
+	display:block;
+	clear:both;
+}

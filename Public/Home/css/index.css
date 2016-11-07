@@ -27,14 +27,7 @@ li{
 .fr{
 	float:right;
 }
-.clearFix:after{
-	content:'.';
-	visibility:hidden;
-	width:0;
-	height:0;
-	display:block;
-	clear:both;
-}
+
 
 /*主要内容顶部的各个标签内容（当当电子商城）*/	
 .ele_top>div>ul li{

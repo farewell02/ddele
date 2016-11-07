@@ -6,4 +6,9 @@ class IndexController extends Controller {
       layout('layout/layout');
       $this -> display();
     }
+
+    public function goodsList(){
+    	layout('layout/layout');
+    	$this -> display();
+    }
 }
