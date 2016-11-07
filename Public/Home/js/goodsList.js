@@ -18,7 +18,21 @@ $(function(){
 		
 	})
 
-	// $('.firstCatUl>li').mouseenter(function(){
-	// 	$(this).css('background','#FCF0E8');
-	// })
+
+	$('.sortMenu>li').mouseover(function(){
+		$('.sortMenu>li').removeClass('on');
+		$(this).addClass('on');
+	})
+
+	//收货地城市下拉框
+	$('.selectBox').mouseover(function(){
+		$(this).children('.provinceDetail').show();
+	})
+	$('.provinceDetail').mouseout(function(){
+		$(this).hide();
+	})
+
+	
+
+
 })

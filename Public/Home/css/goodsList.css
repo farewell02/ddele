@@ -235,7 +235,8 @@ color: #F60;
 	font-weight:bold;
 	border-right:1px solid #ccc;
 }
-.sortBox{
+.sortBox,.checkBox{
+	background:url("http://localhost/ddEle/Public/Home/img/tools_box_bg.png") repeat scroll 0% 0% transparent;
 	width:100%;
 	height:38px;
 	line-height:38px;
@@ -249,4 +250,76 @@ color: #F60;
 	float:left;
 	border-right:1px solid #ccc;
 }
+.sortMenu li:hover{
+	cursor:pointer;
+}
+.on{
+	background:url("http://localhost/ddEle/Public/Home/img/tools_box_bg.png") repeat scroll 0% 0% transparent;
+	background-position:0 -38px;
+	color:white;
+}
+/*黑色向下箭头*/
+.icon{
+	background:url("http://localhost/ddEle/Public/Home/img/tools_box_bg.png") repeat scroll 0% 0% transparent;
+	display: inline-block;
+	height: 8px;
+	width: 7px;
+	background-position: 0px -76px;
+	margin-left: 8px;
+	overflow: hidden;
+}
+/*白色向上箭头*/
+.on .icon{
+	background-position: -21px -76px;;
+}
 
+/*收货地框*/
+.selectBox{
+	width:82px;
+	float: left;
+	border: 1px solid #C2C2C2;
+	height: 20px;
+	line-height: 20px;
+	background: none repeat scroll 0% 0% #FFF;
+	margin-top: 8px;
+	position: relative;
+	z-index: 100;
+	text-align:center;
+}
+.arrow{
+	display: inline-block;
+	width: 17px;
+	border-left: 1px solid #C2C2C2;
+	height: 20px;
+	vertical-align: top;
+	cursor: pointer;
+	background: url("http://localhost/ddEle/Public/Home/img/tools_box_bg.png") repeat scroll 0% 0% transparent;
+	background-position: -20px -146px;
+}
+.provinceDetail{
+	top:29px;
+	background:white;
+	position:absolute;
+	width:314px;
+	height:156px;
+}
+.provinceDetail ul{
+	padding-left:8px;
+}
+.provinceDetail>div{
+	font-weight:bold;
+	text-align:left;
+	width:304px;
+	height:22px;
+	background:#E8E8E8;
+	padding-left:8px;
+}
+.provinceDetail li{
+	margin-top:10px;
+	float:left;
+	margin-right:20px;
+}
+.provinceDetail li a:hover{
+	color: #FD4708;
+	text-decoration: underline;
+}
