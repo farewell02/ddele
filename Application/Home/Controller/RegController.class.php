@@ -13,15 +13,16 @@ class RegController extends Controller
 	{
 		$this->display();
 	}
+
 	public function code(){
 		$verify = new \Think\Verify();
 		$verify->fontSize = 35;
 		$verify->length =4;
 		$verify->useNoise = false;
 		$verify->useImgBg = true;
-		// $verify->expire = 60;
 		$verify->entry();
 	}
+
 	public function verifyCode()
 	{
 		if(IS_AJAX){
@@ -41,6 +42,7 @@ class RegController extends Controller
 			$this->error('未知错误');
 		}
 	}
+	
 	//验证传来的用户是否已存在
 	public function verifyUser()
 	{

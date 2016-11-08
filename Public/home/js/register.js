@@ -5,7 +5,7 @@
 // var mobileIsOk = false;//验证手机是否符合规则
 // var code = false; //验证码是否正确
 
-
+var webPath = 'http://www.s52.com/ddele/';
 //定义四个接受函数返回值的参数
 var lock1 = lock2 =lock3 = lock4 =null;
 // 验证邮箱的
@@ -26,7 +26,7 @@ function checkUser(pattern1,pattern2,obj)
     }else{
         $.ajax({
             type:'post',
-            url:'http://web.com/index.php/home/reg/verifyUser',
+            url:webPath+'home/reg/verifyUser',
             async:false,
             dataType:'json',
             data:{username:obj.val()},
@@ -115,7 +115,7 @@ function checkCode(obj){
         type:'post',
         dataType:'json',
         async:false,
-        url:'http://web.com/index.php/home/reg/verifyCode',
+        url:webPath+'home/reg/verifyCode',
         data:{code:obj.val()},
         success:function(data){
             if(data.code){
@@ -151,9 +151,9 @@ function checkTwo(obj,msg,status)
     }
 }
 //验证图片切换
-$('#imgVcode').attr('src','http://web.com/index.php/home/reg/code');
+$('#imgVcode').attr('src',webPath+'home/reg/code');
 $('#imgVcode').click(function(){
-$('#imgVcode').attr('src','http://web.com/index.php/home/reg/code/a/'+Math.random());
+$('#imgVcode').attr('src',webPath+'home/reg/code/a/'+Math.random());
   $('#txt_vcode').attr('disabled',false);
 })
 $('#vcodeImgBtn').click(function(){

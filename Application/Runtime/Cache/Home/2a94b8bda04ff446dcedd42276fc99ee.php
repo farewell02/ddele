@@ -197,7 +197,7 @@
 <script src="/ddEle/Public/Home/js/index.js"></script>
 
 <div id="main_content"><!--首页主要内容结束-->
-
+	<?Php echo WEB ;?>
 	<!--头部标签页-->
 	<div class="ele_top clearFix">
 		<div class="">
