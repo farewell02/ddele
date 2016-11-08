@@ -1,5 +1,5 @@
 $(function(){
-
+	var img=[];
 	//点击收缩按钮
 	$('#catBox').delegate('.catBtnMinus','click',function(){
 		$(this).removeClass('catBtnMinus').addClass('catBtn');
@@ -28,11 +28,18 @@ $(function(){
 	$('.selectBox').mouseover(function(){
 		$(this).children('.provinceDetail').show();
 	})
-	$('.provinceDetail').mouseout(function(){
-		$(this).hide();
+	$('.provinceDetail,.selectBox').mouseout(function(){
+		$('.provinceDetail').hide();
 	})
 
-	
+	$('#goodsListUl li').each(function(){
+		img.push({left:$(this).position().left,top:$(this).position().top});
+	})
+	$.each(img,function(i){
+		$('#goodsListUl li').eq(i).css('position','absolute');
+		$('#goodsListUl li').eq(i).css('left',img[i].left).css('top',img[i].top);
+	})
+
 
 
 })
