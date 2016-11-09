@@ -297,7 +297,7 @@ color: #F60;
 	background-position: -20px -146px;
 }
 .provinceDetail{
-	top:29px;
+	top:19px;
 	background:white;
 	position:absolute;
 	width:314px;
@@ -322,4 +322,72 @@ color: #F60;
 .provinceDetail li a:hover{
 	color: #FD4708;
 	text-decoration: underline;
+}
+.listName{
+	width:200px;
+	overflow:hidden;
+}
+.listPrice{
+	width:200px;
+}
+
+
+#goodsListUl li>div{
+	border: solid 4px #fff;
+ 	padding: 16px 16px 0;
+ 	position: absolute;
+}
+.listPrice{
+	 font-size: 14px;
+ 	 color: #c30;
+ 	 font-weight: bold;
+ 	 padding-right: 10px;
+  	font-family: Arial;
+
+}
+.listName{
+	color:#555555;
+}
+.listName>a:hover{
+	text-decoration:underline;
+	color:#f60;
+}
+.listAdd{
+  color: #c30;
+  width: 200px;
+  overflow: hidden;
+  height: 18px;;
+}
+
+/*商品星级*/
+.star span{
+  background: url("http://localhost/ddEle/Public/Home/img/icon_star.png") left top repeat-x;
+  display: inline-block;
+  width: 80px;/*四颗星*/
+  height: 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  line-height: 12px;
+  font-size: 0;
+}
+.link a:hover{
+	color:orange;
+}
+
+#goodsListUl{
+	position:relative;
+}
+#goodsListUl li:hover{
+	border:4px solid #ffcfb1;
+	background:#fff;
+	z-index:12;
+	height: 373px;
+}
+#goodsListUl  li{
+	  float: left;
+	  width: 240px;
+	  height: 339px;
+	  line-height: 18px;
+	  position: relative;
+	  border-bottom: solid 1px #e6e6e6;
 }

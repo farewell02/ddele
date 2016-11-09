@@ -185,208 +185,126 @@
 </div><!--头部文件结束-->
 
 
-<link rel="stylesheet" href="/ddEle/Public/Home/css/goodsList.css" />
+<link rel="stylesheet" href="/ddEle/Public/Home/css/goodsDetail.css" />
 <!--引入了js文件-->
-<script src="/ddEle/Public/Home/js/goodsList.js"></script>
+
+<script src="/ddEle/Public/Home/js/goodsDetail.js"></script>
 <!--页面主要内容-->
-<div id ="Goodscontent clearFix" style="margin:0 auto;width:1200px">
 
-	<!--导航详情-->
-	<div class="clearFix">
-		<a href="">当当</a>
-		<span>></span>
-		<a href="">手机通讯></a>
-		<span>></span>
-		<a href="">手机</a>
-	</div><!--导航详情结束-->
-	
-	<!--左侧-->
-	<div class="leftSide fl clearFix">
+<div id="mainContent">
+	<div>
+		<!--左侧图片详细信息放大镜-->
+		<div class="photo fl">
 
-		<!--左侧分类小盒子-->
-		<div id="catBox">
-			<h3>手机通讯</h3>
-			<ul class="firstCatUl">
-			    <li class="firstCat">
-			    	<span class="m"></span>
-			    	<a href="">手机</a>
-			    	<span class="catBtn"></span>
-			    </li>
-			    <li class="firstCat">
-			    	<span class="m"></span>
-			    	<a href="">手机配件</a>
-			    	<span class="catBtn"></span>
-			    	<ul class="secondCatUl hideNow clearFix">
-			    		<li><a href="">电话/移动电源</a></li>
-			    		<li><a href="">蓝牙耳机</a></li>
-			    		<li><a href="">充电器/数据线</a></li>
-			    		<li><a href="">手机贴膜</a></li>
-			    		<li><a href="">手机耳机</a></li>
-			    	</ul>
-			    </li>
-				<li class="firstCat ">
-					<span class="m"></span>
-					<a href="">对讲机</a>
-					<span class="catBtn"></span>
-				</li>	
-			</ul>
-		</div><!--左侧分类小盒子结束-->
-		
-
-		<!--排行-->
-		<div class="saleRankBox">
-			<!--标题头-->
-			<div class="rankHeader">
-				<span>一周销量排行榜</span>
+			<!--大图-->
+			<div id="bigImgBox">
+				<a class="mdImg" href="">
+					<img src= "/ddEle/Public/Home/img/1040015948-6_k_2.jpg" width="400px" height="400px">
+				</a>
+				<div class="lgImg">
+					<img src="/ddEle/Public/Home/img/1040015948-8_u_2.jpg" alt="">
+				</div>
+				<div class="zoomBox"></div>
 			</div>
 
-			<!--排行内容-->
-			<div class="rankDetail">
-				<ul class="clearFix">
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name"><a href="">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</a></p>
-						<p class="price">¥50.00</p>
-					</li>
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name"><a href="">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</a></p>
-						<p class="price">¥50.00</p>
-					</li>
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</p>
-						<p class="price">¥50.00</p>
-					</li>
-				</ul>
-			</div>
-		</div>	<!--排行结束-->
-
-		
-		<!--推广开始-->
-		<div class="AdBox saleRankBox">
-			<!--标题头-->
-			<div class="AdBoxHeader rankHeader">
-				<span>一周销量排行榜</span>
-			</div>
-
-			<!--推广内容-->
-			<div class="AdContent">
-				<ul class="clearFix">
-					<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-						<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-						<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-				</ul>
-			</div>
-		</div>	<!--推广结束-->
-	</div>
-
-	<!--右侧商品搜索和列表页-->	
-	<div class="rightSide fl clearFix">
-
-		<!--排序 销量、价格、最新-->
-		<div class="sortBox clearFix">
-			<h4 class="fl">排序</h4>
-			<ul class="sortMenu clearFix">
-				<li class="on">
-					默认排序
-					<span class="icon"></span>
-				</li>
-				<li>
-					价格
-					<span class="icon"></span>
-				</li>
-				<li>
-					好评
-					<span class="icon"></span>
-				</li>
-				<li>
-					最新
-					<span class="icon"></span>
-				</li>
-			</ul>
-		</div><!--排序 销量、价格、最新结束-->
-
-		
-		<div class="checkBox"><!--收货地、促销，商品类型-->
-			<span class="fl">收货地址:</span>
-			<div class="fl selectBox">
-				全部地区
-				<div class="provinceDetail clearFix hideNow">
-					<div class="clearFix">
-						请保存库存地区
-					</div>
-					<ul class="clearFix">
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
+			<!--小图-->
+			<div id="smImgBox" >
+				<div class="smphoto">
+					<img src="/ddEle/Public/home/img/left.jpg" class="rightBtn">
+					<img src="/ddEle/Public/home/img/right.jpg" class="leftBtn">
+					<ul class="smphotoUl">
+						<li><img src="/ddEle/Public/Home/img/1040015948-6_k_2.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
 					</ul>
 				</div>
-				<span class="arrow"></span>
-			</div>
-		</div><!--收货地、促销，商品类型结束-->
-		
+			</div><!--小图结束-->
+			
+		</div><!--左侧图片详细信息结束-->
 
-		<!--商品列表页-->
-		<div>
+		<!--右侧商品详细信息-->
+		<div class="fl goodsDetailBox">
+			<!--左侧商品价格数量-->
+			<div class="">
+				<h1>【赠送钢化膜+手机壳】Apple苹果 iPhone7 iPhone7 Plus 32GB/128GB/256GB 苹果7 移动联通电信全网通 4G手机</h1>
+				<p class="tag">
+					<span>支持礼品卡</span>
+					<span>正品行货</span>
+					<span>顺丰包邮</span>
+				</p>
+				<!--商品评分-->
+				<p class="star">
+					<span style="width:80%"></span>
+				</p>
+				<!--价格-->
+				<div class="priceBox clearFix">
+					<div class="text">抢购价</div>
+					<div class="price">¥4969</div>
+				</div>
+				<!--促销-->
+				<div class="Marker clearFix">
+					<span class="text">促销</span>
+					<span>店铺Vip</span>
+					<div></div>
+				</div>
+				<!--配送地址-->
+				<div class="address clearFix">
+					<span class="text">配送至</span>
+					<div class="fl">
+						上海上海市 
+						<div class="fl">城市列表</div>
+					</div>
+				</div>
+				<!--服务-->
+				<div class="service clearFix">
+					<span class="text">服务</span>
+					<span>由“苹果iPhone旗舰店”发货，并提供售后服务。</span>
+				</div>
+				<!--颜色-->
+				<div class="color clearFix">
+					<span class="text">颜色</span>
+					<ul>
+						<li><img src="" alt=""></li>
+						<li><img src="" alt=""></li>
+						<li><img src="" alt=""></li>
+					</ul>
+				</div>
+				<!--套餐-->
+				<div class="clearFix package">
+					<span class="text">套餐</span>
+					<ul>
+						<li>iphone7 32GB</li>
+						<li>iphone7 128GB</li>
+						<li>iphone7 plus 32GB</li>
+					</ul>
+				</div>
+				<!---->
+				<div class="clearFix">
+					<div></div>
+					<a href="" class="addBtn"></a>
+					<a href="" class="minuBtn"></a>
+				</div>
+				<p class="tip">
+					每账户限购2件，超出限购数量以当当价为准
+				</p>
+			</div><!--左侧商品价格数量结束-->
+
+			<!--右侧店铺-->
 			<div>
 				
-			</div>
-		</div><!--商品列表页结束-->
+			</div><!--右侧店铺结束-->
+		</div><!--右侧商品详细信息结束-->
+	</div>
+	<div>
 		
 	</div>
-	<div class="clear"></div>
 </div>
 <!--网页尾部文件-->
 <div id="footer">
