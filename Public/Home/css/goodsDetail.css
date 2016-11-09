@@ -1,0 +1,169 @@
+.hot_tag{
+	height:30px;
+	background:#F5F5F5;
+}
+.hot_tag_ul{
+	width:1200px;
+	margin:0 auto;
+}
+li{
+	list-style:none;
+}
+.hot_tag li{
+	float:left;
+	margin-right:10px;
+	margin-left:20px;
+	margin-right:10px;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clearFix:after{
+	display:block;
+	content:'.';
+	visibility:hidden;
+	clear:both;
+	width:0;
+	height:0;
+}
+#mainContent{
+	width:1200px;
+	margin:0 auto;
+}
+.smphoto{
+	width:380px;
+
+	overflow:hidden;
+}
+.smphoto li{
+	float:left;
+
+	margin-right:23px;
+}
+.smphotoUl{
+	width:1500px;
+		position:relative;
+		margin-left:20px;
+}
+.smphotoUl li:hover{
+	cursor:pointer;
+}
+#smImgBox{
+	position:relative;
+}
+.leftBtn,.rightBtn{
+	position:absolute;
+}
+.leftBtn{
+	left:0px;
+	top:0px;
+}
+.rightBtn{
+	right:0px;
+	top:0px;
+}
+.leftBtn:hover,.rightBtn:hover{
+	cursor:pointer;
+	background-color: #fb7a80;
+}
+.photo{
+	width:400px;
+}
+
+.zoomBox{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:200px;
+	height:200px;
+	background:url('http://www.s52.com/ddEle/Public/Home/img/zoom.png');
+}
+#bigImgBox{
+	position:relative;
+}
+.lgImg{
+	width: 400px;
+  	height: 400px;
+  	position:absolute;
+  	right:-400px;
+  	top:0px;
+  	overflow:hidden;
+}
+.lgImg img{
+	position:absolute;
+	left:100px;
+}
+.goodsDetailBox{
+	float:left;
+	width:780px;
+}
+.goodsDetailBox h1{
+	color: #323232;
+}
+.tag span{
+	font-family: Verdana, 'Microsoft Yahei';
+ 	font-size: 14px;
+	color:#ff2832;
+}
+
+/*星级评分*/
+.star{
+	  width: 70px;
+	  height: 16px;
+	  background: url("http://www.s52.com/ddEle/Public/Home/img/icon_star (2).png") repeat-x 0 -12px;
+	  margin: 6px 6px 0 0;
+	  overflow: hidden;
+}
+/*填充星级*/
+.star>span{
+	  background: url("http://www.s52.com/ddEle/Public/Home/img/icon_star (2).png") repeat-x 0 0;
+	  display: block;
+	  height: 12px;
+}
+
+.priceBox{
+	padding-left:10px;
+	width: 540px;
+	background:#EBEBEB;
+}
+.text{
+	  float: left;
+	  width: 68px;
+	  height:24px;
+	  letter-spacing: 24px;
+	  white-space: nowrap;
+	  overflow: hidden;
+	 display:inline-block;
+	 color: #8f8f8f;
+	 line-height:24px;
+ 	 font-weight: normal !important;
+  	 font-size: 12px !important;
+}
+.package>ul>li{
+	float:left;
+ }
+.priceBox>.price{
+	  font-size: 26px;
+  	color: #e52222;
+  	font-weight:bold;
+}
+.priceBox .text{
+	float:none;
+}
+.Marker>span:nth-of-type(2){
+	  float: left;
+	  background-color: #f66;
+	  color: #fff;
+	  font-weight: normal;
+	  padding: 0 6px;
+	  height: 16px;
+	  line-height: 14px;
+	  line-height: 16px\0;
+	  border-radius: 3px;
+	  margin-top: 5px;
+	  overflow: hidden;
+}
+ 

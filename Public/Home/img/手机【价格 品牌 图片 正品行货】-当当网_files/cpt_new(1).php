@@ -1,1 +1,0 @@
-DD_AD.cpt_ad['bottom_catc_4004279']=[]
