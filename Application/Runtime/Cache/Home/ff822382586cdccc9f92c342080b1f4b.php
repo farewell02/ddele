@@ -230,9 +230,10 @@
 		</div><!--左侧图片详细信息结束-->
 
 		<!--右侧商品详细信息-->
-		<div class="fl goodsDetailBox">
+		<div class="fl goodsDetailBox clearFix">
+
 			<!--左侧商品价格数量-->
-			<div class="">
+			<div class="buyGoods fl">
 				<h1>【赠送钢化膜+手机壳】Apple苹果 iPhone7 iPhone7 Plus 32GB/128GB/256GB 苹果7 移动联通电信全网通 4G手机</h1>
 				<p class="tag">
 					<span>支持礼品卡</span>
@@ -240,20 +241,28 @@
 					<span>顺丰包邮</span>
 				</p>
 				<!--商品评分-->
-				<p class="star">
-					<span style="width:80%"></span>
-				</p>
+				<div class="clearFix">
+					<p class="star fl">
+						<span style="width:80%"></span>
+					</p>
+					<p class="fl comment">
+						<span ><a href="">53</a></span>条评论	
+					</p>
+				</div>
+				
 				<!--价格-->
 				<div class="priceBox clearFix">
 					<div class="text">抢购价</div>
 					<div class="price">¥4969</div>
 				</div>
+
 				<!--促销-->
 				<div class="Marker clearFix">
 					<span class="text">促销</span>
 					<span>店铺Vip</span>
 					<div></div>
 				</div>
+
 				<!--配送地址-->
 				<div class="address clearFix">
 					<span class="text">配送至</span>
@@ -262,43 +271,109 @@
 						<div class="fl">城市列表</div>
 					</div>
 				</div>
+
 				<!--服务-->
 				<div class="service clearFix">
 					<span class="text">服务</span>
 					<span>由“苹果iPhone旗舰店”发货，并提供售后服务。</span>
 				</div>
+
 				<!--颜色-->
 				<div class="color clearFix">
 					<span class="text">颜色</span>
 					<ul>
-						<li><img src="" alt=""></li>
-						<li><img src="" alt=""></li>
-						<li><img src="" alt=""></li>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
 					</ul>
 				</div>
+
 				<!--套餐-->
 				<div class="clearFix package">
 					<span class="text">套餐</span>
-					<ul>
+					<ul class="clearFix">
 						<li>iphone7 32GB</li>
 						<li>iphone7 128GB</li>
 						<li>iphone7 plus 32GB</li>
+						<li>iphone7 plus 32GB</li>
 					</ul>
 				</div>
-				<!---->
+
+				<!--商品数量的添加-->
 				<div class="clearFix">
-					<div></div>
-					<a href="" class="addBtn"></a>
-					<a href="" class="minuBtn"></a>
+					<div class="numberBox">
+						<input id="buy-num" class="" value="1" type="text">
+						<span href="" class="addBtn"></span>
+						<span href="" class="minuBtn"></span>
+					</div>
+					<div class="cartBgBox">
+						<a class="cartBox fl" href="">
+						  <i class=""></i>
+						  <span>加入购物车</span>
+						</a>
+					</div>
+					
+					<div class="buyNow">
+						立即购买
+					</div>
+
 				</div>
 				<p class="tip">
-					每账户限购2件，超出限购数量以当当价为准
+					每账户限购<b>2</b>件，超出限购数量以当当价为准
 				</p>
 			</div><!--左侧商品价格数量结束-->
 
 			<!--右侧店铺-->
-			<div>
-				
+			<div class="shopBox fl">
+				<!--店铺名-->
+				<div class="shopDiv clearFix">
+					<span class="clearFix">
+						<span class="shoplogo"></span>
+						<span class="shopName"><a href="">苹果官方旗舰店</a></span>
+					</span>
+				</div>
+
+				<!--店铺评分-->
+				<div>
+					店铺总分 <span>5.00</span>分
+				</div>
+
+				<!--描述、服务、发货-->
+				<div>
+					<!--描述-->
+					<div>
+						<div>描述</div>
+						<div>服务</div>
+						<div>发货</div>
+					</div>
+					<!--各项评分-->
+					<div>
+						<div><span>5.00</span></div>
+						<div><span>5.00</span></div>
+						<div><span>5.00</span></div>
+					</div>
+				</div>
+
+				<!--各项质量保障-->
+				<div>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+
+				<!--联系客服收藏店铺，进入店铺-->
+				<div class="">
+					<div></div>
+					<div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
 			</div><!--右侧店铺结束-->
 		</div><!--右侧商品详细信息结束-->
 	</div>

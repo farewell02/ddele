@@ -192,9 +192,9 @@
 <!--页面主要内容-->
 
 <div id="mainContent">
-	<div>
+	<div class="clearFix">
 		<!--左侧图片详细信息放大镜-->
-		<div class="photo fl">
+		<div class="photo fl clearFix">
 
 			<!--大图-->
 			<div id="bigImgBox">
@@ -226,13 +226,22 @@
 					</ul>
 				</div>
 			</div><!--小图结束-->
-			
+			<div>
+				<!-- <div>
+					<i class=""></i><a href="">分享</a>
+				</div> -->
+				<div class="collect">
+					<i class="collectGoods"></i>
+					<a href="" class="shopText">收藏商品</a>	
+				</div>
+			</div>
 		</div><!--左侧图片详细信息结束-->
 
 		<!--右侧商品详细信息-->
-		<div class="fl goodsDetailBox">
+		<div class="fl goodsDetailBox clearFix">
+
 			<!--左侧商品价格数量-->
-			<div class="">
+			<div class="buyGoods fl">
 				<h1>【赠送钢化膜+手机壳】Apple苹果 iPhone7 iPhone7 Plus 32GB/128GB/256GB 苹果7 移动联通电信全网通 4G手机</h1>
 				<p class="tag">
 					<span>支持礼品卡</span>
@@ -240,20 +249,28 @@
 					<span>顺丰包邮</span>
 				</p>
 				<!--商品评分-->
-				<p class="star">
-					<span style="width:80%"></span>
-				</p>
+				<div class="clearFix">
+					<p class="star fl">
+						<span style="width:80%"></span>
+					</p>
+					<p class="fl comment">
+						<span ><a href="">53</a></span>条评论	
+					</p>
+				</div>
+				
 				<!--价格-->
 				<div class="priceBox clearFix">
 					<div class="text">抢购价</div>
 					<div class="price">¥4969</div>
 				</div>
+
 				<!--促销-->
 				<div class="Marker clearFix">
 					<span class="text">促销</span>
 					<span>店铺Vip</span>
 					<div></div>
 				</div>
+
 				<!--配送地址-->
 				<div class="address clearFix">
 					<span class="text">配送至</span>
@@ -262,48 +279,197 @@
 						<div class="fl">城市列表</div>
 					</div>
 				</div>
+
 				<!--服务-->
 				<div class="service clearFix">
 					<span class="text">服务</span>
 					<span>由“苹果iPhone旗舰店”发货，并提供售后服务。</span>
 				</div>
+
 				<!--颜色-->
 				<div class="color clearFix">
 					<span class="text">颜色</span>
 					<ul>
-						<li><img src="" alt=""></li>
-						<li><img src="" alt=""></li>
-						<li><img src="" alt=""></li>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
 					</ul>
 				</div>
+
 				<!--套餐-->
 				<div class="clearFix package">
 					<span class="text">套餐</span>
-					<ul>
+					<ul class="clearFix">
 						<li>iphone7 32GB</li>
 						<li>iphone7 128GB</li>
 						<li>iphone7 plus 32GB</li>
+						<li>iphone7 plus 32GB</li>
 					</ul>
 				</div>
-				<!---->
+
+				<!--商品数量的添加-->
 				<div class="clearFix">
-					<div></div>
-					<a href="" class="addBtn"></a>
-					<a href="" class="minuBtn"></a>
+					<div class="numberBox">
+						<input id="buy-num" class="" value="1" type="text">
+						<span href="" class="addBtn"></span>
+						<span href="" class="minuBtn"></span>
+					</div>
+					<div class="cartBgBox">
+						<a class="cartBox fl" href="">
+						  <i class=""></i>
+						  <span>加入购物车</span>
+						</a>
+					</div>
+					
+					<div class="buyNow">
+						立即购买
+					</div>
+
 				</div>
 				<p class="tip">
-					每账户限购2件，超出限购数量以当当价为准
+					每账户限购<b>2</b>件，超出限购数量以当当价为准
 				</p>
 			</div><!--左侧商品价格数量结束-->
 
 			<!--右侧店铺-->
-			<div>
-				
+			<div class="shopBox fl">
+				<!--店铺名-->
+				<div class="shopDiv clearFix">
+					<span class="clearFix">
+						<span class="shoplogo"></span>
+						<span class="shopName"><a href="">苹果官方旗舰店</a></span>
+					</span>
+				</div>
+
+				<!--店铺评分-->
+				<div>
+					<span class="shopText">店铺总分</span> <span class="scoreNumber">5.00</span>分
+				</div>
+
+				<!--描述、服务、发货-->
+				<div class="scoreBox">
+					<!--描述-->
+					<div class="subject clearFix shopText">
+						<div class="">描述</div>
+						<div class="">服务</div>
+						<div class="">发货</div>
+					</div>
+					<!--各项评分-->
+					<div class="score clearFix shopText">
+						<div><span>5.00</span><span class="trend"></span></div>
+						<div><span>5.00</span><span class="trend"></span></div>
+						<div><span>5.00</span><span class="trend"></span></div>
+					</div>
+				</div>
+
+				<!--各项质量保障-->
+				<div class="service clearFix">
+					<ul>
+						<li><i></i>正品保障</li>
+						<li><i></i>闪电发货</li>
+						<li><i></i>推荐商家</li>
+						<li><i></i>以旧换新</li>
+						<li class="goodsback"><i></i>不支持7天无理由退货</li>
+						<li class="gift"><i></i>支持礼品卡</li>
+					</ul>
+				</div>
+
+				<!--联系客服收藏店铺，进入店铺-->
+				<div class="collectShopBox clearFix">
+					<div><i></i>联系客服</div>
+					<div>
+						<div>进入店铺</div>
+						<div>收藏店铺</div>
+					</div>
+				</div>
 			</div><!--右侧店铺结束-->
 		</div><!--右侧商品详细信息结束-->
 	</div>
-	<div>
-		
+
+	<!--左侧推广商品-->
+	<div class="bottomBox">
+		<div class="fl adBox">
+			<p>推广商品<span>广告</span></p>
+			<ul class="ad">
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="fl">
+			<!--标题头-->
+			<div>
+				<ul class="threeBox clearFix">
+					<!--商品详情-->
+					<li>商品详情</li>
+
+					<!--商品评论-->
+					<li>商品评论(<span>53</span>)</li>
+
+					<!--商品问答-->
+					<li>商品问答(<span>0</span>)</li>
+				</ul>
+			</div>
+
+			<!--商品详情-->
+			<div id="commodityDetail">
+				<div>
+					<ul class="clearFix">
+						<li>品牌:苹果</li>
+						<li>型号iphone</li>
+						<li>机身颜色： 金色 银色 灰色</li>
+						<li>网络： 全网通</li>
+						<li>屏幕尺寸： 5.0-4.6英寸</li>
+						<li>系统： 苹果（IOS）</li>
+					</ul>
+				</div>
+				<div class="clearFix">
+					<span class="detailTag"><div>详情</div></span>
+				</div>
+				<div class="">
+					<div class="detailTitle"></div>
+					<div>
+						商品详情显示
+					</div>
+				</div>
+			</div>
+
+			<!--商品评论-->
+			<div>
+				<div class="tit"></div>
+				<div></div>
+			</div>
+
+			<!--商品问答-->
+			<div></div>
+		</div>
 	</div>
 </div>
 <!--网页尾部文件-->
