@@ -68,4 +68,30 @@ $(function(){
 	})
 
 
+	//商品数量的添加和减少
+	$('.addBtn').click(function(){
+		var number = parseInt($(this).siblings('input').val());
+		$(this).siblings('input').get(0).value= number+1;
+		console.log(number)
+	})
+
+	$('.minuBtn').click(function(){
+		var number = parseInt($(this).siblings('input').val());
+		if(number - 1 !=0){
+			$(this).siblings('input').get(0).value= number-1;
+		}
+	})
+
+	$('.package li').click(function(){
+		$(this).siblings().removeClass('clicked').end().addClass('clicked');
+	})
+
+
+	//选项卡切换按钮
+	$('.threeBox li').eq(0).addClass('click');
+	$('.threeBox li').click(function(){
+		$(this).siblings().removeClass('click').end().addClass('click');
+	})
+
+
 })

@@ -79,7 +79,7 @@ li{
 	left:0px;
 	width:200px;
 	height:200px;
-	background:url('http://www.s52.com/ddEle/Public/Home/img/zoom.png');
+	background:url('http://localhost/ddEle/Public/Home/img/zoom.png');
 }
 #bigImgBox{
 	position:relative;
@@ -90,6 +90,7 @@ li{
   	position:absolute;
   	right:-400px;
   	top:0px;
+  	z-index:200;
   	overflow:hidden;
 }
 .lgImg img{
@@ -101,7 +102,12 @@ li{
 	width:780px;
 }
 .goodsDetailBox h1{
+	width:544px;
+	line-height: 24px;
+	max-height: 48px;
+	overflow: hidden;
 	color: #323232;
+	font-size: 18px;
 }
 .tag span{
 	font-family: Verdana, 'Microsoft Yahei';
@@ -113,13 +119,13 @@ li{
 .star{
 	  width: 70px;
 	  height: 16px;
-	  background: url("http://www.s52.com/ddEle/Public/Home/img/icon_star (2).png") repeat-x 0 -12px;
+	  background: url("http://localhost/ddEle/Public/Home/img/icon_star (2).png") repeat-x 0 -12px;
 	  margin: 6px 6px 0 0;
 	  overflow: hidden;
 }
 /*填充星级*/
 .star>span{
-	  background: url("http://www.s52.com/ddEle/Public/Home/img/icon_star (2).png") repeat-x 0 0;
+	  background: url("http://localhost/ddEle/Public/Home/img/icon_star (2).png") repeat-x 0 0;
 	  display: block;
 	  height: 12px;
 }
@@ -145,6 +151,10 @@ li{
 .package>ul>li{
 	float:left;
  }
+ .package{
+ 	margin-bottom:30px;
+ 	margin-top:10px;
+ }
 .priceBox>.price{
 	  font-size: 26px;
   	color: #e52222;
@@ -166,4 +176,348 @@ li{
 	  margin-top: 5px;
 	  overflow: hidden;
 }
- 
+.package li{
+	border: 1px solid #D7D7D7;
+	float:left;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	font: 12px/22px "Verdana","simsun";
+	padding:2px 3px 2px 3px;
+	margin-right:5px;
+}
+.package li:hover{
+	padding: 0px 8px;
+	cursor:pointer;
+	border: 4px solid #FF7D82;
+	margin: -1px 4px 4px 0px;
+}
+.package .clicked{
+	border: 3px solid #FF7D82;
+	/*margin: -1px 4px 4px 0px;*/
+	background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll right -648px transparent;
+}
+.numberBox{
+	float: left;
+	height: 34px;
+	border: 1px solid #E9E9E9;
+	width: 38px;
+	padding-right: 23px;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+}
+
+.numberBox input{
+	width: 38px !important;
+	height: 32px;
+	line-height: 32px;
+	border: 0px none;
+	background: none repeat scroll 0% 0% #FFF;
+	text-align: center;
+}
+.addBtn{
+	z-index:10;
+	right:0px;
+	top:0px;
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 18px;
+	background:url("http://localhost/ddEle/Public/Home/img/addBtn.jpg");
+	/*background-repeat: no-repeat;*/
+	/*background-color: #646464;*/
+	/*margin-left: 6px;*/
+}
+.minuBtn:hover,.addBtn:hover{
+	cursor:pointer;
+}
+.minuBtn{
+	position:absolute;
+	z-index:10;
+	right:-1px;
+	top:17px;
+	display: block;
+	width: 24px;
+	height: 18px;
+	background:url("http://localhost/ddEle/Public/Home/img/minus.jpg");
+}
+
+.cartBox{
+	height: 36px;
+	width:134px;
+	font: 16px/36px "Microsoft Yahei";
+	overflow: hidden;
+	margin: 0px 0px 3px 10px;
+	float:left;
+	padding: 0px 15px;
+	border-radius: 3px;
+	background-color: #FF2832;
+	text-decoration: none;
+	color: #FFF;
+}
+.color li{
+	float:left;
+	margin-right:3px;
+}
+.color li:hover{
+	outline:2px solid red
+}
+.cartBox:hover{
+	background:red;
+}
+.cartBox i{
+	float: left;
+	width: 20px;
+	height: 19px;
+	background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll -40px -35px transparent;
+	margin: 9px 4px 0px 0px;
+}
+.buyNow{
+	height: 36px;
+	font: 16px/36px "Microsoft Yahei";
+	overflow: hidden;
+	margin: 0px 0px 3px 10px;
+	float: left;
+	padding: 0px 15px;
+	border-radius: 3px;
+	text-decoration: none;
+	background:#FFEDEE;
+}
+.buyNow:hover{
+	cursor:pointer;
+	background:pink;
+}
+
+.tip{
+	  height:24px;
+	  white-space: nowrap;
+	  overflow: hidden;
+	  display:inline-block;
+	 color: #8f8f8f;
+	 line-height:24px;
+ 	 font-weight: normal !important;
+  	 font-size: 12px !important;
+}
+.tip b{
+	color:red;
+	padding-left:3px;
+	padding-right:3px;
+}
+.comment{
+	  width: 70px;
+	  height: 16px;
+	  margin: 6px 6px 0 0;
+	  overflow: hidden;
+}
+.comment span a{
+	text-decoration:none;
+	color:blue;
+}
+
+/*右侧店铺详细信息*/
+.shoplogo{
+	margin-top:5px;
+	margin-right:5px;
+	float:left;
+	width:18px;
+	height:18px;
+	background:url("http://localhost/ddEle/Public/Home/img/product_sprites.png");
+		background-position: -20px -230px;
+}
+.buyGoods{
+	width:550px;
+}
+.shopBox{
+	width: 180px;
+	padding-left: 10px;
+	margin-top: 0px;
+	margin-left: 29px;
+	font-family: "Simsun","Verdana";
+}
+.shopDiv{
+	line-height:24px;
+}
+.subject>div{
+	float:left;
+}
+
+.trend{
+	display: inline-block;
+	width: 7px;
+	height: 8px;
+	font-size: 0px;
+	overflow: hidden;
+	background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll -22px -735px transparent;
+	/*position: absolute;*/
+	right: 13px;
+	top: 7px;
+}
+.score>div,.subject>div{
+	float:left;
+	width: 51px;
+	height: 24px;
+	padding-left:9px;
+}
+.shopText{
+	color:#969696
+}
+.scoreNumber{
+	padding: 0px 4px 0px 10px;
+	color: #FF2832;
+	font: italic 16px "Verdana";
+}
+.service,.scoreBox{
+	/*padding-bottom:5px;*/
+	border-bottom:1px dotted #ccc;
+}
+.service li{
+	float: left;
+	width: 90px;
+	height: 26px;
+	line-height: 26px;
+	color: #855758;
+	position: relative;
+	z-index: 100;
+}
+.service .gift{
+	width: 180px;
+}
+.service .goodsback{
+	width:180px;
+}
+.collectShopBox>div:nth-of-type(2) div{
+	float:left;
+	width:74px;
+	height:22px;
+	padding:1px;
+	margin-left:4px;
+	line-height:22px;
+	text-align:center;
+	border:1px solid #ccc;
+	background:#F1F1F1;
+}
+.collectShopBox>div:nth-of-type(2) div:hover{
+	/*background:#EDEDED;*/
+	background:#BCC4C4;
+	cursor:pointer;
+}
+
+/*收藏商品样式*/
+
+.collectGoods{
+    float: left;
+    width: 13px;
+    height: 13px;
+    overflow: hidden;
+    background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll 0px 0px transparent;
+    margin: 2px 5px 0px 0px;
+    position: relative;
+    background-position: -30px -60px;
+}
+.collect a:hover{
+	color:red;
+	text-decoration:underline;
+}
+
+/*推广商品样式*/
+.adBox{
+	border:1px solid #ccc;
+}
+.ad li{
+	padding: 10px;
+	width: 174px;
+	overflow: hidden;
+	border-top: 1px dotted #CCC;
+
+ }
+ .ad li span{
+ 	font-size:14px;
+ 	display: inline-block;
+    padding-right: 3px;
+    color: #FF2832;
+    font-family:Hiragino;
+ }
+  .ad li a{
+  	 text-decoration:none;
+  	 color:#646464;
+  }
+  .ad li a:hover{
+  	text-decoration:underline;
+  }
+  .bottomBox{
+  	margin-top:80px;
+  }
+  .threeBox .click{
+  	border-width: 1px 1px 0px;
+	border-style: solid solid none;
+	border-color: #323232 #323232 -moz-use-text-color;
+	/*-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;*/
+	border-image: none;
+	padding: 0px 29px 1px;
+	margin-bottom: -1px;
+	position: relative;
+	background-color: #FFF;
+	color: #FF2832;
+ }
+ .threeBox{
+ 	border-bottom:1px solid black;
+ }
+ .threeBox>li{
+ 	float: left;
+    height: 24px;
+    font: 16px/24px "Microsoft Yahei";
+    padding: 1px 30px 0px;
+    color: #969696;
+    overflow: hidden;
+    cursor: pointer;
+ }
+#commodityDetail{
+	width:970px;
+}
+ #commodityDetail ul>li{
+	float:left;
+	padding-left: 20px;
+	width: 266px;
+	overflow: hidden;
+	line-height: 22px;
+	height: 22px;
+	color: #323232;
+ }
+
+#commodityDetail>div:nth-of-type(2){
+	border-bottom: 2px solid #E5E5E5;
+	height: 22px;
+	margin-top:20px;
+} 
+ .detailTag{
+	float: left;
+	border-left: 2px solid #FF2832;
+	padding: 0px 30px 2px 6px;
+	background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll right -525px #E5E5E5;
+	height: 22px;
+	margin-bottom: -2px;
+	position: relative;
+	font: 14px/22px "Microsoft Yahei";
+	color: #323232;
+ }
+
+.detailTag~div{
+	left:0px;
+	top:1px;
+	position:absolute;
+	font-size:16px;
+}
+
+.tit{
+	background: url("http://localhost/ddEle/Public/Home/img/bg_comment.png") repeat-x scroll 0% 0% transparent;
+	border: 1px solid #CAC3BF;
+	font-size: 14px;
+	height: 36px;
+	line-height: 36px;
+	padding-left: 15px;
+	font-weight: bold;
+}
