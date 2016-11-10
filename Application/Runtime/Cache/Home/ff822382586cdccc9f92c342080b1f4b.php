@@ -192,9 +192,9 @@
 <!--页面主要内容-->
 
 <div id="mainContent">
-	<div>
+	<div class="clearFix">
 		<!--左侧图片详细信息放大镜-->
-		<div class="photo fl">
+		<div class="photo fl clearFix">
 
 			<!--大图-->
 			<div id="bigImgBox">
@@ -226,7 +226,15 @@
 					</ul>
 				</div>
 			</div><!--小图结束-->
-			
+			<div>
+				<!-- <div>
+					<i class=""></i><a href="">分享</a>
+				</div> -->
+				<div class="collect">
+					<i class="collectGoods"></i>
+					<a href="" class="shopText">收藏商品</a>	
+				</div>
+			</div>
 		</div><!--左侧图片详细信息结束-->
 
 		<!--右侧商品详细信息-->
@@ -335,50 +343,139 @@
 
 				<!--店铺评分-->
 				<div>
-					店铺总分 <span>5.00</span>分
+					<span class="shopText">店铺总分</span> <span class="scoreNumber">5.00</span>分
 				</div>
 
 				<!--描述、服务、发货-->
-				<div>
+				<div class="scoreBox">
 					<!--描述-->
-					<div>
-						<div>描述</div>
-						<div>服务</div>
-						<div>发货</div>
+					<div class="subject clearFix shopText">
+						<div class="">描述</div>
+						<div class="">服务</div>
+						<div class="">发货</div>
 					</div>
 					<!--各项评分-->
-					<div>
-						<div><span>5.00</span></div>
-						<div><span>5.00</span></div>
-						<div><span>5.00</span></div>
+					<div class="score clearFix shopText">
+						<div><span>5.00</span><span class="trend"></span></div>
+						<div><span>5.00</span><span class="trend"></span></div>
+						<div><span>5.00</span><span class="trend"></span></div>
 					</div>
 				</div>
 
 				<!--各项质量保障-->
-				<div>
+				<div class="service clearFix">
 					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
+						<li><i></i>正品保障</li>
+						<li><i></i>闪电发货</li>
+						<li><i></i>推荐商家</li>
+						<li><i></i>以旧换新</li>
+						<li class="goodsback"><i></i>不支持7天无理由退货</li>
+						<li class="gift"><i></i>支持礼品卡</li>
 					</ul>
 				</div>
 
 				<!--联系客服收藏店铺，进入店铺-->
-				<div class="">
-					<div></div>
+				<div class="collectShopBox clearFix">
+					<div><i></i>联系客服</div>
 					<div>
-						<div></div>
-						<div></div>
+						<div>进入店铺</div>
+						<div>收藏店铺</div>
 					</div>
 				</div>
 			</div><!--右侧店铺结束-->
 		</div><!--右侧商品详细信息结束-->
 	</div>
-	<div>
-		
+
+	<!--左侧推广商品-->
+	<div class="bottomBox">
+		<div class="fl adBox">
+			<p>推广商品<span>广告</span></p>
+			<ul class="ad">
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="fl">
+			<!--标题头-->
+			<div>
+				<ul class="threeBox clearFix">
+					<!--商品详情-->
+					<li>商品详情</li>
+
+					<!--商品评论-->
+					<li>商品评论(<span>53</span>)</li>
+
+					<!--商品问答-->
+					<li>商品问答(<span>0</span>)</li>
+				</ul>
+			</div>
+
+			<!--商品详情-->
+			<div id="commodityDetail clearFix">
+				<div>
+					<ul class="clearFix">
+						<li>品牌:苹果</li>
+						<li>型号iphone</li>
+						<li>机身颜色： 金色 银色 灰色</li>
+						<li>网络： 全网通</li>
+						<li>屏幕尺寸： 5.0-4.6英寸</li>
+						<li>系统： 苹果（IOS）</li>
+					</ul>
+				</div>
+				<div class="clearFix">
+					<span class="detailTag"><div>详情</div></span>
+				</div>
+				<div class="">
+					<div class="detailTitle"></div>
+					<div>
+						商品详情显示<span>(53条)</span>
+					</div>
+				</div>
+			</div>
+
+			<!--商品评论-->
+			<div>
+				<div class="tit">
+					<span>商品评论</span>	
+				</div>
+				<div class="commentLog">
+					<div class="commentNum">
+						
+					</div>
+				</div>
+			</div>
+
+			<!--商品问答-->
+			<div></div>
+		</div>
 	</div>
 </div>
 <!--网页尾部文件-->

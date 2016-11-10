@@ -10,6 +10,8 @@ li{
 	list-style:none;
 }
 .hot_tag li{
+	height: 30px;
+	line-height: 30px;
 	float:left;
 	margin-right:10px;
 	margin-left:20px;
@@ -79,7 +81,7 @@ li{
 	left:0px;
 	width:200px;
 	height:200px;
-	background:url('http://localhost/ddEle/Public/Home/img/zoom.png');
+	background:url('../img/zoom.png');
 }
 #bigImgBox{
 	position:relative;
@@ -119,13 +121,13 @@ li{
 .star{
 	  width: 70px;
 	  height: 16px;
-	  background: url("http://localhost/ddEle/Public/Home/img/icon_star (2).png") repeat-x 0 -12px;
+	  background: url("../img/icon_star (2).png") repeat-x 0 -12px;
 	  margin: 6px 6px 0 0;
 	  overflow: hidden;
 }
 /*填充星级*/
 .star>span{
-	  background: url("http://localhost/ddEle/Public/Home/img/icon_star (2).png") repeat-x 0 0;
+	  background: url("../img/icon_star (2).png") repeat-x 0 0;
 	  display: block;
 	  height: 12px;
 }
@@ -177,6 +179,7 @@ li{
 	  overflow: hidden;
 }
 .package li{
+	outline:4px solid none;
 	border: 1px solid #D7D7D7;
 	float:left;
 	height:22px;
@@ -187,7 +190,7 @@ li{
 	margin-right:5px;
 }
 .package li:hover{
-	padding: 0px 8px;
+	/*padding: 0px 8px;*/
 	cursor:pointer;
 	border: 4px solid #FF7D82;
 	margin: -1px 4px 4px 0px;
@@ -195,7 +198,7 @@ li{
 .package .clicked{
 	border: 3px solid #FF7D82;
 	/*margin: -1px 4px 4px 0px;*/
-	background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll right -648px transparent;
+	background: url("../img/product_sprites.png") no-repeat scroll right -648px transparent;
 }
 .numberBox{
 	float: left;
@@ -224,7 +227,7 @@ li{
 	display: block;
 	width: 24px;
 	height: 18px;
-	background:url("http://localhost/ddEle/Public/Home/img/addBtn.jpg");
+	background:url("../img/addBtn.jpg");
 	/*background-repeat: no-repeat;*/
 	/*background-color: #646464;*/
 	/*margin-left: 6px;*/
@@ -240,7 +243,7 @@ li{
 	display: block;
 	width: 24px;
 	height: 18px;
-	background:url("http://localhost/ddEle/Public/Home/img/minus.jpg");
+	background:url("../img/minus.jpg");
 }
 
 .cartBox{
@@ -270,7 +273,7 @@ li{
 	float: left;
 	width: 20px;
 	height: 19px;
-	background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll -40px -35px transparent;
+	background: url("../img/product_sprites.png") no-repeat scroll -40px -35px transparent;
 	margin: 9px 4px 0px 0px;
 }
 .buyNow{
@@ -322,7 +325,7 @@ li{
 	float:left;
 	width:18px;
 	height:18px;
-	background:url("http://localhost/ddEle/Public/Home/img/product_sprites.png");
+	background:url("../img/product_sprites.png");
 		background-position: -20px -230px;
 }
 .buyGoods{
@@ -348,7 +351,7 @@ li{
 	height: 8px;
 	font-size: 0px;
 	overflow: hidden;
-	background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll -22px -735px transparent;
+	background: url("../img/product_sprites.png") no-repeat scroll -22px -735px transparent;
 	/*position: absolute;*/
 	right: 13px;
 	top: 7px;
@@ -410,7 +413,7 @@ li{
     width: 13px;
     height: 13px;
     overflow: hidden;
-    background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll 0px 0px transparent;
+    background: url("../img/product_sprites.png") no-repeat scroll 0px 0px transparent;
     margin: 2px 5px 0px 0px;
     position: relative;
     background-position: -30px -60px;
@@ -464,6 +467,7 @@ li{
 	color: #FF2832;
  }
  .threeBox{
+ 	width:970px;
  	border-bottom:1px solid black;
  }
  .threeBox>li{
@@ -497,7 +501,7 @@ li{
 	float: left;
 	border-left: 2px solid #FF2832;
 	padding: 0px 30px 2px 6px;
-	background: url("http://localhost/ddEle/Public/Home/img/product_sprites.png") no-repeat scroll right -525px #E5E5E5;
+	background: url("../img/product_sprites.png") no-repeat scroll right -525px #E5E5E5;
 	height: 22px;
 	margin-bottom: -2px;
 	position: relative;
@@ -512,12 +516,198 @@ li{
 	font-size:16px;
 }
 
+
+/*商品评论*/
 .tit{
-	background: url("http://localhost/ddEle/Public/Home/img/bg_comment.png") repeat-x scroll 0% 0% transparent;
+	background: url("../img/bg_comment.png") repeat-x scroll 0% 0% transparent;
 	border: 1px solid #CAC3BF;
 	font-size: 14px;
 	height: 36px;
 	line-height: 36px;
 	padding-left: 15px;
 	font-weight: bold;
+}
+.commentLog{
+	padding-left:10px;
+	width: 968px;
+	color: #999;
+	border-right: 1px solid #E9E9E9;
+	border-width: 0px 1px 1px;
+	border-style: none solid solid;
+	border-color: -moz-use-text-color #E9E9E9 #E9E9E9;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+}
+.commentNum{
+	position:relative;
+	width:86px;
+	height: 86px;
+	background: url("../img/comment_rate.jpg") no-repeat scroll 0% 0% transparent;
+}
+.ratePercentBox{
+	position:absolute;
+	left:14px;
+	top:2px;
+}
+.percent{
+	height: 24px;
+    font: 22px/24px arial;
+    color: #EA5504;
+    text-align: center;
+    padding-top: 20px;
+}
+.range{
+	color: #404040;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+}
+.commentLogTotal{
+	color: #404040;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	width: 100px;
+	margin: 0px -7px;
+	position: relative;
+}
+.commentLog{
+	margin-top:10px;
+	margin-left
+}
+
+/*商品评论分类*/
+.commentCat{
+	height: 30px;
+	background: none repeat scroll 0% 0% #EAEAEA;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	padding-top: 0px;
+	border-style: solid;
+	border-color: #E9E9E9;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-width: 0px 1px;
+}
+.commentCat .common{
+	width: 110px;
+	cursor: pointer;
+	height: 22px;
+	line-height: 22px;
+	overflow: hidden;
+	color: #404040;
+	text-decoration: none;
+	background: url("../images/comment_new_tab.png") no-repeat scroll right 4px transparent;
+	padding: 4px 0px;
+	margin-top: 0px;
+	border-top: 0px none;
+	float: left;
+}
+
+.commentCat .on{
+	border-width: 2px 0px 0px;
+	border-style: solid none none;
+	border-color: #F44700 -moz-use-text-color -moz-use-text-color;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	background: none repeat scroll 0% 0% #FFF;
+	height: 22px;
+	font-weight: bold;
+	cursor: default;
+	margin-top: -1px;
+	padding: 4px 0px 5px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.commentCat>ul{
+	height: 30px;
+	width: 670px;
+}
+
+.itemLeft{
+    width: 90px;
+    position:relative;
+}
+.itemRight{
+	width: 842px;
+}
+.userLevel{
+    display:block;
+	width: 24px;
+	height: 16px;
+	background: url("../img/level_bg.png") no-repeat scroll 0% 0% transparent;
+	position: absolute;
+	right:12px;
+	top: 0px;
+	font-family: arial;
+	text-align: center;
+	padding-bottom: 4px;
+	line-height: 16px;
+	color: #FFF;
+	font-weight: bold;
+}
+.leftName{
+	color: #A3A3A3;
+	height: 18px;
+	line-height: 18px;
+	padding-top: 6px;
+}
+.itemRight ul li{
+	float:left;
+	color: #A3A3A3;
+	height: 18px;
+	line-height: 18px;
+	padding-top: 6px;
+	font-size:14px;
+	font: 12px "Hiragino Sans GB","Verdana","Simsun";
+}
+.itemRight ul  li.commentTime{
+	float:right;
+}
+.itemRight>div{
+	height: 46px;
+	line-height: 60px;
+	border-top: 0px none;
+	margin-top:20px;
+}
+.singleComment{
+	padding:20px 10px 10px 10px;
+	border-bottom: 1px solid #DCDCDC;
+}
+.hideNow{
+	display:none;
+}
+
+.description li{
+	padding-left: 20px;
+	width: 200px;
+	overflow: hidden;
+	float: left;
+	line-height: 22px;
+	height: 22px;
+	color: #323232;
+}
+
+.adBoxRight{
+	width:970px;
+}
+.detailTagParent{
+	border-bottom: 2px solid #E5E5E5;
+	height: 22px;
+	margin-top:10px;
+	padding-left:15px;
+}
+.detailTitleParent{
+	padding-left:15px;
+	padding-top:10px;
 }

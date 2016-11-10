@@ -32,9 +32,12 @@ $(function(){
 		$('.provinceDetail').hide();
 	})
 
+
+	//让商品列表图片不抖动,转换为absolute定位
 	$('#goodsListUl li').each(function(){
 		img.push({left:$(this).position().left,top:$(this).position().top});
 	})
+
 	$.each(img,function(i){
 		$('#goodsListUl li').eq(i).css('position','absolute');
 		$('#goodsListUl li').eq(i).css('left',img[i].left).css('top',img[i].top);
