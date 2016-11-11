@@ -1,0 +1,457 @@
+.hot_tag{
+	height:30px;
+	background:#F5F5F5;
+}
+.hot_tag_ul{
+	width:1200px;
+	margin:0 auto;
+}
+li{
+	list-style:none;
+}
+.hot_tag li{
+	height: 30px;
+	line-height: 30px;
+	float:left;
+	margin-right:10px;
+	margin-left:20px;
+	margin-right:10px;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clearFix:after{
+	display:block;
+	content:'.';
+	visibility:hidden;
+	clear:both;
+	width:0;
+	height:0;
+}
+#mainContent{
+	width:1200px;
+	margin:0 auto;
+}
+#leftMenu{
+	border-width: 0px 1px 1px;
+    border-style: none solid solid;
+    border-color: -moz-use-text-color #DDD #DDD;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+}
+h3{width: 210px;line-height: 30px;border: 1px solid #999;background-color: #F7F7F7;cursor: pointer;}
+#nav ul{width:212px;display: none;}
+#nav ul li{width: 170px;height: 30px;line-height: 30px;padding: 0 20px;border: 1px solid #999;background-color:white;cursor: pointer;}
+
+/*左侧按钮被选中的样式*/
+#nav ul li a.on, #nav ul li a.on:link, #nav ul li a.on:visited, #nav ul li a.on:active {
+    font-weight: bold;
+    color: #009c74;
+    background: url(../img/mydangdang_icon.png) -81px 13px no-repeat;
+}
+
+/*左侧slideUp样式*/
+#nav a.slide_up{
+    display: block;
+    height: 15px;
+    width: 15px;
+    background: url(../img/mydangdang_icon.png) 3px 4px no-repeat;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+}
+#nav h3{
+	position:relative;
+}
+/*左侧slideDown样式*/
+#nav a.slide_down{
+    display: block;
+    height: 15px;
+    width: 15px;
+    background: url(../img/mydangdang_icon.png) -16px 4px no-repeat;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+}
+#nav ul li:hover a{
+	text-decoration:underline;
+	color:#2BCEE8;
+}
+.zi{color:#404040;}
+#nav ul li a {
+    display: block;
+    padding-left: 23px;
+    color: #404040;
+}
+.orderBox ul>li{
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	padding: 0px 12px;
+	cursor: pointer;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #E9E9E9;
+}
+.orderBox ul>li.on{
+	background-color: #6DC7B4;
+    color: white;
+    padding-bottom: 1px;
+    border: medium none;
+}
+
+ .filter{
+ 	margin: 25px 0px 15px;
+	height: 32px;
+	line-height: 32px;
+	width: 768px;
+	padding-right: 10px;
+	border-width: 2px 1px 1px;
+	border-style: solid;
+	border-color: #6EC8B5 #DADADA #DADADA;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	background: transparent url("../img/bg_myfavo.png") repeat-x scroll 0px -48px;
+ }
+ .filter .icon{
+
+ 	/*下降箭头*/
+	background: transparent url("../img/bg_myfavo.png") no-repeat scroll -38px -32px;
+	display: inline-block;
+	height: 8px;
+	width: 7px;
+	overflow: hidden;
+	margin-left: 8px;
+ }
+ .iconHover:hover{
+ 	background:rgb(224,243,253);
+ }
+
+/*白色箭头*/
+  .filter .on .icon{
+ 	background-position: -30px -32px;
+ }
+
+
+/*批量删除和批量购买的可以选择的样式*/
+.collectMenuBox .btn{
+	background: transparent url("../img/bg_myfavo.png") repeat-x scroll 0px -80px;
+	padding: 0px 10px;
+	border: 1px solid #A8DACF;
+	display: block;
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 5px;
+	color: #6AB1A2;
+	border-radius: 2px;
+	margin-right: 10px;
+}
+.collectMenuBox,.opBox{
+	background: transparent url("../img/bg_myfavo.png") repeat-x scroll 0px -140px;
+	height: 32px;
+	line-height: 32px;
+	border-style: solid;
+	border-color: #DADADA;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-width: 1px 1px 0px;
+}
+
+/*批量删除和批量购买的无法选择的样式*/
+.collectMenuBox .btnNone{
+	background-position: 0px -120px;
+	color: #999;
+	border-color: #ABB2B8;
+	cursor: default;
+}
+
+.label{
+	margin-right: 20px;
+	float: left;
+
+}
+.label input{
+    vertical-align: middle;
+	margin: -3px 5px 0px 9px;
+}
+.r1{
+	width: 400px;
+}
+.r2{
+	width: 143px;
+}
+.r3{
+	width: 119px;
+}
+.r4{
+	width: 108px;
+	border: medium none;
+	box-shadow: none;
+}
+.opBox span,.op{
+	border-right: 1px solid #DCDCDC;
+	box-shadow: 1px 0px 1px #FFF;
+	display: block;
+	float: left;
+	text-align: center;
+	height: 14px;
+	line-height: 14px;
+	margin-top: 10px;
+}
+.chosen{
+	vertical-align: top;
+    float: left;
+    margin-right: 10px;
+}
+.things{
+	display: block;
+    float: left;
+    width: 72px;
+    text-align: center;
+    margin-right: 10px;
+}
+.detail{
+	float: left;
+	line-height: 18px;
+}
+
+.myfavo_list li{
+	height: 100px;
+	padding-top: 20px;
+	border-top: 1px solid #DADADA;
+	width: 780px;
+	float: left;
+}
+
+.myfavo_list .details .gray{
+	color: #878787;
+	padding-top: 2px;
+}
+
+.myfavo_list .things .pic{
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+	border: 1px solid #DDD;
+}
+
+.myfavo_list .price {
+    font-family: Arial;
+    color: #C30;
+    font-weight: bold;
+}
+
+.myfavo_list li .r1, .myfavo_list li .r2, .myfavo_list li .r3, .myfavo_list li .r4 {
+    float: left;
+    height: 100px;
+    overflow: hidden;
+}
+.myfavo_list li:hover{
+	background-color: rgb(242, 242, 242);
+}
+
+.myfavo_list .tag_ylyx {
+    background-color: #E05D23;
+}
+.myfavo_list .center{
+	text-align:center;
+}
+.myfavo_list .tag {
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    padding: 0px 4px;
+    color: #FFF;
+    margin: 3px 5px 0px 0px;
+    border-radius: 2px;
+}
+
+
+.myfavo_list a.btn:hover {
+    text-decoration: none;
+}
+
+.myfavo_list .btn {
+    background: transparent url("../img/bg_myfavo.png") repeat-x scroll 0% 0%;
+    display: inline-block;
+    height: 21px;
+    line-height: 21px;
+    color: #FFF;
+    padding: 0px 10px;
+    border-radius: 3px;
+}
+
+.myfavo_list .btn_buy {
+    background-position: 0px -210px;
+}
+
+.marginRight{
+	float: left;
+	overflow: hidden;
+	width: 779px;
+	margin-left: 10px;
+}
+.rightBox{
+	width:780px;
+	margin-left:20px;
+}
+
+.hideNow{
+	display:none;
+}
+
+
+/********右侧大分类样式************/
+/*收货地址管理样式*/
+{
+	height: 20px;
+    padding: 5px 0 23px 10px;
+    font-size: 14px;
+}
+.account_right{
+	width: 779px;
+	float: left;
+	margin: 10px 0 20px;
+	padding-left: 10px;
+}
+.account_right h2{
+	height: 20px;
+	padding: 5px 0 23px 10px;
+	font-size: 14px;
+}
+.my_address_info {
+    width: 777px;
+    border: 1px solid #d3d3d3;
+    margin-bottom: 10px;
+}
+.other_address {
+    width: 741px;
+    padding: 10px 0 2px 0;
+    border-bottom: 1px solid #d3d3d3;
+    margin: 0 auto;
+}
+.my_address_dashed {
+    height: 1px;
+    line-height: 1px;
+    background: #fff;
+    overflow: hidden;
+    margin-top: -1px;
+}
+.other_address ul{
+	list-style: none;
+	width: 705px;
+	margin: 3px auto 0;
+}
+.my_address_btn {
+    padding: 5px 0 10px 5px;
+    height: 22px;
+}
+.button_delete {
+    width: 65px;
+    height: 30px;
+    padding-top: 1px;
+    cursor: pointer;
+    margin-left: 13px;
+    float: left;
+    margin-top: 2px;
+}
+.my_address_btn span {
+    display: block;
+    padding: 5px 0 0 43px;
+    float: left;
+}
+.my_address_btn span a {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: #404040;
+}
+a {
+    text-decoration: none;
+    color: #1a66b3;
+}
+.my_address_add {margin-top: 13px;padding-bottom: 51px;}
+
+.my_address_add h5 {
+    border-bottom: 1px solid #D3D3D3;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 auto;
+    width: 736px;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 7px;
+}
+.my_address_add_info {
+    padding: 14px 0 0 0;
+}
+.my_address_add_info p{display: block;clear: both;padding: 8px 0;}
+
+.my_address_add_info select {
+    display: block;
+    float: left;
+    border: 1px solid #dadada;
+    background: #fff;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 9px;
+}
+.my_address_add_info label {
+    width: 80px;
+    padding: 3px 12px 0 0;
+    text-align: right;
+    display: block;
+    float: left;
+}
+.my_address_add_info label strong {font-weight: normal;margin: 3px 0 0 5px;font-size: 12px;line-height: 18px;color: #ff7417;padding-right: 2px;}
+.my_address_add_info input, .my_address_add_info select {
+    display: block;
+    float: left;
+    border: 1px solid #dadada;
+    background: #fff;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 9px;
+}
+
+/*提示信息*/
+.my_address_add_info span.hint.new_tip {
+    clear: both;
+    display: block;
+    margin: 3px 0 0 87px;
+}
+
+.my_address_add_info span.hint {
+    color: #f40000;
+    display: inline-block;
+    padding: 3px 0 0 28px;
+    background: url(../img/icon_tip.png) 5px 0px no-repeat;
+}
+
+.address_add_btn button {
+    width: 63px;
+}
+.address_add_btn {
+    padding: 0 0 4px 92px !important;
+}
+
+.my_address_add_info .address_add_checkbox input {
+    border: 0;
+    background: none;
+    margin-left: 60px;
+    _display: inline;
+}
