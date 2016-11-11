@@ -47,7 +47,7 @@ li{
 	color:#FFA500;
 }
 #catBox>h3{
-	background: url("http://localhost/ddEle/Public/Home/img/sort_box_bg.png") repeat-x scroll left 0px transparent;
+	background: url("../img/sort_box_bg.png") repeat-x scroll left 0px transparent;
 	display: block;
 	height: 35px;
 	line-height: 35px;
@@ -78,14 +78,14 @@ a{
 	display:inline-block;
 	width:14px;
 	height:14px;
-	background: url("http://localhost/ddEle/Public/Home/img/sort_box_bg.png") no-repeat scroll -16px -134px 
+	background: url("../img/sort_box_bg.png") no-repeat scroll -16px -134px 
 }
 .catBtnMinus{
 	position:absolute;
 	display: inline-block;
 	vertical-align: middle;
 	float: right;
-	background: url("http://localhost/ddEle/Public/Home/img/sort_box_bg.png") no-repeat scroll -16px -118px transparent;
+	background: url("../img/sort_box_bg.png") no-repeat scroll -16px -118px transparent;
 	width: 14px;
 	height: 14px;
 	margin-top: 6px;
@@ -197,7 +197,7 @@ p.name a:hover{
 /*推广内容*/
 
 .AdBox .AdBoxHeader{
-	background:url("http://localhost/ddEle/Public/Home/img/bk_ad.jpg");
+	background:url("../img/bk_ad.jpg");
 }
 .AdContent{
 	padding: 17px 0px 0px 33px;
@@ -236,7 +236,7 @@ color: #F60;
 	border-right:1px solid #ccc;
 }
 .sortBox,.checkBox{
-	background:url("http://localhost/ddEle/Public/Home/img/tools_box_bg.png") repeat scroll 0% 0% transparent;
+	background:url("../img/tools_box_bg.png") repeat scroll 0% 0% transparent;
 	width:100%;
 	height:38px;
 	line-height:38px;
@@ -254,13 +254,13 @@ color: #F60;
 	cursor:pointer;
 }
 .on{
-	background:url("http://localhost/ddEle/Public/Home/img/tools_box_bg.png") repeat scroll 0% 0% transparent;
+	background:url("../img/tools_box_bg.png") repeat scroll 0% 0% transparent;
 	background-position:0 -38px;
 	color:white;
 }
 /*黑色向下箭头*/
 .icon{
-	background:url("http://localhost/ddEle/Public/Home/img/tools_box_bg.png") repeat scroll 0% 0% transparent;
+	background:url("../img/tools_box_bg.png") repeat scroll 0% 0% transparent;
 	display: inline-block;
 	height: 8px;
 	width: 7px;
@@ -293,7 +293,7 @@ color: #F60;
 	height: 20px;
 	vertical-align: top;
 	cursor: pointer;
-	background: url("http://localhost/ddEle/Public/Home/img/tools_box_bg.png") repeat scroll 0% 0% transparent;
+	background: url("../img/tools_box_bg.png") repeat scroll 0% 0% transparent;
 	background-position: -20px -146px;
 }
 .provinceDetail{
@@ -361,8 +361,7 @@ color: #F60;
 
 /*商品星级*/
 .star span{
-  background: url("http://localhost/ddEle/Public/Home/img/icon_star.png") left top repeat-x;
-  display: inline-block;
+  background: url("../img/icon_star.png") left top repeat-x; display: inline-block;
   width: 80px;/*四颗星*/
   height: 16px;
   vertical-align: middle;
@@ -370,6 +369,7 @@ color: #F60;
   line-height: 12px;
   font-size: 0;
 }
+
 .link a:hover{
 	color:orange;
 }
@@ -377,13 +377,16 @@ color: #F60;
 #goodsListUl{
 	position:relative;
 }
+
 #goodsListUl li:hover{
-	border:4px solid #ffcfb1;
+	outline:4px solid #ffcfb1;
 	background:#fff;
 	z-index:12;
 	height: 373px;
 }
-#goodsListUl  li{
+
+#goodsListUl li{
+	  border:4px solid none;
 	  float: left;
 	  width: 240px;
 	  height: 339px;
@@ -391,3 +394,72 @@ color: #F60;
 	  position: relative;
 	  border-bottom: solid 1px #e6e6e6;
 }
+
+.brandCat{
+	width: 95px;
+    float: left;
+    padding: 14px 0px 13px 10px;
+    font-weight: bold;
+}
+.brandCatUl{
+	padding: 5px 0px 0px 5px;
+	width: 714px;
+}
+.brandCatUl li{
+	float: left;
+	width: 119px;
+	height: 57px;
+}
+
+
+.brandCatUl li a{
+	text-decoration: none;
+	color: #EC7814;
+	padding: 0px;
+	border: 2px solid #EC7814;
+
+	display: block;
+	padding: 1px;
+	border: 1px solid #D8D8D8;
+	background: none repeat scroll 0% 0% #FFF;
+	height: 48px;
+	width: 110px;
+	color: #000;
+	line-height: 48px;
+	text-align: center;
+	font-family: "Microsoft Yahei";
+	position: relative;
+}
+
+.brandCatUl li a>img{
+	display: block;
+	position: absolute;
+	left: 16px;
+	top: 5px;
+}
+.listLeft{
+	width: 95px;
+    float: left;
+    padding: 14px 0px 13px 10px;
+    font-weight: bold;
+}
+.listRight{
+	width: 843px;
+	float: left;
+	padding: 13px 0px 3px;
+	position: relative;
+}
+.listRight .list_content span{
+	padding-right: 30px;
+	height: 18px;
+	float: left;
+	display: block;
+	padding-bottom: 10px;
+	font-family: Arial,宋体;
+}
+
+.listRight .list_content span a:hover{
+    background: none repeat scroll 0% 0% #FF7A29;
+    color: #FFF;
+    text-decoration: none;
+ }

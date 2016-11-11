@@ -517,7 +517,7 @@ div.mask span{
 	display:inline-block;
 	width:16px;
 	height:16px;
-	background:url(http://localhost/ddEle/Public/Home/img/home_sprite2_1017.png) -65px -542px no-repeat;
+	background:url(../img/home_sprite2_1017.png) -65px -542px no-repeat;
 }
 #broadCast .switchBtn{
 	margin-top:20px;

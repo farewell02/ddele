@@ -94,4 +94,21 @@ $(function(){
 	})
 
 
+	//商品详情，商品评论，商品问答顶部选项卡
+	$('.threeBox li').click(function(){
+		var indexOfli = $('.threeBox li').index($(this));
+		$('.threeBox li').removeClass('click');
+		$(this).addClass('click');
+		$('.largeContainer>div').hide().eq(indexOfli).show();
+	})
+
+
+	//全部评论，好评，中评，差评切换
+	$('.commentCat li').click(function(){
+
+		var indexLi = $('.commentCat li').index($(this));
+		console.log(indexLi);
+		$('.commentCat li').removeClass('on').eq(indexLi).addClass('on');
+		$('.criticism').hide().eq(indexLi).show();
+	})
 })

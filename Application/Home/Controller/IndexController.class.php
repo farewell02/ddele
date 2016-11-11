@@ -20,4 +20,10 @@ class IndexController extends Controller {
     	layout('layout/layout');
     	$this -> display();
     }
+
+    //商品收藏展示
+    public function goodsCollect(){
+        layout('layout/layout');
+        $this -> display();
+    }
 }
