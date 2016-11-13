@@ -393,7 +393,8 @@ class Model {
      * @param array $options 表达式
      * @return boolean
      */
-    public function save($data='',$options=array()) {
+    public function save($data='',$options=array()){
+
         if(empty($data)) {
             // 没有传递数据，获取当前数据对象的值
             if(!empty($this->data)) {
@@ -405,6 +406,7 @@ class Model {
                 return false;
             }
         }
+
         // 数据处理
         $data       =   $this->_facade($data);
         if(empty($data)){
@@ -448,6 +450,7 @@ class Model {
         if(false === $this->_before_update($data,$options)) {
             return false;
         }
+
         $result     =   $this->db->update($data,$options);
         if(false !== $result && is_numeric($result)) {
             if(isset($pkValue)) $data[$pk]   =  $pkValue;

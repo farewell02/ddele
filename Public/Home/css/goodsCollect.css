@@ -239,7 +239,10 @@ h3{width: 210px;line-height: 30px;border: 1px solid #999;background-color: #F7F7
 	color: #878787;
 	padding-top: 2px;
 }
-
+.details .title:hover{
+    color:red;
+    cursor:pointer;
+}
 .myfavo_list .things .pic{
 	display: inline-block;
 	width: 70px;
@@ -279,7 +282,10 @@ h3{width: 210px;line-height: 30px;border: 1px solid #999;background-color: #F7F7
     border-radius: 2px;
 }
 
-
+.space a:hover{
+    text-decoration:underline;
+    color:red;
+}
 .myfavo_list a.btn:hover {
     text-decoration: none;
 }
@@ -297,7 +303,9 @@ h3{width: 210px;line-height: 30px;border: 1px solid #999;background-color: #F7F7
 .myfavo_list .btn_buy {
     background-position: 0px -210px;
 }
-
+.myfavo_list{
+    position:relative;
+}
 .marginRight{
 	float: left;
 	overflow: hidden;
@@ -312,6 +320,80 @@ h3{width: 210px;line-height: 30px;border: 1px solid #999;background-color: #F7F7
 .hideNow{
 	display:none;
 }
+
+/*商品收藏弹出框显示样式**/
+.window_100{
+    position: absolute;
+    z-index: 10;
+}
+.my_pop {
+    width: 300px;
+    border: 1px solid #a8d9cc;
+    box-shadow: 1px 1px 3px #ddd;
+}
+.my_pop .tit {
+    background-color: #d2ede7;
+    height: 23px;
+    line-height: 23px;
+    color: #646464;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.my_pop .content {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+.my_pop .tit .close {
+    background: url(../images/bg_myfavo.png) no-repeat 0 -273px;
+    display: block;
+    float: right;
+    height: 23px;
+    width: 23px;
+    margin-right: -1px;
+}
+.my_pop .content p {
+    line-height: 20px;
+}
+.my_pop .content .btn_p {
+    margin-top: 20px;
+}
+.my_pop .content a, .my_pop .content a.btn:hover {
+    _text-decoration: none;
+}
+.my_pop .btn {
+    background: url(../img/bg_myfavo.png) repeat-x;
+    display: inline-block;
+    line-height: 21px;
+    padding: 0 12px;
+    margin: 0 10px;
+}
+.my_pop .btn_no {
+    background-position: 0 -120px;
+    border: 1px solid #d0d0d0;
+    height: 19px;
+    color: #666;
+    line-height: 19px;
+}
+.my_pop .btn_yes {
+    background-position: 0 -210px;
+    color: #fff;
+    height: 21px;
+}
+/*商品收藏弹出框显示样式结束**/
+
+/**遮罩层*/
+#div_shield {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.50;
+    z-index: 1;
+    display: none;
+}
+
+
 
 
 /********右侧大分类样式************/
@@ -454,4 +536,8 @@ a {
     background: none;
     margin-left: 60px;
     _display: inline;
+}
+
+#province,#city,#county{
+    height:20px;
 }

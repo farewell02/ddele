@@ -33,6 +33,9 @@ $(function(){
 	})
 
 
+	//获取商品的垂直高度
+	$('#goodsListUl').css('height',Math.ceil($('#goodsListUl li').length/4)*380);
+	
 	//让商品列表图片不抖动,转换为absolute定位
 	$('#goodsListUl li').each(function(){
 		img.push({left:$(this).position().left,top:$(this).position().top});

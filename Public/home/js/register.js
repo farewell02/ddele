@@ -5,7 +5,7 @@
 // var mobileIsOk = false;//验证手机是否符合规则
 // var code = false; //验证码是否正确
 
-var webPath = 'http://www.s52.com/ddele/';
+var webPath = 'http://localhost/ddele/';
 //定义四个接受函数返回值的参数
 var lock1 = lock2 =lock3 = lock4 =null;
 // 验证邮箱的
@@ -16,7 +16,6 @@ var mobileReg= /^1[3,4,5,7,8][0-9]{9}$/;
 // alert(emailReg.test('1319933170@qq.com'));
 function checkUser(pattern1,pattern2,obj)
 {
-
     if(!pattern1.test(obj.val()) && !pattern2.test(obj.val())){
         // alert(obj.val());
         msg = "邮箱/手机格式不正确，请重新输入";
