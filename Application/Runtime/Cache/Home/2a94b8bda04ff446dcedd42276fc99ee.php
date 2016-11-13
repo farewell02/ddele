@@ -528,11 +528,11 @@
 	</div><!--推广产品结束-->
 
 	<!--楼层展示-->
-	<div class="floor">
+	<?php if(is_array($catArr)): $k = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($k % 2 );++$k;?><div class="floor">
 		<div class="topFloor clearFix">
 			<h1 class="fl">
-				1F
-				<span class="floorName">手机/配件</span>
+				<?php echo ($k); ?>F
+				<span class="floorName"></span>
 			</h1>
 			<div class="floor_floor fl">
 				<ul>
@@ -555,20 +555,23 @@
 								<img src="/ddEle/Public/Home/img/4949-7m.jpg" alt="">
 							</div>
 							<ul class="brandUl clearFix">
+
+								<?php if(is_array($cat['cat_brand'])): $i = 0; $__LIST__ = $cat['cat_brand'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><li><a href="<?php echo ($brand['id']); ?>"><?php echo ($brand['brandname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+								
+								<!-- <li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
+								<li><a href="">苹果</a></li> -->
 							</ul>
 						</div>
 
 						<!--楼层中间内容-->
 						<div class="middleFloor fl">
 							<ul style="width:732px" class="clearFix">
+
 								<li class="floorGoods">
 									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
 									</a>
@@ -644,6 +647,8 @@
 							</ul>
 						</div><!--楼层中间内容结束-->
 					</div><!--左中部楼层结束-->
+
+				<!--楼层开始-->
 				<div class="fl clearFix floorContent"><!--左中部楼层开始2-->
 						<!--楼层左部内容-->
 						<div class="leftFloor fl">
@@ -1062,15 +1067,15 @@
 		</div>
 
 		<!--logo展示-->
-		<div class="logo">
-			<ul>
-				<li>
+		<div class="logo clearFix">
+			<ul class="clearFix">
+				<?php if(is_array($cat['cat_brand'])): $i = 0; $__LIST__ = $cat['cat_brand'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><li>
 					<a href="#"><img src="/ddEle/Public/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a>
 					<div class="mask">
-						<span>华为</span>
+						<span><?php echo ($brand['brandname']); ?></span>
 					</div>
-				</li>
-				<li>
+				</li><?php endforeach; endif; else: echo "" ;endif; ?>
+				<!-- <li>
 					<a href="#"><img src="/ddEle/Public/Home/img/midea_logo80x50-5.8.jpg" width="120px" height="55px"/></a>
 					<div class="mask">
 						<span>美的</span>
@@ -1088,11 +1093,10 @@
 						<span>九阳</span>
 					</div>
 				</li>
-				<li><a href="#"><img src="/ddEle/Public/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a></li>
+				<li><a href="#"><img src="/ddEle/Public/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a></li> -->
 			</ul>
 		</div><!--logo展示结束-->
-	</div><!--楼层展示结束-->
-
+	</div><!--楼层展示结束--><?php endforeach; endif; else: echo "" ;endif; ?>
 </div><!--首页主要内容结束
 <!--网页尾部文件-->
 <div id="footer">

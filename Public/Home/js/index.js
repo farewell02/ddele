@@ -75,8 +75,9 @@ $(function(){
 
      //鼠标悬停移动箭头,移出立即停止动画，并运动到目标点
      $('.floor_floor li').mouseover(function(){
-     	var index = $('.floor_floor li').index($(this));
-     	$('.floorContent').hide().eq(index).show();
+     	var index = $(this).parent().find('li').index($(this));
+     	$(this).closest('.floor').find('.floorContent').hide().eq(index).show();
+     	// $('.floorContent').hide().eq(index).show();
      	$(this).parent().next().animate({
      		left:index*180+90
      	},'slow')

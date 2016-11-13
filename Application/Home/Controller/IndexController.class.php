@@ -46,10 +46,10 @@ class IndexController extends Controller {
 
       //查询每个分类下的所有spu
 
-      echo '<pre>';
-      print_r($catArr);
-      echo '</pre>';
-      exit;
+      // echo '<pre>';
+      // print_r($catArr);
+      // echo '</pre>';
+      // exit;
       
       $this -> assign('cat_product',$arr);
       $this -> assign('catArr',$catArr);

@@ -358,11 +358,12 @@
 	</div><!--推广产品结束-->
 
 	<!--楼层展示-->
+	<volist name="catArr" id="cat" key="k">
 	<div class="floor">
 		<div class="topFloor clearFix">
 			<h1 class="fl">
-				1F
-				<span class="floorName">手机/配件</span>
+				<{$k}>F
+				<span class="floorName"></span>
 			</h1>
 			<div class="floor_floor fl">
 				<ul>
@@ -385,20 +386,25 @@
 								<img src="__PUBLIC__/Home/img/4949-7m.jpg" alt="">
 							</div>
 							<ul class="brandUl clearFix">
+
+								<volist name="cat['cat_brand']" id="brand">
+									<li><a href="<{$brand['id']}>"><{$brand['brandname']}></a></li>
+								</volist>
+								
+								<!-- <li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
+								<li><a href="">苹果</a></li> -->
 							</ul>
 						</div>
 
 						<!--楼层中间内容-->
 						<div class="middleFloor fl">
 							<ul style="width:732px" class="clearFix">
+
 								<li class="floorGoods">
 									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
 									</a>
@@ -474,6 +480,8 @@
 							</ul>
 						</div><!--楼层中间内容结束-->
 					</div><!--左中部楼层结束-->
+
+				<!--楼层开始-->
 				<div class="fl clearFix floorContent"><!--左中部楼层开始2-->
 						<!--楼层左部内容-->
 						<div class="leftFloor fl">
@@ -892,15 +900,17 @@
 		</div>
 
 		<!--logo展示-->
-		<div class="logo">
-			<ul>
+		<div class="logo clearFix">
+			<ul class="clearFix">
+				<volist name="cat['cat_brand']" id="brand">
 				<li>
 					<a href="#"><img src="__PUBLIC__/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a>
 					<div class="mask">
-						<span>华为</span>
+						<span><{$brand['brandname']}></span>
 					</div>
 				</li>
-				<li>
+				</volist>
+				<!-- <li>
 					<a href="#"><img src="__PUBLIC__/Home/img/midea_logo80x50-5.8.jpg" width="120px" height="55px"/></a>
 					<div class="mask">
 						<span>美的</span>
@@ -918,9 +928,9 @@
 						<span>九阳</span>
 					</div>
 				</li>
-				<li><a href="#"><img src="__PUBLIC__/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a></li>
+				<li><a href="#"><img src="__PUBLIC__/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a></li> -->
 			</ul>
 		</div><!--logo展示结束-->
 	</div><!--楼层展示结束-->
-
+	</volist>
 </div><!--首页主要内容结束
