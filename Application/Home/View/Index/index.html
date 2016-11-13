@@ -11,6 +11,7 @@
 
 <div id="main_content"><!--首页主要内容结束-->
 	<?Php echo WEB ;?>
+	<{$Think.const.GOODSIMGPATH}>
 	<!--头部标签页-->
 	<div class="ele_top clearFix">
 		<div class="">
@@ -35,7 +36,9 @@
 			<ul>
 				<!--全分类永远存在-->
 				<li><a href="">全分类</a></li>
-				<li><a href="">手机适配</a></li>
+				<volist name="catArr" id="cat">
+					<li><a href=""><{$cat['catname']}></a></li>
+				</volist>		
 				<!-- <li><a href="">电脑/平板</a></li> -->
 			</ul>
 		</div>
@@ -44,23 +47,33 @@
 			<!--全分类层对应的middleNav是永远存在的-->
 		<div class="middleNav fl clearFix AllCat">
 			<div class="fl LmiddleNav clearFix">
+
+				<!--分类内容-->
 				<ul class="clearFix">
-					<li><a href="">手机/配件</a></li>
+					<volist name="catArr" id="cat">
+						<li><a href=""><{$cat['catname']}></a></li>
+					</volist>
+					<!-- <li><a href="">手机/配件</a></li>
 					<li><a href="">电脑办公</a></li>
 					<li><a href="">手机/配件</a></li>
 					<li><a href="">手机/配件</a></li>
 					<li><a href="">手机/配件</a></li>
-					<li><a href="">手机/配件</a></li>
+					<li><a href="">手机/配件</a></li> -->
 				</ul>
 				<ul class="hot_keys clearFix">
-					<li><a href="">苹果7</a></li>
+					<volist name="cat_product" id="randomproduct">
+						<volist name="randomproduct" id="product">
+						<li><a href="<{$product['spuid']}>"><{$product['name']}></a></li>
+						</volist>
+					</volist>
+					<!-- <li><a href="">苹果7</a></li>
 					<li><a href="">阅读器</a></li>
 					<li><a href="">苹果7</a></li>
 					<li><a href="">阅读器</a></li>
 					<li><a href="">苹果7</a></li>
 					<li><a href="">阅读器</a></li>
 					<li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>	
+					<li><a href="">阅读器</a></li>	 -->
 				</ul>
 			</div>
 			<div class="fr">
@@ -91,21 +104,32 @@
 				</div>
 			</div>
 		</div><!--中间开始详细分类变化层结束-->
+		
 
+		<volist name="catArr" id="cat">
 		<!--中间开始详细分类变化层开始--><!--各个分类层-->
 		<div class="middleNav fl clearFix  hideNow ">
 			<div class="fl LmiddleNav">
 				<dl>
 					<!--分类名和左侧相同-->
-					<dt><a href="">摄影摄像</a></dt>
+					<dt><a href=""><{$cat['catname']}></a></dt>
+
 					<!--具体分类-->
 					<dd>
-						<a href="">单反相机</a>
-						<a href="">单反相机</a>
-						<a href="">单反相机</a>
-						<a href="">单反相机</a>
-						<a href="">单反相机</a>
-						<a href="">单反相机</a>
+						<volist name="cat['child']" id="secCat">
+								<a href=""><{$secCat['catname']}></a>
+							<!--子分类输出6条-->
+							<volist name="secCat['child']" id="thdCat" offset="0" length="6">
+								<a href=""><{$thdCat['catname']}></a>
+							</volist>
+
+							
+						</volist>
+
+						<!--品牌输出-->
+						<volist name="cat['cat_brand']" id="brandname">
+							<a href="<{$brandname['id']}>"><{$brandname['brandname']}></a>
+						</volist>	
 					</dd>
 				</dl>
 			</div>
@@ -122,7 +146,7 @@
 				</div>
 			</div>
 		</div><!--中间开始详细分类变化层结束-->
-
+		</volist>
 		<!--最右侧服务保障开始-->
 		<div class="service_insure fr clearFix">
 			<div>

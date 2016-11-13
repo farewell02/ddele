@@ -13,8 +13,46 @@ class IndexController extends Controller {
         }
     }
 
-	//首页展示
+	 //首页展示
     public function index(){
+      
+      $treeModel = D('Tree'); //实例化分类数模型类
+      $catModel   = M('category');
+      $goodModel  = M('goods');
+      $Model  = M('goods');
+      $spu_skuModel = M('spu_sku');
+      $indexModel = D('index');
+      //取得分类数组
+      $catArr = $treeModel ->getHomeCate();
+
+      //处理分类数组合并数据
+      foreach($catArr as $key => $value){
+
+        //得到每个大分类下的所有品牌
+         $brand = $catModel ->distinct(true)-> alias('cat') -> field('bd.*') -> join('__GOODS__ gd ON gd.catid=cat.id') -> join('__GOODS_BRAND__ gdb on gdb.goodsid=gd.id ')-> join('__BRAND__ bd on bd.id=gdb.brandid')->where('cat.path like "0,'.$value['id'].'%"')->select(); 
+
+         //得到该分类下的按照销量排序靠前的spu产品
+         $product = $indexModel->getspuInfo('max(salenumber)','salenum',$value['id']); 
+         $catArr[$key] = array_merge($value,['cat_brand'=>$brand],['product'=>$product]);
+      }
+
+      //得到所有分类下的随机spu产品 用于前台全部分类的产品显示  
+      $catidArr = $goodModel->distinct(true)->field('catid')-> select();
+      $arr = [];
+      foreach( $catidArr as $key => $value){
+           $arr[]= $goodModel ->alias('gd')->field('*')->join('__SPU_SKU__ pk on pk.spuid=gd.id')->where('catid ='.$value['catid'])->select();
+      }
+
+
+      //查询每个分类下的所有spu
+
+      echo '<pre>';
+      print_r($catArr);
+      echo '</pre>';
+      exit;
+      
+      $this -> assign('cat_product',$arr);
+      $this -> assign('catArr',$catArr);
       layout('layout/layout');
       $this -> display();
     }

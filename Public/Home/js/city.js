@@ -1,5 +1,6 @@
 $(function(){
-  var url = 'http://localhost/ddEle/index.php/Home/Index/city';
+  // var url = 'http://localhost/ddEle/index.php/Home/Index/city';
+  var url = '/ddEle/index.php/Home/Index/city.html';
   function modal(flag){
   	if(flag){
   		$('.mask').show();

@@ -44,8 +44,8 @@ $(function(){
 	 
 	  
 	  /***************************商品收藏页的js*********************************/
-	  var collectUrl = 'http://localhost/ddEle/index.php/Home/Index/ajaxshow',
-	  	  deleteUrl  =  'http://localhost/ddEle/index.php/Home/Index/delCollectGoods',
+	  var collectUrl = '/ddEle/index.php/Home/Index/ajaxshow',
+	  	  deleteUrl  =  '/ddEle/index.php/Home/Index/delCollectGoods',
 	  	  btnFlag = []; //判断点击的是哪个元素
 	  /**
 	   * [modal 摸态框loading函数]
@@ -227,7 +227,7 @@ $(function(){
 
 
     /***************************收货地址的js*********************************/
-    var url = 'http://localhost/ddEle/index.php/Home/Index/city';
+    var url = '/ddEle/index.php/Home/Index/city.html';
     //获得市
 	function getCitys(url){
 		$.ajax({

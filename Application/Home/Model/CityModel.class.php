@@ -9,7 +9,7 @@
 			$container = [];
        		$arr = [];
 
-      		 //处理结果数组并合并
+      		//处理结果数组并合并
 	       foreach($data as $key => $value){
 	            $province = $this->field('name,id') ->  where(['id'=>['eq',$value['province']]]) -> find();
 	            $city    = $this ->field('name,id') ->  where(['id'=>['eq',$value['city']]]) -> find();
