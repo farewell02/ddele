@@ -259,7 +259,7 @@ color: #F60;
 	color:white;
 }
 /*黑色向下箭头*/
-.icon{
+.icon,.upicon,.icon{
 	background:url("../img/tools_box_bg.png") repeat scroll 0% 0% transparent;
 	display: inline-block;
 	height: 8px;
@@ -268,11 +268,23 @@ color: #F60;
 	margin-left: 8px;
 	overflow: hidden;
 }
-/*白色向上箭头*/
+/*白色向下箭头*/
 .on .icon{
-	background-position: -21px -76px;;
+	background-position: -21px -76px;
+}
+/*白色向上箭头*/
+.on .upicon{
+	background-position: -7px -76px;
 }
 
+/*黑色向上箭头*/
+.upicon{
+	background-position: -15px -76px;
+}
+/*黑色向下箭头*/
+.icon{
+	background-position: 0px -76px;
+}
 /*收货地框*/
 .selectBox{
 	width:82px;

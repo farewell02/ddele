@@ -224,7 +224,7 @@
 			<ul>
 				<!--全分类永远存在-->
 				<li><a href="">全分类</a></li>
-				<?php if(is_array($catArr)): $i = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><li><a href=""><?php echo ($cat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>		
+				<?php if(is_array($catArr)): $i = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><li><a href="javscript:void(0)"><?php echo ($cat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>		
 				<!-- <li><a href="">电脑/平板</a></li> -->
 			</ul>
 		</div>
@@ -236,8 +236,8 @@
 
 				<!--分类内容-->
 				<ul class="clearFix">
-					<?php if(is_array($catArr)): $i = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><li><a href=""><?php echo ($cat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-					<!-- <li><a href="">手机/配件</a></li>
+					<?php if(is_array($catArr)): $i = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('index/goodsList',['path'=>$cat['path']]);?>"><?php echo ($cat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+				<!-- 	<li><a href="">手机/配件</a></li>
 					<li><a href="">电脑办公</a></li>
 					<li><a href="">手机/配件</a></li>
 					<li><a href="">手机/配件</a></li>
@@ -291,16 +291,17 @@
 			<div class="fl LmiddleNav">
 				<dl>
 					<!--分类名和左侧相同-->
-					<dt><a href=""><?php echo ($cat['catname']); ?></a></dt>
+					<dt><a href="<?php echo U('index/goodsList',['path'=>$cat['path']]);?>"><?php echo ($cat['catname']); ?></a></dt>
 
 					<!--具体分类-->
 					<dd>
-						<?php if(is_array($cat['child'])): $i = 0; $__LIST__ = $cat['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$secCat): $mod = ($i % 2 );++$i;?><a href=""><?php echo ($secCat['catname']); ?></a>
+						<?php if(is_array($cat['child'])): $i = 0; $__LIST__ = $cat['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$secCat): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$secCat['path']]);?>"><?php echo ($secCat['catname']); ?></a>
 							<!--子分类输出6条-->
-							<?php if(is_array($secCat['child'])): $i = 0; $__LIST__ = array_slice($secCat['child'],0,6,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$thdCat): $mod = ($i % 2 );++$i;?><a href=""><?php echo ($thdCat['catname']); ?></a><?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
+							<?php if(is_array($secCat['child'])): $i = 0; $__LIST__ = array_slice($secCat['child'],0,6,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$thdCat): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$thdCat['path']]);?>">
+								<?php echo ($thdCat['catname']); ?></a><?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
 
 						<!--品牌输出-->
-						<?php if(is_array($cat['cat_brand'])): $i = 0; $__LIST__ = $cat['cat_brand'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brandname): $mod = ($i % 2 );++$i;?><a href="<?php echo ($brandname['id']); ?>"><?php echo ($brandname['brandname']); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>	
+						<?php if(is_array($cat['cat_brand'])): $i = 0; $__LIST__ = $cat['cat_brand'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brandname): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$cat['path'],'brandid'=>$brandname['id']]);?>"><?php echo ($brandname['brandname']); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>	
 					</dd>
 				</dl>
 			</div>
@@ -531,7 +532,7 @@
 	<?php if(is_array($catArr)): $k = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($k % 2 );++$k;?><div class="floor">
 		<div class="topFloor clearFix">
 			<h1 class="fl">
-				<?php echo ($k); ?>F
+				<?php echo ($k); ?>F<?php echo ($cat['catname']); ?>
 				<span class="floorName"></span>
 			</h1>
 			<div class="floor_floor fl">
@@ -571,85 +572,28 @@
 						<!--楼层中间内容-->
 						<div class="middleFloor fl">
 							<ul style="width:732px" class="clearFix">
-
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-									<div class="icon_pop">
-										<span style="background: url(/ddEle/Public/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
-										</span>
-									</div>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">  
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-									<div class="icon_pop"><span style="background: url(http://img4.ddimg.cn/00035/pic/xsq.png) no-repeat 0px 0px; _background-image: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img4.ddimg.cn/00035/pic/xsq.png',sizingMethod='noscale');" class="product_tags"></span>
-									</div>
-								</li>
+			
+								<?php if(is_array($cat['product'])): $i = 0; $__LIST__ = $cat['product'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$productArr): $mod = ($i % 2 );++$i;?><li class="floorGoods">
+										<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="<?php echo (GOODSIMGPATH); echo ($productArr['imgurl']); ?>" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" width="150px" height="150px">
+										</a>
+										<div class="name">
+											<?php echo ($productArr['name']); ?>
+										</div>
+										<p class="price">
+											<span class="sign">¥</span>
+											<span class="number"><?php echo ($productArr['price']); ?></span>
+										</p>
+										<div class="icon_pop">
+											<span style="background: url(/ddEle/Public/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
+											</span>
+										</div>
+									</li><?php endforeach; endif; else: echo "" ;endif; ?>
 							</ul>
 						</div><!--楼层中间内容结束-->
 					</div><!--左中部楼层结束-->
 
 				<!--楼层开始-->
-				<div class="fl clearFix floorContent"><!--左中部楼层开始2-->
+				<div class="fl clearFix floorContent hidenow"><!--左中部楼层开始2-->
 						<!--楼层左部内容-->
 						<div class="leftFloor fl">
 							<div>
@@ -751,8 +695,8 @@
 				<div class="rightFloor fr">
 					<div class="rgFloorTop clearFix">
 						<ul class="clearFix">
-							<li class="on">手机</li>
-							<li>手机配件</li>
+							<li class="on"><{$}></li>
+							<!-- <li>手机配件</li> -->
 						</ul>
 					</div>
 
@@ -1070,7 +1014,7 @@
 		<div class="logo clearFix">
 			<ul class="clearFix">
 				<?php if(is_array($cat['cat_brand'])): $i = 0; $__LIST__ = $cat['cat_brand'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><li>
-					<a href="#"><img src="/ddEle/Public/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a>
+					<a href="#"><img src="<?php echo ($brand['logo']); ?>" width="120px" height="55px"/></a>
 					<div class="mask">
 						<span><?php echo ($brand['brandname']); ?></span>
 					</div>

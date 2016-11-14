@@ -149,65 +149,59 @@
 				<!--品牌图标-->
 				<div class="fl brandCatUl">
 					<ul>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-						<li><a title="Lenovo联想" href="/cid4001075-a1:1066.html"><font style="display: none;">Lenovo联想</font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
+					    <volist name="brandArr" id="brand">
+					    	<li><a title="<{$brand['brandname']}>" href="/cid4001075-a1:1066.html"><font style="display: none;"><{$brand['brandname']}></font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
+					    </volist>
 					</ul>
 				</div>
 			</div><!--品牌分类结束-->
 
-			<!--价格-->
-			<div class="clearFix">
+			<!--价格排序-->
+			<!-- <div class="clearFix">
 				<div class="clearFix listLeft">价格</div>
 				<div class="listRight">
 					<div class="list_content"><div class="width_515"><span><a title="0-3259" name="price_segments" href="/cid4001075-lp0-hp3259.html">0-3259</a></span><span><a title="3259-4099" name="price_segments" href="/cid4001075-lp3259-hp4099.html">3259-4099</a></span><span><a title="4099-5199" name="price_segments" href="/cid4001075-lp4099-hp5199.html">4099-5199</a></span><span><a title="5199-7149" name="price_segments" href="/cid4001075-lp5199-hp7149.html">5199-7149</a></span><span><a title="7149以上" name="price_segments" href="/cid4001075-lp7149-hp.html">7149以上</a></span></div></div>
 				</div>
 			</div>
-
+ -->
 			<!--网络-->
 			
 			<!--价格-->
-			<div class="clearFix">
+			<!-- <div class="clearFix">
 				<div class="clearFix listLeft">价格</div>
 				<div class="listRight">
 					<div class="list_content"><div class="width_515"><span><a title="0-3259" name="price_segments" href="/cid4001075-lp0-hp3259.html">0-3259</a></span><span><a title="3259-4099" name="price_segments" href="/cid4001075-lp3259-hp4099.html">3259-4099</a></span><span><a title="4099-5199" name="price_segments" href="/cid4001075-lp4099-hp5199.html">4099-5199</a></span><span><a title="5199-7149" name="price_segments" href="/cid4001075-lp5199-hp7149.html">5199-7149</a></span><span><a title="7149以上" name="price_segments" href="/cid4001075-lp7149-hp.html">7149以上</a></span></div></div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 		<!--排序 销量、价格、最新-->
-		<div class="sortBox clearFix">
+		<div class="sortBox clearFix" data-path="<{$searchstring['path']}>" data-brandid='<{$searchstring["brandid"]}>'>
 			<h4 class="fl">排序</h4>
 			<ul class="sortMenu clearFix">
-				<li class="on">
+				<li id="default" class=" <?php echo $orderflag['defaultorder']=='yes'?'on clicked':''; ?>">
 					默认排序
-					<span class="icon"></span>
+					<span class=""></span>
 				</li>
-				<li>
+				<li id="priceorder" class="<?php echo $clicked['clicked']=='priceorder'?'on clicked':'' ?>">
 					价格
-					<span class="icon"></span>
+					<span class="<?php echo $orderflag['priceorder']=='desc'?'icon':'upicon'; ?>"></span>
 				</li>
-				<li>
+			<!-- 	<li>
 					好评
 					<span class="icon"></span>
-				</li>
-				<li>
-					最新
-					<span class="icon"></span>
+				</li> -->
+				<li id="saleorder" class="<?php echo $clicked['clicked']=='saleorder'?'on clicked':'' ?>">
+					销量
+					<span class="<?php echo $orderflag['saleorder']=='desc'?'icon':'upicon'; ?>"></span>
 				</li>
 			</ul>
 		</div><!--排序 销量、价格、最新结束-->
 
 		
 		<div class="checkBox"><!--收货地、促销，商品类型-->
-			<span class="fl">收货地址:</span>
-			<div class="fl selectBox">
+			<!-- <span class="fl">收货地址:</span> -->
+			<!-- <div class="fl selectBox">
 				全部地区
 				<div class="provinceDetail clearFix hideNow">
 					<div class="clearFix">
@@ -229,7 +223,7 @@
 					</ul>
 				</div>
 				<span class="arrow"></span>
-			</div>
+			</div> -->
 		</div><!--收货地、促销，商品类型结束-->
 		
 
@@ -237,149 +231,159 @@
 		<div>
 			<div>
 				<ul id="goodsListUl">
-					<li>
-						<div>
-							<a href="">
-								<div>
-									<a href=""><img src="__PUBLIC__/home/img/1040015948-1_b_6.jpg" alt=""></a>	
-								</div>
-								<p class="listPrice">¥4936</p>
-								<p class="listName">
-									<a href="">【赠送钢化膜+手机壳】Apple苹果 iPhone7 	iPhone7 Plus</a>
-								</p>
-								<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-								<p class="star">
-									<span>
-										<span></span>
-									</span>
-								</p>
-								<p class="link">
-									<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
-									<a href="">苹果官方旗舰店</a>
-								</p>
-							</a>
-					   </div>
-					</li>
-					<li>
-						<div>
-							<a href="">
-								<div>
-									<a href=""><img src="__PUBLIC__/home/img/1040015948-1_b_6.jpg" alt=""></a>	
-								</div>
-								<p class="listPrice">¥4936</p>
-								<p class="listName">
-									<a href="">【赠送钢化膜+手机壳】Apple苹果 iPhone7 	iPhone7 Plus</a>
-								</p>
-								<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-								<p class="star">
-									<span>
-										<span></span>
-									</span>
-								</p>
-								<p class="link">
-									<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
-									<a href="">苹果官方旗舰店</a>
-								</p>
-							</a>
-					   </div>
-					</li>
-					<li>
-						<div>
-							<a href="">
-								<div>
-									<a href=""><img src="__PUBLIC__/home/img/1040015948-1_b_6.jpg" alt=""></a>	
-								</div>
-								<p class="listPrice">¥4936</p>
-								<p class="listName">
-									<a href="">【赠送钢化膜+手机壳】Apple苹果 iPhone7 	iPhone7 Plus</a>
-								</p>
-								<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-								<p class="star">
-									<span>
-										<span></span>
-									</span>
-								</p>
-								<p class="link">
-									<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
-									<a href="">苹果官方旗舰店</a>
-								</p>
-							</a>
-					   </div>
-					</li>
-					<li>
-						<div>
-							<a href="">
-								<div>
-									<a href=""><img src="__PUBLIC__/home/img/1040015948-1_b_6.jpg" alt=""></a>	
-								</div>
-								<p class="listPrice">¥4936</p>
-								<p class="listName">
-									<a href="">【赠送钢化膜+手机壳】Apple苹果 iPhone7 	iPhone7 Plus</a>
-								</p>
-								<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-								<p class="star">
-									<span>
-										<span></span>
-									</span>
-								</p>
-								<p class="link">
-									<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
-									<a href="">苹果官方旗舰店</a>
-								</p>
-							</a>
-					   </div>
-					</li>
-					<li>
-						<div>
-							<a href="">
-								<div>
-									<a href=""><img src="__PUBLIC__/home/img/1040015948-1_b_6.jpg" alt=""></a>	
-								</div>
-								<p class="listPrice">¥4936</p>
-								<p class="listName">
-									<a href="">【赠送钢化膜+手机壳】Apple苹果 iPhone7 	iPhone7 Plus</a>
-								</p>
-								<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-								<p class="star">
-									<span>
-										<span></span>
-									</span>
-								</p>
-								<p class="link">
-									<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
-									<a href="">苹果官方旗舰店</a>
-								</p>
-							</a>
-					   </div>
-					</li>
-
-					<li>
-						<div>
-							<a href="">
-								<div>
-									<a href=""><img src="__PUBLIC__/home/img/1040015948-1_b_6.jpg" alt=""></a>	
-								</div>
-								<p class="listPrice">¥4936</p>
-								<p class="listName">
-									<a href="">【赠送钢化膜+手机壳】Apple苹果 iPhone7 	iPhone7 Plus</a>
-								</p>
-								<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-								<p class="star">
-									<span>
-										<span></span>
-									</span>
-								</p>
-								<p class="link">
-									<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
-									<a href="">苹果官方旗舰店</a>
-								</p>
-							</a>
-					   </div>
-					</li>
+					<volist name="goodslistArr" id="goodslist" empty="暂时没有商品">	
+						<li>
+							<div>
+								<a href="">
+									<div>
+										<a href="" style="display:inline-block;width:200px;height:200px"><img width="200px" height="200px" src="<{$Think.const.GOODSIMGPATH}><{$goodslist['imgurl']}>" alt=""></a>	
+									</div>
+									<p class="listPrice">¥<{$goodslist['price']}></p>
+									<p class="listName">
+										<a href=""><{$goodslist['spuname']}></a>
+									</p>
+									<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
+									<!-- <p class="star">
+										<span>
+											<span></span>
+										</span>
+									</p> -->
+									<!-- <p class="link">
+										<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
+										<a href="">苹果官方旗舰店</a>
+									</p> -->
+								</a>
+						   </div>
+						</li>
+					</volist>
+					<volist name="goodslistArr" id="goodslist" empty="暂时没有商品">	
+						<li>
+							<div>
+								<a href="">
+									<div>
+										<a href="" style="display:inline-block;width:200px;height:200px"><img width="200px" height="200px" src="<{$Think.const.GOODSIMGPATH}><{$goodslist['imgurl']}>" alt=""></a>	
+									</div>
+									<p class="listPrice">¥<{$goodslist['price']}></p>
+									<p class="listName">
+										<a href=""><{$goodslist['spuname']}></a>
+									</p>
+									<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
+									<!-- <p class="star">
+										<span>
+											<span></span>
+										</span>
+									</p> -->
+									<!-- <p class="link">
+										<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
+										<a href="">苹果官方旗舰店</a>
+									</p> -->
+								</a>
+						   </div>
+						</li>
+					</volist>
+					<volist name="goodslistArr" id="goodslist" empty="暂时没有商品">	
+						<li>
+							<div>
+								<a href="">
+									<div>
+										<a href="" style="display:inline-block;width:200px;height:200px"><img width="200px" height="200px" src="<{$Think.const.GOODSIMGPATH}><{$goodslist['imgurl']}>" alt=""></a>	
+									</div>
+									<p class="listPrice">¥<{$goodslist['price']}></p>
+									<p class="listName">
+										<a href=""><{$goodslist['spuname']}></a>
+									</p>
+									<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
+									<!-- <p class="star">
+										<span>
+											<span></span>
+										</span>
+									</p> -->
+									<!-- <p class="link">
+										<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
+										<a href="">苹果官方旗舰店</a>
+									</p> -->
+								</a>
+						   </div>
+						</li>
+					</volist>
 				</ul>
 			</div>
 		</div><!--商品列表页结束-->
 		
+
+		<!--分页-->
+	    <div class="" name="m4048975_pid0_t3989"><div id="component_4048975"></div><div class="con paginating" name="m4048975_pid0_t3990"><script type="text/javascript" src="js/jquery/lazyload181.js"></script>
+<script type="text/javascript"> $("img[data-original]").lazyload(); </script>
+
+<ul class="paging" name="Fy">
+            <li class="prev none"><a>上一页</a></li>
+                    <li><a href="/cid4004279-srsort_score_desc.html" class=" current">1</a></li>
+                        <li><a href="/pg2-cid4004279-srsort_score_desc.html" class="null">2</a></li>
+                        <li><a href="/pg3-cid4004279-srsort_score_desc.html" class="null">3</a></li>
+                        <li><a href="/pg4-cid4004279-srsort_score_desc.html" class="null">4</a></li>
+                        <li><a href="/pg5-cid4004279-srsort_score_desc.html" class="null">5</a></li>
+                        <li><a href="/pg6-cid4004279-srsort_score_desc.html" class="null">6</a></li>
+                        <li><span>...<span></span></span></li>
+                    <li class="next"><a href="/pg2-cid4004279-srsort_score_desc.html">下一页</a></li>
+            <li class="page_input"><span>共94页 到第</span>
+        <input id="t__cp" class="number" value="1" type="text">
+        <span>页</span>
+        <input class="button" id="click_get_page" value="确定" type="button"></li>
+</ul>
+<script type="text/javascript">
+    $(function(){     
+        $('#t__cp').keydown(function(e){
+            if(e.keyCode==13){
+                verifyListPages();
+            }
+        });
+        $('#click_get_page').click(function(){
+            verifyListPages();
+        });
+    });
+
+    function verifyListPages(){
+        var page=$.trim($('#t__cp').val());
+        var max_page=94;
+        re = /^[1-9]*[0-9]*[0-9]$/i; 
+        if(!re.test(page)||page==0){                  
+            alert('您好，请输入正确页码。');
+            return false;                   
+        }else{
+            if(parseInt(page)>100){
+                alert('您好，请输入正确页码。');
+                return false;
+            }else{       
+                if(parseInt(page)>max_page){
+                    
+                    alert('您好，请输入正确页码。');
+                    return false;
+//                    var href_url = '/pgnone-cid4004279-srsort_score_desc.html';
+//                    //                        end_url = href_url;
+//                    //                    
+//                    window.location.href=end_url;
+//                    return false;
+                }else{
+                     var href_url = '/pgnone-cid4004279-srsort_score_desc.html';
+                                            if (page == 1) {
+                            end_url = href_url.replace('pgnone-','');
+                        }else{
+                            end_url = href_url.replace('pgnone','pg'+page);
+                        }
+                                        
+                    window.location.href=end_url;
+                }
+            }
+        }
+    }
+</script>
+
+
+
+
+
+</div></div>
+
 	</div>
 	<div class="clear"></div>
 </div>

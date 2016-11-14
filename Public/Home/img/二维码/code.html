@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的二维码</title>
+</head>
+<body>
+
+	<div id="code"></div>
+
+
+	<script>
+		// $('#code').qrcode("http://www.jb51.net.com");
+
+		$("#code").qrcode({ 
+		render: "table", //table方式 
+		width: 200, //宽度 
+		height:200, //高度 
+		text: "www.baidu.com" //任意内容 
+		});
+	</script>
+	<script type="text/javascript" src="jquery.js"></script> 
+	<script type="text/javascript" src="jquery.qrcode.min.js"></script>
+</body>
+</html>

@@ -37,7 +37,7 @@
 				<!--全分类永远存在-->
 				<li><a href="">全分类</a></li>
 				<volist name="catArr" id="cat">
-					<li><a href=""><{$cat['catname']}></a></li>
+					<li><a href="javscript:void(0)"><{$cat['catname']}></a></li>
 				</volist>		
 				<!-- <li><a href="">电脑/平板</a></li> -->
 			</ul>
@@ -51,9 +51,9 @@
 				<!--分类内容-->
 				<ul class="clearFix">
 					<volist name="catArr" id="cat">
-						<li><a href=""><{$cat['catname']}></a></li>
+						<li><a href="<{:U('index/goodsList',['path'=>$cat['path']])}>"><{$cat['catname']}></a></li>
 					</volist>
-					<!-- <li><a href="">手机/配件</a></li>
+				<!-- 	<li><a href="">手机/配件</a></li>
 					<li><a href="">电脑办公</a></li>
 					<li><a href="">手机/配件</a></li>
 					<li><a href="">手机/配件</a></li>
@@ -112,15 +112,16 @@
 			<div class="fl LmiddleNav">
 				<dl>
 					<!--分类名和左侧相同-->
-					<dt><a href=""><{$cat['catname']}></a></dt>
+					<dt><a href="<{:U('index/goodsList',['path'=>$cat['path']])}>"><{$cat['catname']}></a></dt>
 
 					<!--具体分类-->
 					<dd>
 						<volist name="cat['child']" id="secCat">
-								<a href=""><{$secCat['catname']}></a>
+								<a href="<{:U('index/goodsList',['path'=>$secCat['path']])}>"><{$secCat['catname']}></a>
 							<!--子分类输出6条-->
 							<volist name="secCat['child']" id="thdCat" offset="0" length="6">
-								<a href=""><{$thdCat['catname']}></a>
+								<a href="<{:U('index/goodsList',['path'=>$thdCat['path']])}>">
+								<{$thdCat['catname']}></a>
 							</volist>
 
 							
@@ -128,7 +129,7 @@
 
 						<!--品牌输出-->
 						<volist name="cat['cat_brand']" id="brandname">
-							<a href="<{$brandname['id']}>"><{$brandname['brandname']}></a>
+							<a href="<{:U('index/goodsList',['path'=>$cat['path'],'brandid'=>$brandname['id']])}>"><{$brandname['brandname']}></a>
 						</volist>	
 					</dd>
 				</dl>
@@ -362,7 +363,7 @@
 	<div class="floor">
 		<div class="topFloor clearFix">
 			<h1 class="fl">
-				<{$k}>F
+				<{$k}>F<{$cat['catname']}>
 				<span class="floorName"></span>
 			</h1>
 			<div class="floor_floor fl">
@@ -404,85 +405,30 @@
 						<!--楼层中间内容-->
 						<div class="middleFloor fl">
 							<ul style="width:732px" class="clearFix">
-
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-									<div class="icon_pop">
-										<span style="background: url(__PUBLIC__/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
-										</span>
-									</div>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">  
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-									<div class="icon_pop"><span style="background: url(http://img4.ddimg.cn/00035/pic/xsq.png) no-repeat 0px 0px; _background-image: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img4.ddimg.cn/00035/pic/xsq.png',sizingMethod='noscale');" class="product_tags"></span>
-									</div>
-								</li>
+			
+								<volist name="cat['product']" id="productArr">
+									<li class="floorGoods">
+										<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="<{$Think.const.GOODSIMGPATH}><{$productArr['imgurl']}>" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" width="150px" height="150px">
+										</a>
+										<div class="name">
+											<{$productArr['name']}>
+										</div>
+										<p class="price">
+											<span class="sign">¥</span>
+											<span class="number"><{$productArr['price']}></span>
+										</p>
+										<div class="icon_pop">
+											<span style="background: url(__PUBLIC__/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
+											</span>
+										</div>
+									</li>
+								</volist>
 							</ul>
 						</div><!--楼层中间内容结束-->
 					</div><!--左中部楼层结束-->
 
 				<!--楼层开始-->
-				<div class="fl clearFix floorContent"><!--左中部楼层开始2-->
+				<div class="fl clearFix floorContent hidenow"><!--左中部楼层开始2-->
 						<!--楼层左部内容-->
 						<div class="leftFloor fl">
 							<div>
@@ -584,8 +530,8 @@
 				<div class="rightFloor fr">
 					<div class="rgFloorTop clearFix">
 						<ul class="clearFix">
-							<li class="on">手机</li>
-							<li>手机配件</li>
+							<li class="on"><{$}></li>
+							<!-- <li>手机配件</li> -->
 						</ul>
 					</div>
 
@@ -904,7 +850,7 @@
 			<ul class="clearFix">
 				<volist name="cat['cat_brand']" id="brand">
 				<li>
-					<a href="#"><img src="__PUBLIC__/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a>
+					<a href="#"><img src="<{$brand['logo']}>" width="120px" height="55px"/></a>
 					<div class="mask">
 						<span><{$brand['brandname']}></span>
 					</div>

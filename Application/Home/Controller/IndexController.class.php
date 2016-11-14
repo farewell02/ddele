@@ -32,10 +32,19 @@ class IndexController extends Controller {
          $brand = $catModel ->distinct(true)-> alias('cat') -> field('bd.*') -> join('__GOODS__ gd ON gd.catid=cat.id') -> join('__GOODS_BRAND__ gdb on gdb.goodsid=gd.id ')-> join('__BRAND__ bd on bd.id=gdb.brandid')->where('cat.path like "0,'.$value['id'].'%"')->select(); 
 
          //得到该分类下的按照销量排序靠前的spu产品
-         $product = $indexModel->getspuInfo('max(salenumber)','salenum',$value['id']); 
-         $catArr[$key] = array_merge($value,['cat_brand'=>$brand],['product'=>$product]);
+         $topProduct = $indexModel->getAllspu($value['id'],'order by gdd.salenumber desc');
+        
+         //得到该分类下的按照销量排序靠前的spu产品
+         $product = $indexModel->getAllspu($value['id']);
+         $catArr[$key] = array_merge($value,['cat_brand'=>$brand],['topproduct'=>$topProduct],['product'=>$product]);
       }
 
+      $sql = $indexModel->searchGoods('0,1%','','','gdd.price desc');
+
+      // echo '<pre>';
+      // dump($sql);
+      // echo '</pre>';
+      // exit;
       //得到所有分类下的随机spu产品 用于前台全部分类的产品显示  
       $catidArr = $goodModel->distinct(true)->field('catid')-> select();
       $arr = [];
@@ -47,7 +56,7 @@ class IndexController extends Controller {
       //查询每个分类下的所有spu
 
       // echo '<pre>';
-      // print_r($catArr);
+      // dump($catArr);
       // echo '</pre>';
       // exit;
       
@@ -57,11 +66,63 @@ class IndexController extends Controller {
       $this -> display();
     }
 
-    //商品列表展示
+
+    //商品列表展示根据条件展示相应的数据
     public function goodsList(){
+      $indexModel = D('index');
+      $catModel   = M('category');
+
+      // dump($indexModel->searchGoods(I('get.path').'%',I('get.brandid')));
+      // exit;
+
+      //用于前台的排序的order显示
+      //假设前台发送过来的数据是 ['price'=>'asc','sale'=>'desc'];
+      $orderflag = [];
+
+      //存储跳转过来的查询字符串
+      $searchstring = ['path'=>I('get.path'),'brandid'=>I('get.brandid')];
+      $clickedBtn  = ['clicked'=>I('get.clicked')];
+      //价格排序标志
+      if(!empty(I('get.priceorder'))){
+         $orderflag=['priceorder'=>I('get.priceorder')];
+         $order = 'gdd.price '.I('get.priceorder');
+      }else if(!empty(I('get.saleorder'))){
+
+        //销量排序标志
+        $orderflag=['saleorder'=>I('get.saleorder')];
+        $order = 'gdd.salenumber '.I('get.saleorder');
+      }
+
+       //如果没有排序则默认排序
+      if(empty($orderflag)){
+         $orderflag = ['defaultorder'=>'yes'];
+         $order = '';
+      }
+ // dump(I('get.'));
+//  dump($orderflag);
+// dump($clickedBtn);
+      //根据条件查询出首页点击进来的所有商品
+      $goodslistArr = $indexModel->searchGoods(I('get.path').'%',I('get.brandid'),'',$order);
+         // dump($goodslistArr);
+      // exit;
+      //查询该分类下的所有品牌
+      if(empty(I('get.brandid'))){
+         $where = '';
+      }else{
+         $where = ' AND brandid = '.I('get.brandid');
+      }
+
+      $brandArr = $catModel ->distinct(true)-> alias('cat') -> field('bd.*') -> join('__GOODS__ gd ON gd.catid=cat.id') -> join('__GOODS_BRAND__ gdb on gdb.goodsid=gd.id ')-> join('__BRAND__ bd on bd.id=gdb.brandid')->where('cat.path like "'.I('get.path').'%"'.$where)->select(); 
+
     	layout('layout/layout');
+      $this -> assign('clicked',$clickedBtn);
+      $this -> assign('searchstring',$searchstring);
+      $this -> assign('brandArr',$brandArr);
+      $this -> assign('orderflag',$orderflag);
+      $this -> assign('goodslistArr',$goodslistArr);
     	$this -> display();
     }
+
 
     //详情页面展示
     public function goodsDetail(){
