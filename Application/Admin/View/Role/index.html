@@ -1,0 +1,393 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+<block name="link">
+<link rel="stylesheet" href="__PUBLIC__/admin/css/pager.css">
+</block>
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="<{:U('Role/index')}>">首页</a>
+	</li>
+	<li class="active">角色管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		角色管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 角色列表
+		</small>
+	</h1>
+	<div class="modal fade modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title text-primary" id="myModalLabel">编辑角色信息</h4>
+	      </div>
+	      <div class="modal-body">
+				<form class="form-horizontal" role="form" action="<{:U('Role/save')}>" method="post">
+				  <div class="form-group has-feedback">
+				    <label for="inputName" class="col-sm-2 control-label text-info" >角色名</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="inputName" placeholder="请填写角色名" name="username">
+				      <span class="glyphicon form-control-feedback"></span>
+				    </div>
+				    <div class="col-sm-4"></div><!--放置提示信息-->
+				  </div>
+				  <div class="form-group has-feedback">
+				    <label for="inputRemark" class="col-sm-2 control-label text-info">说明</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="inputRemark" placeholder="请填写简洁说明" name="userremark">
+				      <input type="hidden" name="userid" value="">
+
+				      <span class="glyphicon form-control-feedback"></span>
+				    </div>
+				    <div class="col-sm-4"></div><!--放置提示信息-->
+				  </div>
+				  <div class="form-group has-primary">
+				    <label  class="col-sm-2 control-label text-info">权限</label>
+				    <div class="col-sm-6">
+					<label class="radio-inline">
+					  <input type="radio" name="userstatus" id="inlineRadio1" value="1" > 启用
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="userstatus" id="inlineRadio2" value="0"> 关闭 
+					</label>
+				    </div>
+				  </div>
+				  
+			
+				</form>  
+	      </div><!--model-body结束部分-->
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	        <button type="button" class="btn btn-primary" id="sb">提交</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- 添加角色显示的摸态框 -->
+	<div class="modal fade modal-sm" id="addrole" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title text-primary" id="myModalLabel">添加角色</h4>
+	      </div>
+	      <div class="modal-body">
+				<form class="form-horizontal" role="form"  method="post">
+				  <div class="form-group has-feedback">
+				    <label for="inputAddName" class="col-sm-2 control-label text-info" >角色名</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="inputAddName" placeholder="请填写角色名" name="username">
+				      <span class="glyphicon form-control-feedback"></span>
+				    </div>
+				    <div class="col-sm-4"></div><!--放置提示信息-->
+				  </div>
+				  <div class="form-group has-feedback">
+				    <label for="inputAddRemark" class="col-sm-2 control-label text-info">说明</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="inputAddRemark" placeholder="请填写简洁说明" name="userremark">
+
+				      <span class="glyphicon form-control-feedback"></span>
+				    </div>
+				    <div class="col-sm-4"></div><!--放置提示信息-->
+				  </div>
+				  <div class="form-group has-primary">
+				    <label  class="col-sm-2 control-label text-info">权限</label>
+				    <div class="col-sm-6">
+					<label class="radio-inline">
+					  <input type="radio" name="userstatus" id="Radio1" value="1" checked > 启用
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="userstatus" id="Radio2" value="0"> 关闭 
+					</label>
+				    </div>
+				  </div>
+				  
+			
+				</form>  
+	      </div><!--model-body结束部分-->
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	        <button type="button" class="btn btn-primary" id="sbadd">提交</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- 权限摸态框 -->
+	<div class="modal fade modal-sm" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title text-primary" id="myModalLabel">分配角色权限</h4>
+	      </div>
+	      <div class="modal-body">
+				<form class="form-horizontal" role="form" action="<{:U('Role/save')}>" method="post">
+				 <input type="hidden" id="getid" value="">
+				  <table class="table table-bordered table-hover ">
+				  	<tr>
+				  		<td>可选权限</td>
+				  		<td id="authlist"></td>
+				  	</tr>
+				  		
+				  </table>
+				</form>
+				<button class="btn btn-success" id="all">全选</button>
+				<button class="btn btn-info" id="invert">反选</button>
+				<button class="btn btn-waring" id="notall">清空</button>
+	      </div><!--model-body结束部分-->
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	        <button type="button" class="btn btn-primary" id="authsb">提交</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</block>
+<block name="main">
+	<div class="content" id="ajax_lists"></div>
+
+	<script type="text/javascript">
+			//无刷新分页
+            var url_ajax = "__APP__/Admin/Box/role";
+            $(function() {
+            	function auto(){
+                $("#ajax_lists").delegate(".pager a", "click", function() {
+                    page = $(this).attr("data-page");
+                    getPage(page);
+                })
+                }
+                auto();
+                getPage(1);
+
+            })
+            function getPage(page) {
+                 $("#ajax_lists").html("<div class='loading'><img src='__PUBLIC__/admin/images/loading.gif' alt='loading'></div>");
+                var keyword = $("#keyword").val();
+                $.get(url_ajax, {keyword: keyword, p: page}, function(data) {
+                    $('#ajax_lists').html(data);
+                })
+                }
+                //无刷新删除
+	            $("#ajax_lists").delegate('.del','click',function(){
+	            	if(confirm('确定要删除该条用户信息?')){
+	            		$.ajax({
+	            			type:'post',
+	            			dataType:'json',
+	            			async:false,
+	            			url:'http://web.com/index.php/Admin/Role/delete.html',
+	            			data:{'id':$(this).data('id')},
+	            			success:function(data){
+	            				if(data.code){
+	            					getPage(data.p);
+	            					$('.pager a').trigger('click');
+	            					alert('数据删除成功');
+	            					return;
+	            				}else{
+	            					alert('数据删除失败');
+	            					return;
+	            				}
+	            			}
+	            		})
+	            	}else{
+	            		return;
+	            	}
+	            })
+
+	            // 点击编辑按钮触发摸态框
+				 $('#ajax_lists').delegate('a','click',function(ev){
+	            	var ev = ev || event;
+	            	// console.log($(this));
+	            	if($(ev.target).hasClass('edit')==true){
+	            		// console.log(ev.target);
+	            		ev.preventDefault();
+	            		$('#myModal').modal('show');
+	            		index = $(ev.target).data('id');
+	            		$.ajax({
+	            			type:'post',
+	            			dataType:'json',
+	            			async:false,
+	            			data:{'id':index},
+	            			url:'http://web.com/index.php/Admin/Role/edit.html',
+	            			success:function(data){
+	            				$('#myModal input').eq(0).val(data.name).end().eq(1).val(data.remark).end().eq(2).val(data.id);
+	            				if(data.status==1){
+	            					$('#inlineRadio1').attr('checked',true);
+	            					return;
+	            				}else{
+	            					$('#inlineRadio2').attr('checked',true);
+	            					return;
+	            				}
+	            				
+	            			}
+
+	            			
+	            		})
+	            	
+	            	}
+	
+	            })
+	            //点击摸态框的提交按钮获取数据进行提交ajax数据  
+	            $('#sb').click(function(ev){
+	            	// alert($('#inlineRadio1').attr('checked'));
+	            	var ev = ev || event;
+	            	ev.preventDefault();
+	            	var id = $('#myModal input').eq(2).val();
+	            	var name = $('#myModal input').eq(0).val();
+	            	var status = $('#inlineRadio1').prop('checked')==true? 1:0;
+	            	var remark = $('#myModal input').eq(1).val();
+	            	$.ajax({
+	            		type:'post',
+	            		dataType:'json',
+	            		url:'http://web.com/index.php/Admin/Role/save.html',
+	            		async:false,
+	            		data:{"id":id,"name":name,"status":status,"remark":remark},
+	            		success:function(data){
+	            			if(data.code==1){
+	            				alert('数据保存成功');
+	            				$('#myModal').modal('hide');
+	            				getPage(data.p);
+	            				$('.pager a').trigger('click');
+	            				return;
+	            			}else{
+	            				alert(data.mess);
+	            				return;
+	            			}
+	            		}
+	            	})
+	            })
+				
+				//摸态框消失初始化里面的内容
+				$('#myModal_2').on('hidden.bs.modal', function (e) {
+				  $('#authlist').html('');
+				  
+				})
+				//点击分配权限的按钮触发摸态框	
+            	$('#ajax_lists').delegate('.auth','click',function(ev){
+            		var ev = ev || event;
+            		ev.preventDefault();
+            		$('#myModal_2').modal('show');
+            		$.ajax({
+            			type:'post',
+            			dataType:'json',
+            			async:false,
+            			url:'http://web.com/index.php/Admin/Role/nodelist.html',
+            			data:{'id':$(this).data('id')},
+            			success:function(data){
+            				for (var i = 0; i < data.auth.length; i++) {
+            					if($.inArray(data.auth[i].id,data.nid)==-1){
+            					var div= $('<div></div>').html('<input type="checkbox" value="'+data.auth[i].id+'">'+data.auth[i].name);
+            					$(div).appendTo('#authlist');
+            				}else{
+            					var div= $('<div></div>').html('<input type="checkbox" checked value="'+data.auth[i].id+'">'+data.auth[i].name);
+            					$(div).appendTo('#authlist');
+            				}
+            				};
+            				$('#getid').val(data.rid);
+            			}
+            		})
+
+            	})
+
+            	//点击提交按钮更改权限
+            	$('#authsb').click(function(){
+            		//获取选中的权限
+            		var arr = [];
+            		$('#authlist input').each(function(){
+            			if($(this).prop('checked')==true){
+            				arr.push($(this).val());
+            			}
+            		})
+            		var id =$('#getid').val();
+            		//ajax发送选中的权限
+            		$.ajax({
+            			type:'post',
+            			dataType:'json',
+            			url:'http://web.com/index.php/Admin/Role/savenode.html',
+            			async:false,
+            			data:{'arr':arr,'id':id},
+            			success:function(data){
+            				if(data.code==1){
+            					alert(data.mess);
+            					$('#myModal_2').modal('hide');
+	            				getPage(data.p);
+	            				$('.pager a').trigger('click');
+	            				return;
+            				}else{
+            					alert(data.mess);
+            					return;
+            				}
+            			}
+            		})
+            	})
+            	//节点的全选 反选 删除
+            	$('#all').click(function(){
+							$('#authlist input').each(function(){
+								$(this).get(0).checked = true;
+							});
+						});
+						// $('#all').click(function(){
+						// 	$('#authlist input').prop('checked',true);
+						// })
+						$('#invert').click(function(){
+							$('#authlist input').each(function(){
+								if($(this).get(0).checked){
+									$(this).get(0).checked=false;
+								}else{
+									$(this).get(0).checked=true;
+								}
+							});
+						});
+						$('#notall').click(function(){
+							$('#authlist input').each(function(){
+								$(this).get(0).checked=false;
+							})
+						})
+
+				//角色的无刷新添加
+				$('#ajax_lists').delegate('.add','click',function(ev){
+					var ev = ev || event;
+            		ev.preventDefault();
+            		$('#addrole').modal('show');
+				})
+				//获取添加角色的摸态框的数据
+				$('#sbadd').click(function(){
+					arr = {};
+					 arr.name = $('#inputAddName').val();
+					 arr.remark = $('#inputAddRemark').val();
+					 arr.status = $('#Radio1').prop('checked') == true? 1 :0;
+					//ajax发送数据
+					$.ajax({
+						type:'post',
+						dataType:'json',
+						data:{"arr":arr},
+						url:'http://web.com/index.php/Admin/Role/doadd.html',
+						async:false,
+						success:function(data){
+							if(data.code==1){
+								alert(data.mess);
+            					$('#addrole').modal('hide');
+            					getPage(data.p);
+	            				$('.pager a').trigger('click');
+								return;
+							}else{
+								alert(data.mess);
+								return;
+							}
+						}
+					})
+				})
+				//添加摸态框消失初始化值
+				$('#addrole').on('hidden.bs.modal', function (e) {
+				  	$('#inputAddName').val('');
+					$('#inputAddRemark').val('');
+					$('#Radio1').prop('checked',true);
+				})
+    </script>
+		
+		
+</block>

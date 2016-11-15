@@ -1,0 +1,27 @@
+#ajax_lists a{
+        cursor: pointer;
+}
+#pager a{
+	 display: inline-block;  
+        color: #337AB7;
+        padding: 6px 12px;
+        margin-left: -1px;
+        position: relative;
+        line-height: 1.42857;
+        text-decoration: none;
+        background-color: #FFF;
+        border: 1px solid #DDD;
+        margin-top: 5px;
+        
+}
+#pager a[class="current"]{
+		background: #337AB7;
+                color: #fff;
+}
+
+#myModal_2 table div{
+        float: left;
+        width: 140px;
+        margin:2px;
+
+}

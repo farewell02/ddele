@@ -1,0 +1,310 @@
+<extend name="Layout/index" />
+<block name="link">
+<link rel="stylesheet" href="__PUBLIC__/admin/css/pager.css">
+</block>
+<block name="breadcrumb-01">
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="#">首页</a>
+	</li>
+	<li class="active">分类管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		分类管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 分类列表
+		</small>
+	</h1>
+     <!-- 编辑摸态框开始 -->
+    <div class="modal fade modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+            <h4 class="modal-title text-primary" id="myModalLabel">编辑分类名</h4>
+          </div>
+          <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group has-feedback">
+                    <label for="inputName" class="col-sm-2 control-label text-info" >分类名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="inputName" placeholder="请填写分类名" name="name">
+                      <input type="hidden" value="" name="id">
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+                </form>  
+          </div><!--model-body结束部分-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" id="sb">提交</button>
+          </div>
+        </div>
+      </div>
+    </div><!--编辑摸态框结束-->
+    <!-- 添加子分类摸态框开始 -->
+    <div class="modal fade modal-sm" id="myModal_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+            <h4 class="modal-title text-primary" id="myModalLabel">添加子分类</h4>
+          </div>
+          <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group has-feedback">
+                    <label for="inputName1" class="col-sm-2 control-label text-info" >子分类名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="inputName1" placeholder="请填写子分类名" name="name">
+                      <input type="hidden" value="" name="id">
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+                </form>  
+          </div><!--model-body结束部分-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" id="sub">提交</button>
+          </div>
+        </div>
+      </div>
+    </div><!--添加子分类摸态框结束-->
+      <!-- 添加一级分类摸态框开始 -->
+    <div class="modal fade modal-sm" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+            <h4 class="modal-title text-primary" id="myModalLabel">添加一级分类</h4>
+          </div>
+          <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group has-feedback">
+                    <label for="inputName2" class="col-sm-2 control-label text-info" >一级类名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="inputName2" placeholder="请填写一级分类名" name="name">
+                      <input type="hidden" value="" name="id">
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+                </form>  
+          </div><!--model-body结束部分-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" id="subb">提交</button>
+          </div>
+        </div>
+      </div>
+    </div><!--添加一级分类摸态框结束-->
+</block>
+<block name='main'>
+	<div class="content" id="ajax_lists"></div>
+		<script type="text/javascript">
+			//无刷新分页
+            var url_ajax = "__APP__/Admin/Box/category";
+            $(function() {
+            	function auto(){
+                $("#ajax_lists").delegate(".pager a", "click", function() {
+                    page = $(this).attr("data-page");
+                    getPage(page);
+                })
+                }
+                auto();
+                getPage(1);
+
+            })
+            function getPage(page) {
+                 $("#ajax_lists").html("<div class='loading'><img src='__PUBLIC__/admin/images/loading.gif' alt='loading'></div>");
+                var keyword = $("#keyword").val();
+                $.get(url_ajax, {keyword: keyword, p: page}, function(data) {
+                    $('#ajax_lists').html(data);
+                })
+                }
+
+            //无刷新删除
+            $("#ajax_lists").delegate('.del','click',function(ev){
+                var ev = ev || event;
+                ev.preventDefault();
+                if(confirm('确定要删除该分类及其所属分类?')){
+                    $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        async:false,
+                        url:'http://web.com/index.php/Admin/Category/delete.html',
+                        data:{'id':$(this).data('id')},
+                        success:function(data){
+                            if(data.code==1){
+                                // getPage(data.p);
+                                $('.pager a').trigger('click');
+                                alert(data.mess);
+                                return;
+                            }else{
+                                alert(data.mess);
+                                return;
+                            }
+                        }
+                    })
+                }else{
+                    return;
+                }
+            }) 
+            //无刷新编辑  
+            //点击编辑开启摸态框并且获取数据  
+             $('#ajax_lists').delegate('.edit','click',function(ev){
+                        var ev = ev || event;
+                        ev.preventDefault();
+                        $('#myModal').modal('show');
+                        index = $(this).data('id');
+                        $.ajax({
+                            type:'post',
+                            dataType:'json',
+                            async:false,
+                            data:{'id':index},
+                            url:'http://web.com/index.php/Admin/Category/edit.html',
+                            success:function(data){
+                                $('#myModal input').eq(0).val(data.name).end().eq(1).val(data.id);
+                            }
+                        })
+                })
+             //编辑点击摸态框的提交按钮获取数据进行提交ajax数据  
+                $('#sb').click(function(ev){
+                    var ev = ev || event;
+                    ev.preventDefault();
+                    var arr ={};
+                    arr.id = $('#myModal input').eq(1).val();
+                    arr.name = $('#myModal input').eq(0).val();
+                    $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        url:'http://web.com/index.php/Admin/Category/save.html',
+                        async:false,
+                        data:{"arr":arr},
+                        success:function(data){
+                            if(data.code==1){
+                                alert(data.mess);
+                                $('#myModal').modal('hide');
+                                // getPage(page);
+                                $('.pager a').trigger('click');
+                                return;
+                            }else{
+                                alert(data.mess);
+                                return;
+                            }
+                        }
+                    })
+                })
+                //添加子分类部分的摸态框
+                 $('#ajax_lists').delegate('.addson','click',function(ev){
+                        var ev = ev || event;
+                        ev.preventDefault();
+                        $('#myModal_1').modal('show');
+                        index = $(this).data('id');
+                       $('#myModal_1 input:eq(1)').val(index);
+                })
+                  //添加子分类摸态框消失初始化值
+                $('#myModal_1').on('hidden.bs.modal', function (e) {
+                    $('#myModal_1 form').get(0).reset();
+                })
+                 //提交添加的子分类数据
+                $('#sub').click(function(ev){
+                    var ev = ev || event;
+                    ev.preventDefault();
+                    var arr = {};
+                    arr.name=$('#myModal_1 input').eq(0).val();
+                    arr.pid=$('#myModal_1 input').eq(1).val();
+                    $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        url:'http://web.com/index.php/Admin/Category/addson.html',
+                        data:{'arr':arr},
+                        async:false,
+                        success:function(data){
+                            if(data.code==1){
+                                alert(data.mess);
+                                 $('#myModal_1').modal('hide');
+                                // getPage(page);
+                                $('.pager a').trigger('click');
+                                return;
+                            }else{
+                                alert(data.mess);
+                                return;
+                            }
+                        }
+                    })
+
+                })
+                //编辑点击摸态框的提交按钮获取数据进行提交ajax数据  
+                $('#sb').click(function(ev){
+                    var ev = ev || event;
+                    ev.preventDefault();
+                    var arr ={};
+                    arr.id = $('#myModal input').eq(1).val();
+                    arr.name = $('#myModal input').eq(0).val();
+                    $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        url:'http://web.com/index.php/Admin/Category/save.html',
+                        async:false,
+                        data:{"arr":arr},
+                        success:function(data){
+                            if(data.code==1){
+                                alert(data.mess);
+                                $('#myModal').modal('hide');
+                                // getPage(page);
+                                $('.pager a').trigger('click');
+                                return;
+                            }else{
+                                alert(data.mess);
+                                return;
+                            }
+                        }
+                    })
+                })
+                //添加一级分类部分的摸态框
+                 $('#ajax_lists').delegate('.add','click',function(ev){
+                        var ev = ev || event;
+                        ev.preventDefault();
+                        $('#myModal_2').modal('show');
+                        index = $(this).data('id');
+                       $('#myModal_2 input:eq(1)').val(index);
+                })
+                  //添加一级分类摸态框消失初始化值
+                $('#myModal_2').on('hidden.bs.modal', function (e) {
+                    $('#myModal_2 form').get(0).reset();
+                })
+                 //提交添加的一级分类数据
+                $('#subb').click(function(ev){
+                    var ev = ev || event;
+                    ev.preventDefault();
+                    var arr = {};
+                    arr.name=$('#myModal_2 input').eq(0).val();
+                    arr.pid=$('#myModal_2 input').eq(1).val();
+                    $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        url:'http://web.com/index.php/Admin/Category/doadd.html',
+                        data:{'arr':arr},
+                        async:false,
+                        success:function(data){
+                            if(data.code==1){
+                                alert(data.mess);
+                                 $('#myModal_2').modal('hide');
+                                // getPage(page);
+                                $('.pager a').trigger('click');
+                                return;
+                            }else{
+                                alert(data.mess);
+                                return;
+                            }
+                        }
+                    })
+
+                })
+		</script>
+</block>

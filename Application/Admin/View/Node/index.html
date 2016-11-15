@@ -1,0 +1,284 @@
+<extend name="Layout/index" />
+<block name="breadcrumb-01">
+<block name="link">
+<link rel="stylesheet" href="__PUBLIC__/admin/css/pager.css">
+</block>
+	<li>
+		<i class="icon-home home-icon"></i>
+		<a href="<{:U('Node/index')}>">首页</a>
+	</li>
+	<li class="active">节点管理</li>
+</block>
+
+<block name="breadcrumb-02">
+	<h1>
+		节点管理
+		<small>
+			<i class="icon-double-angle-right"></i>
+			 节点列表
+		</small>
+	</h1>
+    <!-- 编辑摸态框开始 -->
+    <div class="modal fade modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+            <h4 class="modal-title text-primary" id="myModalLabel">编辑用户信息</h4>
+          </div>
+          <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group has-feedback">
+                    <label for="inputName" class="col-sm-2 control-label text-info" >节点名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="inputName" placeholder="请填写节点名" name="name">
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+                  <div class="form-group has-feedback">
+                    <label for="inputMname" class="col-sm-2 control-label text-info">控制器名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="inputMname" placeholder="请填写控制器" name="mname">
+                     
+
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+                  <div class="form-group has-feedback">
+                    <label for="inputAname" class="col-sm-2 control-label text-info">操作名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="inputAname" placeholder="请填写操作名" name="aname">
+                       <input type="hidden" name="userid" value="">
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+
+                  <div class="form-group has-primary">
+                    <label  class="col-sm-2 control-label text-info">权限</label>
+                    <div class="col-sm-6">
+                    <label class="radio-inline">
+                      <input type="radio" name="status" id="inlineRadio1" value="1" > 启用
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="status" id="inlineRadio2" value="0"> 关闭 
+                    </label>
+                    </div>
+                  </div>
+                </form>  
+          </div><!--model-body结束部分-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" id="sb">提交</button>
+          </div>
+        </div>
+      </div>
+    </div><!--编辑摸态框结束-->
+    <!-- 添加节点显示的摸态框 -->
+    <div class="modal fade modal-sm" id="addnode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+            <h4 class="modal-title text-primary" id="myModalLabel">添加节点</h4>
+          </div>
+          <div class="modal-body">
+                <form class="form-horizontal" role="form"  method="post">
+                  <div class="form-group has-feedback">
+                    <label for="input1" class="col-sm-2 control-label text-info" >节点名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="input1" placeholder="请填写节点名" name="name">
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+                   <div class="form-group has-feedback">
+                    <label for="input2" class="col-sm-2 control-label text-info">控制器名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="input2" placeholder="请填写控制器" name="mname">
+                     
+
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+                  <div class="form-group has-feedback">
+                    <label for="input3" class="col-sm-2 control-label text-info">操作名</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" id="input3" placeholder="请填写操作名" name="aname">
+                      <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <div class="col-sm-4"></div><!--放置提示信息-->
+                  </div>
+
+                  <div class="form-group has-primary">
+                    <label  class="col-sm-2 control-label text-info">权限</label>
+                    <div class="col-sm-6">
+                    <label class="radio-inline">
+                      <input type="radio" name="status" id="Radio1" value="1" checked> 启用
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="status" id="Radio2" value="0"> 关闭 
+                    </label>
+                    </div>
+                  </div>
+                  
+                  
+            
+                </form>  
+          </div><!--model-body结束部分-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" id="sbadd">提交</button>
+          </div>
+        </div>
+      </div>
+    </div><!--添加节点摸态框结束-->
+</block>
+<block name="main">
+	<div class="content" id="ajax_lists"></div>
+		<script type="text/javascript">
+
+			//无刷新分页
+            var url_ajax = "__APP__/Admin/Box/node";
+            $(function() {
+            	function auto(){
+                $("#ajax_lists").delegate(".pager a", "click", function() {
+                    page = $(this).attr("data-page");
+                    getPage(page);
+                })
+                }
+                auto();
+                getPage(1);
+
+            })
+            function getPage(page) {
+                 $("#ajax_lists").html("<div class='loading'><img src='__PUBLIC__/admin/images/loading.gif' alt='loading'></div>");
+                var keyword = $("#keyword").val();
+                $.get(url_ajax, {keyword: keyword, p: page}, function(data) {
+                    $('#ajax_lists').html(data);
+                })
+                }
+
+            $("#ajax_lists").delegate('.del','click',function(){
+                    if(confirm('确定要删除该条用户信息?')){
+                        $.ajax({
+                            type:'post',
+                            dataType:'json',
+                            async:false,
+                            url:'http://web.com/index.php/Admin/Node/delete.html',
+                            data:{'id':$(this).data('id')},
+                            success:function(data){
+                                if(data.code){
+                                    getPage(data.p);
+                                    $('.pager a').trigger('click');
+                                    alert(data.mess);
+                                    return;
+                                }else{
+                                    alert(data.mess);
+                                    return;
+                                }
+                            }
+                        })
+                    }else{
+                        return;
+                    }
+                })
+
+            //无刷新编辑  
+            //点击编辑开启摸态框并且获取数据  
+             $('#ajax_lists').delegate('.edit','click',function(ev){
+                        var ev = ev || event;
+                        ev.preventDefault();
+                        $('#myModal').modal('show');
+                        index = $(this).data('id');
+                        $.ajax({
+                            type:'post',
+                            dataType:'json',
+                            async:false,
+                            data:{'id':index},
+                            url:'http://web.com/index.php/Admin/Node/edit.html',
+                            success:function(data){
+                                $('#myModal input').eq(0).val(data.name).end().eq(1).val(data.mname).end().eq(2).val(data.aname).end().eq(3).val(data.id);
+                                if(data.status==1){
+                                    $('#inlineRadio1').prop('checked',true);
+                                }else{
+                                     $('#inlineRadio2').prop('checked',true);
+                                }
+                            }
+                        })
+                })
+
+             //编辑点击摸态框的提交按钮获取数据进行提交ajax数据  
+                $('#sb').click(function(ev){
+                    var ev = ev || event;
+                    ev.preventDefault();
+                    var arr ={};
+                    arr.id = $('#myModal input').eq(3).val();
+                    arr.name = $('#myModal input').eq(0).val();
+                    arr.mname = $('#myModal input').eq(1).val();
+                    arr.aname = $('#myModal input').eq(2).val();
+                    arr.status = $('#inlineRadio1').prop('checked')==true? 1 :0;
+                    $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        url:'http://web.com/index.php/Admin/Node/save.html',
+                        async:false,
+                        data:{"arr":arr},
+                        success:function(data){
+                            if(data.code==1){
+                                alert(data.mess);
+                                $('#myModal').modal('hide');
+                                getPage(data.p);
+                                $('.pager a').trigger('click');
+                                return;
+                            }else{
+                                alert(data.mess);
+                                return;
+                            }
+                        }
+                    })
+                })
+
+                //用户的无刷新添加
+                $('#ajax_lists').delegate('.add','click',function(ev){
+                    var ev = ev || event;
+                    ev.preventDefault();
+                    $('#addnode').modal('show');
+                })
+                //添加摸态框消失初始化值
+                $('#addnode').on('hidden.bs.modal', function (e) {
+                    $('#addnode form').get(0).reset();
+                })
+                //获取添加用户的摸态框的数据
+                $('#sbadd').click(function(){
+                    arr = {};
+                     arr.name = $('#input1').val();
+                     arr.mname = $('#input2').val();
+                     arr.aname=$('#input3').val();
+                     arr.status=$('#Radio1').prop('checked')==true?1:0;
+                    //ajax发送数据
+                    $.ajax({
+                        type:'post',
+                        dataType:'json',
+                        data:{"arr":arr},
+                        url:'http://web.com/index.php/Admin/Node/doadd.html',
+                        async:false,
+                        success:function(data){
+                            if(data.code==1){
+                                alert(data.mess);
+                                $('#addnode').modal('hide');
+                                getPage(data.p);
+                                $('.pager a').trigger('click');
+                                return;
+                            }else{
+                                alert(data.mess);
+                                return;
+                            }
+                        }
+                    })
+                })
+		</script>
+</block>

@@ -1,0 +1,524 @@
+li{
+	list-style:none;
+}
+.hot_tag li{
+	float:left;
+	margin-right:10px;
+	margin-left:20px;
+	line-height:30px;
+	margin-right:10px;
+}
+.hot_tag{
+	height:30px;
+	background:#F5F5F5;
+}
+.hot_tag_ul{
+	width:1200px;
+	margin:0 auto;
+}
+#main_content{
+	width:1200px;
+	margin:0 auto;
+}
+
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+
+
+/*主要内容顶部的各个标签内容（当当电子商城）*/	
+.ele_top>div>ul li{
+	float:left;
+	margin-right:25px;
+	font-size: 16px;
+	height:40px;
+	line-height:40px;
+}
+.ele_top>div>ul li a{
+	color:black;
+	font-weight:bold;
+}
+.ele_top>div>div{
+	width:330px;
+	height:40px;
+	line-height:40px;
+}
+.ele_top>div>div span:nth-of-type(1){
+	color: #286ad7;
+	font-size:25px;
+	font-weight:bold;
+}
+.ele_top>div>div span:nth-of-type(2){
+	color: #286ad7;
+}
+a{
+	text-decoration:none;
+}
+
+/*分类ul盒子样式*/
+.cat_box{
+	width: 162px;
+	height:583px;
+    background: #1c87ed;
+    overflow: hidden;
+    position: relative;
+}
+.cat_box>ul>li{
+	height: 51px;
+    overflow: hidden;
+    border-top: 1px solid #2e92f1;
+    border-bottom: 1px solid #187ad7;
+}
+.cat_box>ul>li>a{
+	color: #fff;
+    font-size: 14px;
+    line-height:53px;
+    font-family: 'Microsoft Yahei'; 
+}
+
+/*最右侧的服务保障样式*/
+.service_insure{
+	width:212px;
+}
+
+.middleNav>div:nth-of-type(1){
+	width:142px;
+}
+.middleNav>div:nth-of-type(2){
+	width:640px;
+}
+.showImg{
+	width: 212px;
+    height: 294px;
+    overflow: hidden
+}
+/*中间导航样式*/
+.LmiddleNav dd a{
+	display:inline-block;
+	width:70px;
+	float:left;
+	height:28px;
+	line-height:28px;
+}
+.LmiddleNav a:hover{
+	text-decoration:underline;
+}
+.LmiddleNav{
+	padding-left:18px;
+	padding-right:18px;
+	background:#FBFBFB;
+}
+.LmiddleNav a{
+	font-family: arial,'Hiragino Sans GB','Microsoft Yahei','simsun';
+	font-size:12px;
+	color: #666;
+}
+.LmiddleNav dt{	
+	margin-top:15px;
+	width:146px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	background:#67B4FD;
+}
+.LmiddleNav dt a{
+	color:white;
+}
+.hideNow{
+	display:none;
+}
+/*中间轮播图片下面的四个小图片*/
+.img_behind_nav a{
+	float:left;
+	width:320px;
+	height:147px;
+	overflow:hidden;
+}
+
+/*中间全部分类的盒子的样式*/
+.AllCat .LmiddleNav>ul{
+	width:160px;
+}
+.AllCat .LmiddleNav>ul:nth-of-type(1) li{
+	float: left;
+    height: 20px;
+    line-height: 20px;
+    font-family: 'Microsoft Yahei';
+    padding: 17px 10px 15px 0;
+    font-weight: bold;
+    width: 70px;
+    overflow: hidden;
+}
+.AllCat .LmiddleNav>ul:nth-of-type(1)  li a{
+	font-size:14px;
+	color:#5f3c0e;;
+}
+.hot_keys{
+    border-top: 1px solid #dcdcdc;
+    padding-top: 10px;
+    height: 210px;
+    overflow: hidden;
+    width: 156px;
+    margin-right: -10px;
+}
+.hot_keys li{
+	height: 30px;
+    line-height: 30px;
+    font-family: 'Microsoft Yahei';
+    color: #000;
+    width: 60px;
+    overflow: hidden;
+    float: left;
+    margin-right: 16px;
+}
+.hot_keys li a{
+	color: #000;
+}
+
+/*轮播图样式*/
+/*#wrapper .slider-wrapper {
+    width: 640px;
+}*/
+#wrapper .top-banner{
+    background-color: #333;
+}
+.nivo-controlNav{
+	position:absolute;
+	bottom:0;
+	right:0;
+	z-index:10000;
+}
+.nivo-controlNav a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #8c8c8c;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-family: "arial";
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+}
+.nivo-controlNav .active{
+	background:#fa5000;
+}
+#showImg .slider-wrapper{
+	width: 212px;
+}
+
+/*楼层展示*/
+.brandUl li{
+	padding:5px;
+	float:left;
+	margin-right:5px;
+
+}
+.brandUl a{
+	color: #666;
+}
+.leftFloor{
+	width: 235px;
+    height: 500px;
+    padding-top:5px;
+    border-right: 1px solid #ededed;
+    overflow: hidden;	
+}
+.leftFloor>div{
+	height:417px;
+	overflow:hidden;
+}
+.price span{
+	color: #fa5000;
+    font-size: 20px;
+    font-weight:bold;
+}
+.price{
+	position:absolute;
+	bottom:10px;
+	left:10px;
+}
+
+.name{
+	width: 160px;
+    position: absolute;
+    bottom: 50px;
+    left: 12px;
+    overflow: hidden;
+    line-height: 18px;
+    height: 35px;
+    text-align:left;
+}
+.middleFloor{
+	text-align:left;
+    width: 728px;
+    height: 506px;
+    overflow:hidden;
+}
+.middleFloor li{
+	float:left;
+	width:182px;
+	border-right: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+	height:252px;
+}
+.floorGoods{
+	position:relative;
+}
+.icon_pop span{
+	position:absolute;
+	top:0;
+	right:0;
+	display:block;
+	width:52px;
+	height:52px;
+}
+.floorName{
+	font-size:18px;
+}
+.floor>div>h1{
+	font-size:30px;
+}
+.floor{
+	margin-top:50px;
+	
+}
+/*.mainFloor{
+	border-top:2px solid #288CDC;
+}*/
+.rgFloorTop ul li{
+	float:left;
+	text-align:center;
+}
+.rgFloorTop ul li:hover{
+	cursor:default;
+}
+.rgFloorTop ul li:nth-of-type(1){
+	width:85px;
+}
+.rgFloorTop ul li:nth-of-type(2){
+	width:70px;
+}
+.rgFloorTop{
+	margin-bottom:4px;
+	margin-top:4px;
+}
+.on{
+	border-bottom: 2px solid #fff;
+	border-left: 2px solid #ededed;
+	border-right: 2px solid #ededed;
+	font-weight: bold;
+	margin: 0 -1px -1px;
+	position: relative;
+}
+.rgFloorRank{
+	margin-top:8px;
+}
+.topFloor{
+	position:relative;
+}
+.topFloor h1{
+	width:230px;
+	border-bottom:2px solid black;
+}
+.topFloor>div{
+	width:970px;
+	border-bottom:2px solid #288CDC;
+	height:36px;
+}
+.rankNumber{
+	color:orange;
+	font: 16px/38px Arial;
+	float: left;
+	padding: 0 5px;
+	width: 20px;
+}
+.briefItem>p{
+	float:left;
+	line-height:38px;
+}
+
+.briefItem,.DetailItem{
+	border-bottom:1px dotted #c0c0c0;
+}
+.briefItem a,.DetailItem a{
+	color: #666
+}
+.briefItem a:hover,.DetailItem a:hover{
+	text-decoration:underline;
+}
+.DetailItem{
+	position:relative;
+	padding:17px 0 18px 0;
+}
+.DetailItem>a{
+	float:left;
+}
+.DetailItem>p{
+	position:absolute;
+	left:132px;
+	top:32px;
+	word-break:break-all;
+
+}
+.DetailItem p.detailPrice{
+	width: 90px;
+	position: absolute;
+	top: 73px;
+	left: 135px;
+	margin-top: 5px;
+	color:orange;
+	font-size:16px;
+	font-weight:bold;
+}
+
+/*楼层中的logo展示*/
+.logo>ul>li{
+	float:left;
+	width:120px;
+	height:55px;
+	position:relative;
+	z-index:10;
+}
+.logo>ul>li:hover{
+	cursor:pointer;
+}
+.logo>ul>li a{
+	cursor:pointer;
+	position:absolute;
+	z-index:0;
+	top:0;
+	left:0;
+}
+.logo>ul>li:hover div.mask{
+	display:block;
+}
+.logo div.mask{
+	background:#211F20;
+	position:absolute;
+	width:120px;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	top:0;
+	left:0;
+	opacity:0.6;
+	display:none;
+}
+div.mask span{
+	opacity:1;
+	color:white;
+	font-weight:bold;
+}
+.logo{
+	border-top:1px solid #ccc;
+}
+.floor_floor li{
+	float: left;
+	width: 181px;
+	height: 40px;
+	cursor: pointer;
+	overflow: hidden;
+	line-height:40px;
+	text-align:center;
+	font-size:20px;
+	font-weight:bold;
+}
+.floor_floor{
+	position:relative;
+	bottom:2px;
+}
+
+
+.arrow{
+		border-color: #fff #fff #288cdc;
+		border-style: solid;
+		border-width: 0 5px 5px;
+		font-size: 0;
+		height: 0;
+		left: 323px;
+		line-height: 0;
+		position: absolute;
+		width: 0;
+		bottom:0px;
+}
+
+.floor_floor li:hover {
+	color:#288cdc;
+}
+
+/*推广楼层*/
+#broadCast ul li{
+	width: 150px;
+    float: left;
+    margin-right: 1px;
+    margin-bottom: 10px;
+    padding: 20px 24px 0px 25px;
+    position: relative;
+    background-color: #fff;
+    height:220px;
+}
+#broadCast ul li span{
+	display:block;
+} 
+#broadCast  ul li:hover .cover{
+	display:none;
+}
+#broadCast .name,#broadCast .price{
+	left:25px;
+}
+#broadCast .name{
+	top:180px;
+}
+#broadCast .price{
+	bottom:0px;
+}
+#broadCast .cover{
+	height:240px;
+	width:199px;
+	position:absolute;
+	top:0;
+	left:0;
+	background:#ccc;
+	opacity:0.1;
+}
+#broadCast .name span:nth-of-type(2){
+	color: #fa5000;
+}
+#broadCast .name span:nth-of-type(1){
+	color:#686868;
+}
+#broadCast .name a:hover{
+	color:#fa5000;
+	text-decoration:underline;
+}
+#broadCast .name a:hover span{
+	color:#fa5000;
+}
+#broadCast>div:nth-of-type(1){
+	font-size:20px;
+	color:#fa5000;
+	font-family:微软雅黑;
+	font-weight:bold;
+	margin-bottom:3px;
+	border-bottom:2px solid #fa5000;
+	line-height:48px;
+}
+
+/*推广商品 轮播按钮*/
+#broadCast .switchBtn a{
+	display:inline-block;
+	width:16px;
+	height:16px;
+	background:url(http://localhost/ddEle/Public/Home/img/home_sprite2_1017.png) -65px -542px no-repeat;
+}
+#broadCast .switchBtn{
+	margin-top:20px;
+}
