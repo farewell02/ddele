@@ -10,6 +10,5 @@ return array(
 			'student/:id\d' => array(__ROOT__.'/Admin/Student/edit/id:1'),    
 	),
 
-	//'TMPL_FILE_DEPR'=>'_',
 
 );
