@@ -31,21 +31,41 @@
 		} 
 
 
-		public function searchGoods($path='',$brand='',$spu='',$order='',$limit=""){
+		public function searchGoods($path='0,1%',$brand='',$spu='',$order='',$limit="",$count=false){
 
 			   //path是必须的
-			   if(strpos($path,'%')){
-				  $where = 'WHERE path LIKE "'.$path.'"';
-			   }else{
-			   	  $where = 'WHERE path = "'.$path.'"';
-			   }
+			   if(!empty($path)){
+			   		if(strpos($path,'%')){
+					  $where = 'WHERE path LIKE "'.$path.'"';
+				   }else{
+				   	  $where = 'WHERE path = "'.$path.'"';
+				   }
 
+			   }else{
+
+			   		//如果Path是空的
+			  		$where = '';
+			   }
+			   
 			   if(!empty($brand)){
-				  $where.= ' AND gdb.brandid ='.$brand;
+			   		if(empty($path)){
+			   			$where.= 'WHERE gdb.brandid ='.$brand;
+			   		}else{
+			   			$where.= ' AND gdb.brandid ='.$brand;
+			   		}
+				  
 			   }
 
 			   if(!empty($spu)){
-			   	  $where.= ' AND pk.spuid='.$spu;
+			   		if(empty($path)){
+			   			if(empty($brand)){
+			   				$where.='WHERE pk.spuid='.$spu;
+			   			}else{
+			   				$where.=' AND pk.spuid='.$spu;
+			   			}
+			   		}else{
+			   			$where.= ' AND pk.spuid='.$spu;
+			   		}   	  
 			   }
 
 			   //判断有无排序
@@ -61,8 +81,22 @@
 			   	   $limit = '';
 			   }
 
-			   $sql = 'select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid '.$where.' group by pk.spuid '.$order.' '.$limit;
-				// return $sql;
-			   return $this -> query($sql);
+			   $sql = 'select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid and gdd.status=1 left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid '.$where.' group by pk.spuid '.$order.' '.$limit;
+
+			   $sqlcount = 'select count(*) as counts from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid gdd.status=1 left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid '.$where.' group by pk.spuid '.$order.' '.$limit;
+
+			   if($count){
+			   		$counts = $this -> query($sql);
+			   		$counts = count($counts);
+			   		// $sum = 0;
+			   		// foreach($counts as $key => $value){
+			   		// 	$sum+=$value['counts'];
+			   		// }
+			   	   return $counts;
+
+			   }else{
+     			   return $this -> query($sql);
+			   }
+			   
 		  }
 	}

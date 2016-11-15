@@ -105,6 +105,7 @@ a{
 	display: block;
 	margin-right: 4px;
 	padding: 0px 0px 5px;
+	margin-top:4px;
 	float: left;
 	height: 18px;
 	text-align:center;
@@ -475,3 +476,133 @@ color: #F60;
     color: #FFF;
     text-decoration: none;
  }
+
+ .paginating {
+    border-top: solid 2px #fe7c2c;
+    height: 34px;
+    background: url(../img/paginating_bg.png) left 0 repeat-x;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+.paginating .paging {
+    float: right;
+    line-height: 24px;
+    color: #666;
+    padding-top: 5px;
+}
+.paginating .none {
+    cursor: default;
+}
+.paginating li {
+    float: left;
+    height: 24px;
+    padding-left: 5px;
+}
+.paginating .page_input {padding-left: 16px;*font-family: simsun;}
+
+/*当前页的样式*/
+.paginating .current {
+    text-decoration: none;
+    background: #fe7c2c;
+    color: #fff;
+    border-color: #f75a00;
+}
+/*数字分页不包括当前页*/
+.num,.current,.next,.prev{
+    border: solid 1px #c1c1c1;
+    line-height: 22px;
+    height: 22px;
+    display: inline-block;
+    padding: 0 8px;
+    background: #fff;
+    _margin-top: 1px;
+    font-family: Arial;
+    font-size: 12px;
+    color: #555;
+    text-decoration: none;
+}
+
+.paging a:hover{
+	background:#fe7c2c;
+}
+
+li .bn {
+    display: inline-block;
+    vertical-align: top;
+    border: solid 1px #ff7a29;
+    height: 14px;
+    line-height: 14px;
+    padding: 1px 0 1px 4px;
+    background: #fff;
+    border-right: 0;
+    overflow: hidden;
+    *line-height: 16px;
+    cursor: pointer;
+}
+li .block {
+    border: solid 1px #ff7a29;
+    border-left: 0;
+    padding: 1px 1px 1px;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: top;
+    cursor: pointer;
+    padding-left: 5px;
+    margin-right: 10px;
+    margin-left:-6px;
+    background: #fff;
+    overflow: hidden;
+}
+li .block .t {
+    display: inline-block;
+    font-family: SimSun;
+    vertical-align: top;
+    _padding-top: 1px;
+    color: #FD4708;
+}
+
+li .block .close{
+	/*position:absolute;*/
+    display: inline-block;
+    background: #ff7a29 url(../img/btn_bg_new.png)  left -87px top -89px no-repeat;
+    width: 13px;
+    height: 14px;
+    vertical-align: top;
+    margin-left: 5px;
+    cursor: pointer;
+    right:0px;
+    bottom:0px;
+}
+/*.brandCatUl li .block a{
+	width: 20px;
+	height: 20px;
+}*/
+.brandCatUl li.user_selected{
+	width:300px;
+	line-height:57px;
+	height:20px;
+	margin-top:5px;
+	/*position:relative;*/
+}
+.firstCatUl li.on{
+	background-color: #FCF0E8;
+
+}
+.firstCatUl li.on>a{
+	color:red;
+	
+}
+.secondCatUl li.now{
+	 background: #FE792B;
+	 color:white;
+}
+.secondCatUl li.now>a{
+	 background: #FE792B;
+	 color:white;
+}
+
+a.atnow{
+	color:blue;
+}
+

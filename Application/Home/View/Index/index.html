@@ -10,8 +10,6 @@
 <script src="__PUBLIC__/Home/js/index.js"></script>
 
 <div id="main_content"><!--首页主要内容结束-->
-	<?Php echo WEB ;?>
-	<{$Think.const.GOODSIMGPATH}>
 	<!--头部标签页-->
 	<div class="ele_top clearFix">
 		<div class="">
@@ -51,14 +49,11 @@
 				<!--分类内容-->
 				<ul class="clearFix">
 					<volist name="catArr" id="cat">
-						<li><a href="<{:U('index/goodsList',['path'=>$cat['path']])}>"><{$cat['catname']}></a></li>
+						<li><a href="<{:U('index/goodsList',['path'=>$cat['path'],'cid'=>$cat['id']])}>"><{$cat['catname']}></a></li>
 					</volist>
-				<!-- 	<li><a href="">手机/配件</a></li>
+			<!-- 	<li><a href="">手机/配件</a></li>
 					<li><a href="">电脑办公</a></li>
-					<li><a href="">手机/配件</a></li>
-					<li><a href="">手机/配件</a></li>
-					<li><a href="">手机/配件</a></li>
-					<li><a href="">手机/配件</a></li> -->
+ -->
 				</ul>
 				<ul class="hot_keys clearFix">
 					<volist name="cat_product" id="randomproduct">
@@ -66,14 +61,6 @@
 						<li><a href="<{$product['spuid']}>"><{$product['name']}></a></li>
 						</volist>
 					</volist>
-					<!-- <li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>
-					<li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>
-					<li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>
-					<li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>	 -->
 				</ul>
 			</div>
 			<div class="fr">
@@ -81,6 +68,7 @@
 					<!-- <img src="__PUBLIC__/Home/img/17991-640x280-10.24.jpg" alt=""> -->
 					<div id="wrapper">
 				        <div class="slider-wrapper theme-default">
+
 				        	<!--轮播图-->
 				            <div id="slider" class="nivoSlider">
 				            	<a href=""> <img src="__PUBLIC__/Home/img/nav1.jpg" data-thumb="__PUBLIC__/Home/img/nav1.jpg" alt="" /></a>
@@ -88,9 +76,6 @@
 				     			<a href=""> <img src="__PUBLIC__/Home/img/nav3.jpg" data-thumb="__PUBLIC__/Home/img/nav3.jpg" alt="" /></a>
 				     			<a href=""> <img src="__PUBLIC__/Home/img/nav5.jpg" data-thumb="__PUBLIC__/Home/img/nav5.jpg" alt="" /></a>
 				            </div>
-				            <!-- <div id="htmlcaption" class="nivo-html-caption">
-				                1
-				            </div> -->
 				        </div>
 				        <div class="footer-banner" style="width:728px; margin:0 auto"></div>
 	   				 </div>
@@ -105,22 +90,22 @@
 			</div>
 		</div><!--中间开始详细分类变化层结束-->
 		
-
+	
 		<volist name="catArr" id="cat">
 		<!--中间开始详细分类变化层开始--><!--各个分类层-->
 		<div class="middleNav fl clearFix  hideNow ">
 			<div class="fl LmiddleNav">
 				<dl>
 					<!--分类名和左侧相同-->
-					<dt><a href="<{:U('index/goodsList',['path'=>$cat['path']])}>"><{$cat['catname']}></a></dt>
+					<dt><a href="<{:U('index/goodsList',['path'=>$cat['path'],'cid'=>$cat['id']])}>"><{$cat['catname']}></a></dt>
 
 					<!--具体分类-->
 					<dd>
 						<volist name="cat['child']" id="secCat">
-								<a href="<{:U('index/goodsList',['path'=>$secCat['path']])}>"><{$secCat['catname']}></a>
+								<a href="<{:U('index/goodsList',['path'=>$secCat['path'],'cid'=>$secCat['id']])}>"><{$secCat['catname']}></a>
 							<!--子分类输出6条-->
 							<volist name="secCat['child']" id="thdCat" offset="0" length="6">
-								<a href="<{:U('index/goodsList',['path'=>$thdCat['path']])}>">
+								<a href="<{:U('index/goodsList',['path'=>$thdCat['path'],'cid'=>$thdCat['id']])}>">
 								<{$thdCat['catname']}></a>
 							</volist>
 
@@ -129,7 +114,7 @@
 
 						<!--品牌输出-->
 						<volist name="cat['cat_brand']" id="brandname">
-							<a href="<{:U('index/goodsList',['path'=>$cat['path'],'brandid'=>$brandname['id']])}>"><{$brandname['brandname']}></a>
+							<a href="<{:U('index/goodsList',['path'=>$cat['path'],'brandid'=>$brandname['id'],'cid'=>$thdCat['id']])}>">        <{$brandname['brandname']}></a>
 						</volist>	
 					</dd>
 				</dl>
@@ -148,6 +133,7 @@
 			</div>
 		</div><!--中间开始详细分类变化层结束-->
 		</volist>
+
 		<!--最右侧服务保障开始-->
 		<div class="service_insure fr clearFix">
 			<div>
@@ -173,19 +159,19 @@
 	</div><!--中间分类和分类显示大盒子结束-->
 	
 	<!--推广产品-->
-	<div id="broadCast">
+	<!-- <div id="broadCast">
 		<div class="clearFix">
-			<span class="fl">推广产品</span>
+			<span class="fl">推广产品</span> -->
 
 			<!--轮播图按钮-->
-			<div class="switchBtn fr clearFix">
+	<!-- 		<div class="switchBtn fr clearFix">
 				<a href="" class="fl" style="background:url(http://localhost/ddEle/Public/Home/img/home_sprite2_1017.png) -81px -542px no-repeat"></a>
 				<a href="" class="fl" ></a>
 			</div>
-		</div>
+		</div> -->
 
 		<!--轮播框-->
-		<div class="broadCastContent">
+	<!-- 	<div class="broadCastContent">
 			<ul class="clearFix">
 				<li>
 					<a href="">
@@ -353,23 +339,28 @@
 					</p>
 					<p class="price"><span>¥18.80</span></p>
 					<span class="cover"></span>
-				</li>	
-			</ul>
-		</div><!--轮播框结束-->
-	</div><!--推广产品结束-->
+				</li> -->	
+			<!-- </ul> -->
+		<!-- </div>轮播框结束 -->
+	<!-- </div>推广产品结束 -->
 
 	<!--楼层展示-->
-	<volist name="catArr" id="cat" key="k">
+	<volist name="catArr" id="cat" key="m">
 	<div class="floor">
 		<div class="topFloor clearFix">
 			<h1 class="fl">
-				<{$k}>F<{$cat['catname']}>
+				<{$m}>F<{$cat['catname']}>
 				<span class="floorName"></span>
 			</h1>
 			<div class="floor_floor fl">
 				<ul>
-					<li>厨房电器</li>
-					<li>生活电器</li>
+					
+					<volist name="cat['child']" id="seccat" empty="">
+						<!--分类名-->
+						<li><a href="javascript:void(0)"><{$seccat['catname']}></a></li>
+					</volist>
+				<!-- 	<li>厨房电器</li>
+					<li>生活电器</li> -->
 				</ul>
 				<div class="arrow"></div>
 			</div>
@@ -380,16 +371,16 @@
 		<div class="mainFloor">
 			<div class="clearFix">
 				 <div class="">
-				 	 <div class="fl clearFix hideNow floorContent"><!--左中部楼层开始1-->
+			       	<volist name="cat['child']" id="secCat" empty="没有数据" key="k">
+				 	 <div class="fl clearFix <if condition="($k gt 1)">hideNow</if> floorContent"><!--左中部楼层开始1-->
 						<!--楼层左部内容-->
 						<div class="leftFloor fl">
 							<div>
 								<img src="__PUBLIC__/Home/img/4949-7m.jpg" alt="">
 							</div>
 							<ul class="brandUl clearFix">
-
-								<volist name="cat['cat_brand']" id="brand">
-									<li><a href="<{$brand['id']}>"><{$brand['brandname']}></a></li>
+								<volist name="secCat['spu']" id="spu" empty="没有数据">
+									<li><a href=""><{$spu['spuname']}></a></li>
 								</volist>
 								
 								<!-- <li><a href="">苹果</a></li>
@@ -406,130 +397,35 @@
 						<div class="middleFloor fl">
 							<ul style="width:732px" class="clearFix">
 			
-								<volist name="cat['product']" id="productArr">
+								<volist name="secCat['spu']" id="spu">
 									<li class="floorGoods">
-										<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="<{$Think.const.GOODSIMGPATH}><{$productArr['imgurl']}>" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" width="150px" height="150px">
+										<a title="" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="<{$Think.const.GOODSIMGPATH}><{$spu['imgurl']}>" alt="<{$spu['spuname']}>" width="150px" height="150px">
 										</a>
 										<div class="name">
-											<{$productArr['name']}>
+											<{$spu['spuname']}>
 										</div>
 										<p class="price">
 											<span class="sign">¥</span>
-											<span class="number"><{$productArr['price']}></span>
+											<span class="number"><{$spu['price']}></span>
 										</p>
-										<div class="icon_pop">
+										<!--抢字图标-->
+										<!-- <div class="icon_pop">
 											<span style="background: url(__PUBLIC__/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
 											</span>
-										</div>
+										</div> -->
 									</li>
 								</volist>
 							</ul>
 						</div><!--楼层中间内容结束-->
 					</div><!--左中部楼层结束-->
-
-				<!--楼层开始-->
-				<div class="fl clearFix floorContent hidenow"><!--左中部楼层开始2-->
-						<!--楼层左部内容-->
-						<div class="leftFloor fl">
-							<div>
-								<img src="__PUBLIC__/Home/img/18537-1112222.jpg" alt="">
-							</div>
-							<ul class="brandUl clearFix">
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-							</ul>
-						</div>
-
-						<!--楼层中间内容-->
-						<div class="middleFloor fl">
-							<ul style="width:732px" class="clearFix">
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-									<div class="icon_pop">
-										<span style="background: url(__PUBLIC__/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
-										</span>
-									</div>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">  
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="__PUBLIC__/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-									<div class="icon_pop"><span style="background: url(http://img4.ddimg.cn/00035/pic/xsq.png) no-repeat 0px 0px; _background-image: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img4.ddimg.cn/00035/pic/xsq.png',sizingMethod='noscale');" class="product_tags"></span>
-									</div>
-								</li>
-							</ul>
-						</div><!--楼层中间内容结束-->
-					</div><!--左中部楼层结束-->
+		        </volist>
 				 </div>
 				
 				<!--楼层右部内容开始-->
 				<div class="rightFloor fr">
 					<div class="rgFloorTop clearFix">
 						<ul class="clearFix">
+
 							<li class="on"><{$}></li>
 							<!-- <li>手机配件</li> -->
 						</ul>
@@ -695,152 +591,6 @@
 
 						</ul>
 					</div><!--各类排名1结束-->
-
-					<div class="rgFloorRank clearFix hideNow"><!--各类排名2开始-->
-						<ul>
-							<li class="briefItem clearFix hideNow">
-								<span class="rankNumber">2</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix ">
-								<span class="rankNumber">2</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-							<li class="briefItem clearFix">
-								<span class="rankNumber">2</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">2</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-							<li class="briefItem clearFix">
-								<span class="rankNumber">3</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">3</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-							<li class="briefItem clearFix">
-								<span class="rankNumber">4</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">4</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">5</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">5</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">6</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">6</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">7</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">7</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">8</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">8</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">9</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">9</span>
-								<a href=""><img src="__PUBLIC__/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-						</ul>
-					</div><!--各类排名2结束-->
 				</div>
 			</div>	
 		</div>
@@ -856,25 +606,6 @@
 					</div>
 				</li>
 				</volist>
-				<!-- <li>
-					<a href="#"><img src="__PUBLIC__/Home/img/midea_logo80x50-5.8.jpg" width="120px" height="55px"/></a>
-					<div class="mask">
-						<span>美的</span>
-					</div>
-				</li>
-				<li>
-					<a href="#"><img src="__PUBLIC__/Home/img/sanxing-logo.jpg" width="120px" height="55px"/></a>
-					<div class="mask">
-						<span>三星</span>
-					</div>
-				</li>
-				<li>
-					<a href="#"><img src="__PUBLIC__/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a>
-					<div class="mask">
-						<span>九阳</span>
-					</div>
-				</li>
-				<li><a href="#"><img src="__PUBLIC__/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a></li> -->
 			</ul>
 		</div><!--logo展示结束-->
 	</div><!--楼层展示结束-->

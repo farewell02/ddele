@@ -198,8 +198,6 @@
 <script src="/ddEle/Public/Home/js/index.js"></script>
 
 <div id="main_content"><!--首页主要内容结束-->
-	<?Php echo WEB ;?>
-	<?php echo (GOODSIMGPATH); ?>
 	<!--头部标签页-->
 	<div class="ele_top clearFix">
 		<div class="">
@@ -236,24 +234,13 @@
 
 				<!--分类内容-->
 				<ul class="clearFix">
-					<?php if(is_array($catArr)): $i = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('index/goodsList',['path'=>$cat['path']]);?>"><?php echo ($cat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-				<!-- 	<li><a href="">手机/配件</a></li>
+					<?php if(is_array($catArr)): $i = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('index/goodsList',['path'=>$cat['path'],'cid'=>$cat['id']]);?>"><?php echo ($cat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+			<!-- 	<li><a href="">手机/配件</a></li>
 					<li><a href="">电脑办公</a></li>
-					<li><a href="">手机/配件</a></li>
-					<li><a href="">手机/配件</a></li>
-					<li><a href="">手机/配件</a></li>
-					<li><a href="">手机/配件</a></li> -->
+ -->
 				</ul>
 				<ul class="hot_keys clearFix">
 					<?php if(is_array($cat_product)): $i = 0; $__LIST__ = $cat_product;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$randomproduct): $mod = ($i % 2 );++$i; if(is_array($randomproduct)): $i = 0; $__LIST__ = $randomproduct;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$product): $mod = ($i % 2 );++$i;?><li><a href="<?php echo ($product['spuid']); ?>"><?php echo ($product['name']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
-					<!-- <li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>
-					<li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>
-					<li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>
-					<li><a href="">苹果7</a></li>
-					<li><a href="">阅读器</a></li>	 -->
 				</ul>
 			</div>
 			<div class="fr">
@@ -261,6 +248,7 @@
 					<!-- <img src="/ddEle/Public/Home/img/17991-640x280-10.24.jpg" alt=""> -->
 					<div id="wrapper">
 				        <div class="slider-wrapper theme-default">
+
 				        	<!--轮播图-->
 				            <div id="slider" class="nivoSlider">
 				            	<a href=""> <img src="/ddEle/Public/Home/img/nav1.jpg" data-thumb="/ddEle/Public/Home/img/nav1.jpg" alt="" /></a>
@@ -268,9 +256,6 @@
 				     			<a href=""> <img src="/ddEle/Public/Home/img/nav3.jpg" data-thumb="/ddEle/Public/Home/img/nav3.jpg" alt="" /></a>
 				     			<a href=""> <img src="/ddEle/Public/Home/img/nav5.jpg" data-thumb="/ddEle/Public/Home/img/nav5.jpg" alt="" /></a>
 				            </div>
-				            <!-- <div id="htmlcaption" class="nivo-html-caption">
-				                1
-				            </div> -->
 				        </div>
 				        <div class="footer-banner" style="width:728px; margin:0 auto"></div>
 	   				 </div>
@@ -285,23 +270,23 @@
 			</div>
 		</div><!--中间开始详细分类变化层结束-->
 		
-
+	
 		<?php if(is_array($catArr)): $i = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><!--中间开始详细分类变化层开始--><!--各个分类层-->
 		<div class="middleNav fl clearFix  hideNow ">
 			<div class="fl LmiddleNav">
 				<dl>
 					<!--分类名和左侧相同-->
-					<dt><a href="<?php echo U('index/goodsList',['path'=>$cat['path']]);?>"><?php echo ($cat['catname']); ?></a></dt>
+					<dt><a href="<?php echo U('index/goodsList',['path'=>$cat['path'],'cid'=>$cat['id']]);?>"><?php echo ($cat['catname']); ?></a></dt>
 
 					<!--具体分类-->
 					<dd>
-						<?php if(is_array($cat['child'])): $i = 0; $__LIST__ = $cat['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$secCat): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$secCat['path']]);?>"><?php echo ($secCat['catname']); ?></a>
+						<?php if(is_array($cat['child'])): $i = 0; $__LIST__ = $cat['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$secCat): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$secCat['path'],'cid'=>$secCat['id']]);?>"><?php echo ($secCat['catname']); ?></a>
 							<!--子分类输出6条-->
-							<?php if(is_array($secCat['child'])): $i = 0; $__LIST__ = array_slice($secCat['child'],0,6,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$thdCat): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$thdCat['path']]);?>">
+							<?php if(is_array($secCat['child'])): $i = 0; $__LIST__ = array_slice($secCat['child'],0,6,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$thdCat): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$thdCat['path'],'cid'=>$thdCat['id']]);?>">
 								<?php echo ($thdCat['catname']); ?></a><?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
 
 						<!--品牌输出-->
-						<?php if(is_array($cat['cat_brand'])): $i = 0; $__LIST__ = $cat['cat_brand'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brandname): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$cat['path'],'brandid'=>$brandname['id']]);?>"><?php echo ($brandname['brandname']); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>	
+						<?php if(is_array($cat['cat_brand'])): $i = 0; $__LIST__ = $cat['cat_brand'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brandname): $mod = ($i % 2 );++$i;?><a href="<?php echo U('index/goodsList',['path'=>$cat['path'],'brandid'=>$brandname['id'],'cid'=>$thdCat['id']]);?>">        <?php echo ($brandname['brandname']); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>	
 					</dd>
 				</dl>
 			</div>
@@ -318,6 +303,7 @@
 				</div>
 			</div>
 		</div><!--中间开始详细分类变化层结束--><?php endforeach; endif; else: echo "" ;endif; ?>
+
 		<!--最右侧服务保障开始-->
 		<div class="service_insure fr clearFix">
 			<div>
@@ -343,19 +329,19 @@
 	</div><!--中间分类和分类显示大盒子结束-->
 	
 	<!--推广产品-->
-	<div id="broadCast">
+	<!-- <div id="broadCast">
 		<div class="clearFix">
-			<span class="fl">推广产品</span>
+			<span class="fl">推广产品</span> -->
 
 			<!--轮播图按钮-->
-			<div class="switchBtn fr clearFix">
+	<!-- 		<div class="switchBtn fr clearFix">
 				<a href="" class="fl" style="background:url(http://localhost/ddEle/Public/Home/img/home_sprite2_1017.png) -81px -542px no-repeat"></a>
 				<a href="" class="fl" ></a>
 			</div>
-		</div>
+		</div> -->
 
 		<!--轮播框-->
-		<div class="broadCastContent">
+	<!-- 	<div class="broadCastContent">
 			<ul class="clearFix">
 				<li>
 					<a href="">
@@ -523,22 +509,25 @@
 					</p>
 					<p class="price"><span>¥18.80</span></p>
 					<span class="cover"></span>
-				</li>	
-			</ul>
-		</div><!--轮播框结束-->
-	</div><!--推广产品结束-->
+				</li> -->	
+			<!-- </ul> -->
+		<!-- </div>轮播框结束 -->
+	<!-- </div>推广产品结束 -->
 
 	<!--楼层展示-->
-	<?php if(is_array($catArr)): $k = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($k % 2 );++$k;?><div class="floor">
+	<?php if(is_array($catArr)): $m = 0; $__LIST__ = $catArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($m % 2 );++$m;?><div class="floor">
 		<div class="topFloor clearFix">
 			<h1 class="fl">
-				<?php echo ($k); ?>F<?php echo ($cat['catname']); ?>
+				<?php echo ($m); ?>F<?php echo ($cat['catname']); ?>
 				<span class="floorName"></span>
 			</h1>
 			<div class="floor_floor fl">
 				<ul>
-					<li>厨房电器</li>
-					<li>生活电器</li>
+					
+					<?php if(is_array($cat['child'])): $i = 0; $__LIST__ = $cat['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$seccat): $mod = ($i % 2 );++$i;?><!--分类名-->
+						<li><a href="javascript:void(0)"><?php echo ($seccat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+				<!-- 	<li>厨房电器</li>
+					<li>生活电器</li> -->
 				</ul>
 				<div class="arrow"></div>
 			</div>
@@ -549,15 +538,14 @@
 		<div class="mainFloor">
 			<div class="clearFix">
 				 <div class="">
-				 	 <div class="fl clearFix hideNow floorContent"><!--左中部楼层开始1-->
+			       	<?php if(is_array($cat['child'])): $k = 0; $__LIST__ = $cat['child'];if( count($__LIST__)==0 ) : echo "没有数据" ;else: foreach($__LIST__ as $key=>$secCat): $mod = ($k % 2 );++$k;?><div class="fl clearFix <?php if(($k > 1)): ?>hideNow<?php endif; ?> floorContent"><!--左中部楼层开始1-->
 						<!--楼层左部内容-->
 						<div class="leftFloor fl">
 							<div>
 								<img src="/ddEle/Public/Home/img/4949-7m.jpg" alt="">
 							</div>
 							<ul class="brandUl clearFix">
-
-								<?php if(is_array($cat['cat_brand'])): $i = 0; $__LIST__ = $cat['cat_brand'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><li><a href="<?php echo ($brand['id']); ?>"><?php echo ($brand['brandname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+								<?php if(is_array($secCat['spu'])): $i = 0; $__LIST__ = $secCat['spu'];if( count($__LIST__)==0 ) : echo "没有数据" ;else: foreach($__LIST__ as $key=>$spu): $mod = ($i % 2 );++$i;?><li><a href=""><?php echo ($spu['spuname']); ?></a></li><?php endforeach; endif; else: echo "没有数据" ;endif; ?>
 								
 								<!-- <li><a href="">苹果</a></li>
 								<li><a href="">苹果</a></li>
@@ -573,128 +561,32 @@
 						<div class="middleFloor fl">
 							<ul style="width:732px" class="clearFix">
 			
-								<?php if(is_array($cat['product'])): $i = 0; $__LIST__ = $cat['product'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$productArr): $mod = ($i % 2 );++$i;?><li class="floorGoods">
-										<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="<?php echo (GOODSIMGPATH); echo ($productArr['imgurl']); ?>" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" width="150px" height="150px">
+								<?php if(is_array($secCat['spu'])): $i = 0; $__LIST__ = $secCat['spu'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$spu): $mod = ($i % 2 );++$i;?><li class="floorGoods">
+										<a title="" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="<?php echo (GOODSIMGPATH); echo ($spu['imgurl']); ?>" alt="<?php echo ($spu['spuname']); ?>" width="150px" height="150px">
 										</a>
 										<div class="name">
-											<?php echo ($productArr['name']); ?>
+											<?php echo ($spu['spuname']); ?>
 										</div>
 										<p class="price">
 											<span class="sign">¥</span>
-											<span class="number"><?php echo ($productArr['price']); ?></span>
+											<span class="number"><?php echo ($spu['price']); ?></span>
 										</p>
-										<div class="icon_pop">
+										<!--抢字图标-->
+										<!-- <div class="icon_pop">
 											<span style="background: url(/ddEle/Public/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
 											</span>
-										</div>
+										</div> -->
 									</li><?php endforeach; endif; else: echo "" ;endif; ?>
 							</ul>
 						</div><!--楼层中间内容结束-->
-					</div><!--左中部楼层结束-->
-
-				<!--楼层开始-->
-				<div class="fl clearFix floorContent hidenow"><!--左中部楼层开始2-->
-						<!--楼层左部内容-->
-						<div class="leftFloor fl">
-							<div>
-								<img src="/ddEle/Public/Home/img/18537-1112222.jpg" alt="">
-							</div>
-							<ul class="brandUl clearFix">
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-								<li><a href="">苹果</a></li>
-							</ul>
-						</div>
-
-						<!--楼层中间内容-->
-						<div class="middleFloor fl">
-							<ul style="width:732px" class="clearFix">
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-									<div class="icon_pop">
-										<span style="background: url(/ddEle/Public/Home/img/xsq.png) no-repeat 0px 0px;" class="product_tags">
-										</span>
-									</div>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-								</li>
-								<li class="floorGoods">  
-									<a title="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活" href="/ddEle/Public/Home/img/1022143948-1_l_5" target="_blank"><img src="http://img3x8.ddimg.cn/34/4/1022143948-1_l_5.jpg" alt="Apple 苹果 iPhone6S iPhone6S Plus 16G/64G/128G版 移动联通电信4G手机 全网通 公开版 原封未激活">
-									</a>
-									<div class="name">
-										Apple 苹果 iPhone6S iPhone6S Plus 
-									</div>
-									<p class="price">
-										<span class="sign">¥</span>
-										<span class="number">3869</span>
-									</p>
-									<div class="icon_pop"><span style="background: url(http://img4.ddimg.cn/00035/pic/xsq.png) no-repeat 0px 0px; _background-image: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img4.ddimg.cn/00035/pic/xsq.png',sizingMethod='noscale');" class="product_tags"></span>
-									</div>
-								</li>
-							</ul>
-						</div><!--楼层中间内容结束-->
-					</div><!--左中部楼层结束-->
+					</div><!--左中部楼层结束--><?php endforeach; endif; else: echo "" ;endif; ?>
 				 </div>
 				
 				<!--楼层右部内容开始-->
 				<div class="rightFloor fr">
 					<div class="rgFloorTop clearFix">
 						<ul class="clearFix">
+
 							<li class="on"><{$}></li>
 							<!-- <li>手机配件</li> -->
 						</ul>
@@ -860,152 +752,6 @@
 
 						</ul>
 					</div><!--各类排名1结束-->
-
-					<div class="rgFloorRank clearFix hideNow"><!--各类排名2开始-->
-						<ul>
-							<li class="briefItem clearFix hideNow">
-								<span class="rankNumber">2</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix ">
-								<span class="rankNumber">2</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-							<li class="briefItem clearFix">
-								<span class="rankNumber">2</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">2</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-							<li class="briefItem clearFix">
-								<span class="rankNumber">3</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">3</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-							<li class="briefItem clearFix">
-								<span class="rankNumber">4</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">4</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">5</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">5</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">6</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">6</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">7</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">7</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">8</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">8</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-							<li class="briefItem clearFix">
-								<span class="rankNumber">9</span>
-								<p><a href="">（限购1件）LINKON&nbsp;&nbsp;创意便携</a></p>	
-							</li>
-							<li class="DetailItem clearFix hideNow">
-								<span class="rankNumber">9</span>
-								<a href=""><img src="/ddEle/Public/Home/img/1236471736-1_p_2.jpg" alt=""></a>
-								<p><a href="">(限购1件)LINKON创意便携</a></p>
-								<p class="detailPrice">
-									<span class="rob">
-										<span class="sign">¥</span>
-										<span class="num">29.00</span>
-									</span>
-								</p>		
-							</li>
-
-						</ul>
-					</div><!--各类排名2结束-->
 				</div>
 			</div>	
 		</div>
@@ -1019,28 +765,9 @@
 						<span><?php echo ($brand['brandname']); ?></span>
 					</div>
 				</li><?php endforeach; endif; else: echo "" ;endif; ?>
-				<!-- <li>
-					<a href="#"><img src="/ddEle/Public/Home/img/midea_logo80x50-5.8.jpg" width="120px" height="55px"/></a>
-					<div class="mask">
-						<span>美的</span>
-					</div>
-				</li>
-				<li>
-					<a href="#"><img src="/ddEle/Public/Home/img/sanxing-logo.jpg" width="120px" height="55px"/></a>
-					<div class="mask">
-						<span>三星</span>
-					</div>
-				</li>
-				<li>
-					<a href="#"><img src="/ddEle/Public/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a>
-					<div class="mask">
-						<span>九阳</span>
-					</div>
-				</li>
-				<li><a href="#"><img src="/ddEle/Public/Home/img/jiuyang-logo.jpg" width="120px" height="55px"/></a></li> -->
 			</ul>
 		</div><!--logo展示结束-->
-	</div><!--楼层展示结束--><?php endforeach; endif; else: echo "" ;endif; ?>
+	</div><!--楼层展示结束--><?php endforeach; endif; else: echo "没有数据" ;endif; ?>
 </div><!--首页主要内容结束
 <!--网页尾部文件-->
 <div id="footer">

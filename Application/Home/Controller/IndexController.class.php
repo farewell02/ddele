@@ -15,16 +15,19 @@ class IndexController extends Controller {
 
 	 //首页展示
     public function index(){
-      
+
       $treeModel = D('Tree'); //实例化分类数模型类
       $catModel   = M('category');
       $goodModel  = M('goods');
       $Model  = M('goods');
       $spu_skuModel = M('spu_sku');
       $indexModel = D('index');
+
       //取得分类数组
       $catArr = $treeModel ->getHomeCate();
 
+      // dump($catArr);
+      // exit;
       //处理分类数组合并数据
       foreach($catArr as $key => $value){
 
@@ -37,9 +40,18 @@ class IndexController extends Controller {
          //得到该分类下的按照销量排序靠前的spu产品
          $product = $indexModel->getAllspu($value['id']);
          $catArr[$key] = array_merge($value,['cat_brand'=>$brand],['topproduct'=>$topProduct],['product'=>$product]);
-      }
 
-      $sql = $indexModel->searchGoods('0,1%','','','gdd.price desc');
+         foreach($value['child'] as $ck => $cval){
+   
+             $data = $indexModel -> searchGoods($cval["path"].'%');
+            // dump($data);
+             $catArr[$key]['child'][$ck]= array_merge($cval,['spu'=>$data]);
+
+         }
+      }
+      // dump($catArr);
+      // exit;
+      // $sql = $indexModel->searchGoods('0,1%','','','gdd.price desc');
 
       // echo '<pre>';
       // dump($sql);
@@ -69,9 +81,18 @@ class IndexController extends Controller {
 
     //商品列表展示根据条件展示相应的数据
     public function goodsList(){
+
+      $treeModel = D('Tree'); //实例化分类数模型类
       $indexModel = D('index');
       $catModel   = M('category');
 
+      //取得顶级分类数组
+      $topcatArr = $treeModel ->getParentTree(I('get.cid'));
+
+      //取得顶级分类数组下面的字数组
+      $catArr = $treeModel -> getHomeCate($topcatArr[0]['id']);
+      // dump($catArr);
+      // exit;
       // dump($indexModel->searchGoods(I('get.path').'%',I('get.brandid')));
       // exit;
 
@@ -82,6 +103,7 @@ class IndexController extends Controller {
       //存储跳转过来的查询字符串
       $searchstring = ['path'=>I('get.path'),'brandid'=>I('get.brandid')];
       $clickedBtn  = ['clicked'=>I('get.clicked')];
+      $cid = I('get.cid'); //存储跳转过来的具体分类id;
       //价格排序标志
       if(!empty(I('get.priceorder'))){
          $orderflag=['priceorder'=>I('get.priceorder')];
@@ -98,12 +120,24 @@ class IndexController extends Controller {
          $orderflag = ['defaultorder'=>'yes'];
          $order = '';
       }
+
+      if(empty(I('get.path'))){
+          $path = '';
+      }else{
+          $path = I('get.path').'%';
+      }
  // dump(I('get.'));
 //  dump($orderflag);
 // dump($clickedBtn);
       //根据条件查询出首页点击进来的所有商品
-      $goodslistArr = $indexModel->searchGoods(I('get.path').'%',I('get.brandid'),'',$order);
-         // dump($goodslistArr);
+      $counts = $indexModel->searchGoods($path,I('get.brandid'),'',$order,'',true);
+      $page = new \Think\Page($counts,4);
+      $page  -> setConfig('prev','上一页');
+       $page -> setConfig('next','下一页');
+      $pagelist = $page -> show();
+      $goodslistArr = $indexModel->searchGoods($path,I('get.brandid'),'',$order,$page->firstRow.','.$page -> listRows,false);
+
+      // dump($goodslistArr);
       // exit;
       //查询该分类下的所有品牌
       if(empty(I('get.brandid'))){
@@ -115,7 +149,13 @@ class IndexController extends Controller {
       $brandArr = $catModel ->distinct(true)-> alias('cat') -> field('bd.*') -> join('__GOODS__ gd ON gd.catid=cat.id') -> join('__GOODS_BRAND__ gdb on gdb.goodsid=gd.id ')-> join('__BRAND__ bd on bd.id=gdb.brandid')->where('cat.path like "'.I('get.path').'%"'.$where)->select(); 
 
     	layout('layout/layout');
-      $this -> assign('clicked',$clickedBtn);
+      // dump($brandArr);
+      // exit;
+      $this -> assign('topcatArr',$topcatArr);
+      $this -> assign('cid',$cid);           //存储跳过来的cid
+      $this -> assign('catArr',$catArr);     //分配分类数组用于前台遍历显示
+      $this -> assign('page',$pagelist);     //分配page字符串
+      $this -> assign('clicked',$clickedBtn); 
       $this -> assign('searchstring',$searchstring);
       $this -> assign('brandArr',$brandArr);
       $this -> assign('orderflag',$orderflag);
@@ -129,6 +169,12 @@ class IndexController extends Controller {
     	layout('layout/layout');
     	$this -> display();
     }
+
+
+
+
+
+
 
     //****************商品收藏展示和收货地址管理显示****************************
     public function goodsCollect($show='goodsCollect'){
@@ -331,6 +377,11 @@ class IndexController extends Controller {
         }
         
     }
+
+
+
+
+
 /******************************收货地址分割线*************************************************/
     /*添加收货地址的操作*/
     public function addAddress(){

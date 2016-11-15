@@ -16018,3 +16018,648 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
 
+[ 2016-11-14T23:16:08+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5/priceorder/asc/clicked/priceorder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0150s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid  ORDER BY gdd.price asc  [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: defaultorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 368 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:16:09+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5/priceorder/asc/clicked/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid  ORDER BY gdd.price asc  [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: defaultorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 368 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-14T23:16:10+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5/saleorder/asc/clicked/saleorder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid  ORDER BY gdd.salenumber asc  [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: defaultorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 368 行.
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:16:10+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5/saleorder/asc/clicked/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0900s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid  ORDER BY gdd.salenumber asc  [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: defaultorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 368 行.
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:16:12+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5/saleorder/desc/clicked/saleorder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0410s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0180s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid  ORDER BY gdd.salenumber desc  [ RunTime:0.0170s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: defaultorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 368 行.
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:16:12+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5/saleorder/desc/clicked/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0500s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid  ORDER BY gdd.salenumber desc  [ RunTime:0.0130s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: defaultorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 368 行.
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:16:13+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0540s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0200s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:16:13+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0680s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0450s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "js%" group by pk.spuid   [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "js%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:19:21+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:19:21+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "js%" group by pk.spuid   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "js%" )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:20:39+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0380s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-14T23:20:40+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "js%" group by pk.spuid   [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "js%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:22:02+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid   [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:22:02+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "js%" group by pk.spuid   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "js%" )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2016-11-14T23:23:08+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid   [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:23:08+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "js%" group by pk.spuid   [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "js%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2016-11-14T23:23:51+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid   [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-14T23:23:51+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.1140s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "js%" group by pk.spuid   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "js%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:26:49+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/0,1,5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0010s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1,5%" group by pk.spuid   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1,5%" )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-14T23:26:50+08:00 ] 127.0.0.1 /ddEle/index.php/Home/index/goodsList/path/js/jquery/lazyload181.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0210s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0000s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "js%" group by pk.spuid   [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "js%" )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: priceorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 374 行.
+NOTIC: [8] Undefined index: saleorder D:\wamp\www\ddEle\Application\Runtime\Cache\Home\ed92c7692a785495eb22cf0cbe59b57c.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:50:16+08:00 ] 127.0.0.1 /ddEle/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0312s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `spu_sku` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`catname`,`pid`,`path` FROM `category`  [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,1%" )  [ RunTime:0.0000s ]
+SQL: select * from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 where cat.path like "0,1%" order by gdd.salenumber desc [ RunTime:0.0312s ]
+SQL: select * from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 where cat.path like "0,1%"  [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,2%" )  [ RunTime:0.0156s ]
+SQL: select * from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 where cat.path like "0,2%" order by gdd.salenumber desc [ RunTime:0.0000s ]
+SQL: select * from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 where cat.path like "0,2%"  [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,3%" )  [ RunTime:0.0000s ]
+SQL: select * from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 where cat.path like "0,3%" order by gdd.salenumber desc [ RunTime:0.0000s ]
+SQL: select * from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 where cat.path like "0,3%"  [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  bd.* FROM category cat INNER JOIN goods gd ON gd.catid=cat.id INNER JOIN goods_brand gdb on gdb.goodsid=gd.id  INNER JOIN brand bd on bd.id=gdb.brandid  WHERE ( cat.path like "0,4%" )  [ RunTime:0.0000s ]
+SQL: select * from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 where cat.path like "0,4%" order by gdd.salenumber desc [ RunTime:0.0000s ]
+SQL: select * from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 where cat.path like "0,4%"  [ RunTime:0.0000s ]
+SQL: select cat.id catid,gd.name spuname,cat.catname,cat.path,gd.id spuid,gdd.skuid skuid,gdd.price,gdd.status,gdd.goodsname skusname,gdd.salenumber,gimg.imgurl,gimg.ismain,bd.id,bd.brandname,bd.logo,bd.url brandurl,bd.id bdid from category cat inner join goods gd on gd.catid=cat.id inner join spu_sku pk on pk.spuid= gd.id inner join goodsdetail gdd on gdd.skuid = pk.skuid left join goodsimg gimg on gimg.spuid=pk.spuid and gimg.ismain=1 inner join goods_brand gdb on gdb.goodsid = gd.id inner join brand bd on bd.id=gdb.brandid WHERE path LIKE "0,1%" group by pk.spuid  ORDER BY gdd.price desc  [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `catid` FROM `goods`  [ RunTime:0.0156s ]
+SQL: SELECT * FROM goods gd INNER JOIN spu_sku pk on pk.spuid=gd.id  WHERE ( catid =5 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM goods gd INNER JOIN spu_sku pk on pk.spuid=gd.id  WHERE ( catid =7 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM goods gd INNER JOIN spu_sku pk on pk.spuid=gd.id  WHERE ( catid =14 )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-14T23:50:23+08:00 ] 127.0.0.1 /ddEle/home/index/goodscollect
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\wamp\www\ddEle\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `buyaddress` [ RunTime:0.3060s ]
+SQL: SHOW COLUMNS FROM `city` [ RunTime:0.2440s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.1010s ]
+SQL: SHOW COLUMNS FROM `goodscollect` [ RunTime:0.0660s ]
+SQL: SELECT COUNT(*) AS tp_count FROM goodscollect gc INNER JOIN goodsdetail gdd on gdd.skuid=gc.skuid INNER JOIN spu_sku pk on pk.skuid=gdd.skuid INNER JOIN goodsimg gimg on gimg.spuid = pk.spuid  WHERE ( gimg.ismain=1 and gc.uid=1 ) LIMIT 1   [ RunTime:0.1250s ]
+NOTIC: [8] Undefined index: p D:\wamp\www\ddEle\Application\Home\Controller\IndexController.class.php 第 157 行.
+NOTIC: [8] Undefined index: p D:\wamp\www\ddEle\Application\Home\Controller\IndexController.class.php 第 157 行.
+SQL: SELECT gc.id gcid,`imgurl`,`goodsname`,`price`,`ctime`,pk.spuid,pk.skuid FROM goodscollect gc INNER JOIN goodsdetail gdd on gdd.skuid=gc.skuid INNER JOIN spu_sku pk on pk.skuid=gdd.skuid INNER JOIN goodsimg gimg on gimg.spuid = pk.spuid  WHERE ( gimg.ismain=1 and gc.uid=1 ) LIMIT 0,2   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: addressData D:\wamp\www\ddEle\Application\Runtime\Cache\Home\a5139ff64268c84756ac38310c7615bd.php 第 431 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.087005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-14T23:50:24+08:00 ] 127.0.0.1 /ddEle/index.php/Home/Index/city.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\wamp\www\ddEle\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `city` [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name`,`code` FROM `city` WHERE `parent_id` = 0  [ RunTime:0.1420s ]
+
+[ 2016-11-14T23:50:24+08:00 ] 127.0.0.1 /ddEle/index.php/Home/Index/city.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\wamp\www\ddEle\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `city` [ RunTime:0.0310s ]
+SQL: SELECT `id`,`name`,`code` FROM `city` WHERE `parent_id` = 1  [ RunTime:0.0030s ]
+
+[ 2016-11-14T23:50:24+08:00 ] 127.0.0.1 /ddEle/index.php/Home/Index/city.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\wamp\www\ddEle\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `city` [ RunTime:0.0230s ]
+SQL: SELECT `id`,`name`,`code` FROM `city` WHERE `parent_id` = 35  [ RunTime:0.0030s ]
+
+[ 2016-11-14T23:50:28+08:00 ] 127.0.0.1 /ddEle/home/index/goodsdetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

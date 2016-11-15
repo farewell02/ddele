@@ -186,358 +186,774 @@
 </div><!--头部文件结束-->
 
 
-<link rel="stylesheet" href="/ddEle/Public/Home/css/goodsList.css" />
+<link rel="stylesheet" href="/ddEle/Public/Home/css/goodsDetail.css" />
 <!--引入了js文件-->
-<script src="/ddEle/Public/Home/js/goodsList.js"></script>
+
+<script src="/ddEle/Public/Home/js/goodsDetail.js"></script>
 <!--页面主要内容-->
-<div id ="Goodscontent clearFix" style="margin:0 auto;width:1200px">
 
-	<!--导航详情-->
-	<div class="clearFix navtop" style="line-height: 26px;
-padding: 10px 0;">
-		<a href="<?php echo U('index/index');?>">当当</a>
-        <?php if(is_array($topcatArr)): $i = 0; $__LIST__ = $topcatArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><span>></span>
-        	<a <?php echo $cid==$cat['id'] ? 'class="atnow" style="color:blue"' : '';?> href="<?php echo U('index/goodsList',['path'=>$cat['path'],'cid'=>$cat['id']]);?>"><?php echo ($cat['catname']); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
-		<!-- <a href="">当当</a>
-		
-		<a href="">手机通讯></a>
-		<span>></span>
-		<a href="">手机</a> -->
-	</div><!--导航详情结束-->
-	
-	<!--左侧-->
-	<div class="leftSide fl clearFix" >
+<div id="mainContent">
+	<div class="clearFix">
+		<!--左侧图片详细信息放大镜-->
+		<div class="photo fl clearFix">
 
-		<!--左侧分类小盒子-->
-		<div id="catBox">
-
-			<!--左侧分类导航盒子遍历-->
-				<?php if(!empty($catArr)): ?><h3><?php echo ($catArr['catname']); ?></h3>
-				<ul class="firstCatUl">
-					<?php if(is_array($catArr['child'])): $i = 0; $__LIST__ = $catArr['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$seccat): $mod = ($i % 2 );++$i;?><li class="firstCat <?php if($seccat['id'] == $cid): ?>on<?php else: ?>''<?php endif; ?>" >
-					    	<span class="m"></span>
-					    	<a href="<?php echo U('index/goodsList',['path'=>$seccat['path'],'cid'=>$seccat['id']]);?>">     <?php echo ($seccat['catname']); ?></a>
-					    	<span class="catBtn"></span>
-					    	<?php if(!empty($seccat['child'])): ?><ul class="secondCatUl hideNow clearFix">
-					    		  <?php if(is_array($seccat['child'])): $i = 0; $__LIST__ = $seccat['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$thcat): $mod = ($i % 2 );++$i;?><li class="<?php if($thcat['id'] == $cid): ?>now<?php else: ?>''<?php endif; ?>"><a href="<?php echo U('index/goodsList',['path'=>$thcat['path'],'cid'=>$thcat['id']]);?>">       <?php echo ($thcat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-						    		<!-- <li><a href="">蓝牙耳机</a></li>
-						    		<li><a href="">充电器/数据线</a></li>
-						    		<li><a href="">手机贴膜</a></li>
-						    		<li><a href="">手机耳机</a></li> -->
-					    		</ul><?php endif; ?>	
-					    </li><?php endforeach; endif; else: echo "" ;endif; ?>
-				  <!--   <li class="firstCat">
-				    	<span class="m"></span>
-				    	<a href="">手机配件</a>
-				    	<span class="catBtn"></span>
-				    	<ul class="secondCatUl hideNow clearFix">
-				    		<li><a href="">电话/移动电源</a></li>
-				    		<li><a href="">蓝牙耳机</a></li>
-				    		<li><a href="">充电器/数据线</a></li>
-				    		<li><a href="">手机贴膜</a></li>
-				    		<li><a href="">手机耳机</a></li>
-				    	</ul>
-				    </li> -->
-		<!-- 			<li class="firstCat ">
-						<span class="m"></span>
-						<a href="">对讲机</a>
-						<span class="catBtn"></span>
-					</li>	 -->
-					
-				</ul><?php endif; ?>	
-			
-		</div><!--左侧分类小盒子结束-->
-		
-
-		<!--排行-->
-		<div class="saleRankBox">
-			<!--标题头-->
-			<div class="rankHeader">
-				<span>一周销量排行榜</span>
+			<!--大图-->
+			<div id="bigImgBox">
+				<a class="mdImg" href="">
+					<img src= "/ddEle/Public/Home/img/1040015948-6_k_2.jpg" width="400px" height="400px">
+				</a>
+				<div class="lgImg hideNow">
+					<img src="/ddEle/Public/Home/img/1040015948-8_u_2.jpg" alt="">
+				</div>
+				<div class="zoomBox hideNow"></div>
 			</div>
 
-			<!--排行内容-->
-			<div class="rankDetail">
-				<ul class="clearFix">
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name"><a href="">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</a></p>
-						<p class="price">¥50.00</p>
-					</li>
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name"><a href="">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</a></p>
-						<p class="price">¥50.00</p>
-					</li>
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</p>
-						<p class="price">¥50.00</p>
-					</li>
-				</ul>
+			<!--小图-->
+			<div id="smImgBox" >
+				<div class="smphoto">
+					<img src="/ddEle/Public/home/img/left.jpg" class="rightBtn">
+					<img src="/ddEle/Public/home/img/right.jpg" class="leftBtn">
+					<ul class="smphotoUl">
+						<li><img src="/ddEle/Public/Home/img/1040015948-6_k_2.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+						<li><img src="/ddEle/Public/Home/img/1040015948-3_k_5.jpg" width="54px" height="54px" alt=""></li>
+					</ul>
+				</div>
+			</div><!--小图结束-->
+			<div>
+				<!-- <div>
+					<i class=""></i><a href="">分享</a>
+				</div> -->
+				<div class="collect">
+					<i class="collectGoods"></i>
+					<a href="" class="shopText">收藏商品</a>	
+				</div>
 			</div>
-		</div>	<!--排行结束-->
+		</div><!--左侧图片详细信息结束-->
 
-		
-		<!--推广开始-->
-		<div class="AdBox saleRankBox">
-			<!--标题头-->
-			<div class="AdBoxHeader rankHeader">
-				<span>推广产品</span>
-			</div>
+		<!--右侧商品详细信息-->
+		<div class="fl goodsDetailBox clearFix">
 
-			<!--推广内容-->
-			<div class="AdContent">
-				<ul class="clearFix">
-					<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-						<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-						<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-				</ul>
-			</div>
-		</div>	<!--推广结束-->
-	</div>
-
-	<!--右侧商品搜索和列表页-->	
-	<div class="rightSide fl clearFix" style="margin-left:20px" >
-
-		<div class="clearFix">
-			<!--品牌分类开始-->
-			<div class="clearFix lgCatBox" style="border:1px solid #ccc">
-				<div class="fl brandCat listLeft">
-					品牌
+			<!--左侧商品价格数量-->
+			<div class="buyGoods fl">
+				<h1>【赠送钢化膜+手机壳】Apple苹果 iPhone7 iPhone7 Plus 32GB/128GB/256GB 苹果7 移动联通电信全网通 4G手机</h1>
+				<p class="tag">
+					<span>支持礼品卡</span>
+					<span>正品行货</span>
+					<span>顺丰包邮</span>
+				</p>
+				<!--商品评分-->
+				<div class="clearFix">
+					<p class="star fl">
+						<span style="width:80%"></span>
+					</p>
+					<p class="fl comment">
+						<span ><a href="">53</a></span>条评论	
+					</p>
 				</div>
 				
-				<!--品牌图标-->
-				<div class="fl brandCatUl">
+				<!--价格-->
+				<div class="priceBox clearFix">
+					<div class="text">抢购价</div>
+					<div class="price">¥4969</div>
+				</div>
+
+				<!--促销-->
+				<div class="Marker clearFix">
+					<span class="text">促销</span>
+					<span>店铺Vip</span>
+					<div></div>
+				</div>
+
+				<!--配送地址-->
+				<div class="address clearFix">
+					<span class="text">配送至</span>
+					<div class="fl">
+						上海上海市 
+						<div class="fl">城市列表</div>
+					</div>
+				</div>
+
+				<!--服务-->
+				<div class="service clearFix">
+					<span class="text">服务</span>
+					<span>由“苹果iPhone旗舰店”发货，并提供售后服务。</span>
+				</div>
+
+				<!--颜色-->
+				<div class="color clearFix">
+					<span class="text">颜色</span>
 					<ul>
-						<?php if(empty($searchstring['brandid'])): if(is_array($brandArr)): $i = 0; $__LIST__ = $brandArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><li class="defaultBrand" data-brandid="<?php echo ($brand['id']); ?>"><a title="<?php echo ($brand['brandname']); ?>" href="javascript:void(0)"><font style="display: none;"><?php echo ($brand['brandname']); ?></font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-					        <?php else: ?>
-							<?php if(is_array($brandArr)): $i = 0; $__LIST__ = $brandArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><li class="user_selected">
-								    <span class="bn">品牌：</span>
-								    <span class="block" title="美图meitu">
-									    <span class="t"><?php echo ($brand['brandname']); ?></span>
-									    <span class="close"></span>
-			                 		</span>
-                				</li><?php endforeach; endif; else: echo "" ;endif; endif; ?>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
+						<li><a href=""><img src="/ddEle/Public/Home/img/1080046748-1_b.jpg" alt="" width="42px" height="42px"></a></li>
 					</ul>
 				</div>
-			</div><!--品牌分类结束-->
 
-			<!--价格排序-->
-			<!-- <div class="clearFix">
-				<div class="clearFix listLeft">价格</div>
-				<div class="listRight">
-					<div class="list_content"><div class="width_515"><span><a title="0-3259" name="price_segments" href="/cid4001075-lp0-hp3259.html">0-3259</a></span><span><a title="3259-4099" name="price_segments" href="/cid4001075-lp3259-hp4099.html">3259-4099</a></span><span><a title="4099-5199" name="price_segments" href="/cid4001075-lp4099-hp5199.html">4099-5199</a></span><span><a title="5199-7149" name="price_segments" href="/cid4001075-lp5199-hp7149.html">5199-7149</a></span><span><a title="7149以上" name="price_segments" href="/cid4001075-lp7149-hp.html">7149以上</a></span></div></div>
+				<!--套餐-->
+				<div class="clearFix package">
+					<span class="text">套餐</span>
+					<ul class="clearFix">
+						<li>iphone7 32GB</li>
+						<li>iphone7 128GB</li>
+						<li>iphone7 plus 32GB</li>
+						<li>iphone7 plus 32GB</li>
+					</ul>
 				</div>
-			</div>
- -->
-			<!--网络-->
-			
-			<!--价格-->
-			<!-- <div class="clearFix">
-				<div class="clearFix listLeft">价格</div>
-				<div class="listRight">
-					<div class="list_content"><div class="width_515"><span><a title="0-3259" name="price_segments" href="/cid4001075-lp0-hp3259.html">0-3259</a></span><span><a title="3259-4099" name="price_segments" href="/cid4001075-lp3259-hp4099.html">3259-4099</a></span><span><a title="4099-5199" name="price_segments" href="/cid4001075-lp4099-hp5199.html">4099-5199</a></span><span><a title="5199-7149" name="price_segments" href="/cid4001075-lp5199-hp7149.html">5199-7149</a></span><span><a title="7149以上" name="price_segments" href="/cid4001075-lp7149-hp.html">7149以上</a></span></div></div>
-				</div>
-			</div> -->
-		</div>
 
-		<!--排序 销量、价格、最新-->
-		<div class="sortBox clearFix" data-path="<?php echo ($searchstring['path']); ?>" data-brandid='<?php echo ($searchstring["brandid"]); ?>' data-cid="<?php echo ($cid); ?>">
-			<h4 class="fl">排序</h4>
-			<ul class="sortMenu clearFix">
-				<li id="default" class=" <?php echo $orderflag['defaultorder']=='yes'?'on clicked':''; ?>">
-					默认排序
-					<span class=""></span>
+				<!--商品数量的添加-->
+				<div class="clearFix">
+					<div class="numberBox">
+						<input id="buy-num" class="" value="1" type="text">
+						<span href="" class="addBtn"></span>
+						<span href="" class="minuBtn"></span>
+					</div>
+					<div class="cartBgBox">
+						<a class="cartBox fl" href="">
+						  <i class=""></i>
+						  <span>加入购物车</span>
+						</a>
+					</div>
+					
+					<div class="buyNow">
+						立即购买
+					</div>
+
+				</div>
+				<p class="tip">
+					每账户限购<b>2</b>件，超出限购数量以当当价为准
+				</p>
+			</div><!--左侧商品价格数量结束-->
+
+			<!--右侧店铺-->
+			<div class="shopBox fl">
+				<!--店铺名-->
+				<div class="shopDiv clearFix">
+					<span class="clearFix">
+						<span class="shoplogo"></span>
+						<span class="shopName"><a href="">苹果官方旗舰店</a></span>
+					</span>
+				</div>
+
+				<!--店铺评分-->
+				<div>
+					<span class="shopText">店铺总分</span> <span class="scoreNumber">5.00</span>分
+				</div>
+
+				<!--描述、服务、发货-->
+				<div class="scoreBox">
+					<!--描述-->
+					<div class="subject clearFix shopText">
+						<div class="">描述</div>
+						<div class="">服务</div>
+						<div class="">发货</div>
+					</div>
+					<!--各项评分-->
+					<div class="score clearFix shopText">
+						<div><span>5.00</span><span class="trend"></span></div>
+						<div><span>5.00</span><span class="trend"></span></div>
+						<div><span>5.00</span><span class="trend"></span></div>
+					</div>
+				</div>
+
+				<!--各项质量保障-->
+				<div class="service clearFix">
+					<ul>
+						<li><i></i>正品保障</li>
+						<li><i></i>闪电发货</li>
+						<li><i></i>推荐商家</li>
+						<li><i></i>以旧换新</li>
+						<li class="goodsback"><i></i>不支持7天无理由退货</li>
+						<li class="gift"><i></i>支持礼品卡</li>
+					</ul>
+				</div>
+
+				<!--联系客服收藏店铺，进入店铺-->
+				<div class="collectShopBox clearFix">
+					<div><i></i>联系客服</div>
+					<div>
+						<div>进入店铺</div>
+						<div>收藏店铺</div>
+					</div>
+				</div>
+			</div><!--右侧店铺结束-->
+		</div><!--右侧商品详细信息结束-->
+	</div>
+
+	<!--左侧推广商品-->
+	<div class="bottomBox">
+		<div class="fl adBox">
+			<p>推广商品<span>广告</span></p>
+			<ul class="ad">
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
 				</li>
-				<li id="priceorder" class="<?php echo $clicked['clicked']=='priceorder'?'on clicked':'' ?>">
-					价格
-					<span class="<?php echo $orderflag['priceorder']=='desc'?'icon':'upicon'; ?>"></span>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
 				</li>
-			<!-- 	<li>
-					好评
-					<span class="icon"></span>
-				</li> -->
-				<li id="saleorder" class="<?php echo $clicked['clicked']=='saleorder'?'on clicked':'' ?>">
-					销量
-					<span class="<?php echo $orderflag['saleorder']=='desc'?'icon':'upicon'; ?>"></span>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
+				</li>
+				<li><a href=""><img src="/ddEle/Public/home/img/1113068605-1_l_1.jpg" alt=""></a>
+					<div><span>¥149.00</span></div>
+					<a href="">
+						UOVO意大利童鞋时尚品牌<br/>限时特价
+					</a>
 				</li>
 			</ul>
-		</div><!--排序 销量、价格、最新结束-->
-
-		
-		<div class="checkBox"><!--收货地、促销，商品类型-->
-			<!-- <span class="fl">收货地址:</span> -->
-			<!-- <div class="fl selectBox">
-				全部地区
-				<div class="provinceDetail clearFix hideNow">
-					<div class="clearFix">
-						请保存库存地区
-					</div>
-					<ul class="clearFix">
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-					</ul>
-				</div>
-				<span class="arrow"></span>
-			</div> -->
-		</div><!--收货地、促销，商品类型结束-->
-		
-
-		<!--商品列表页-->
-		<div>
+		</div>
+		<div class="fl adBoxRight">
+			<!--标题头-->
 			<div>
-				<ul id="goodsListUl">
-					<?php if(is_array($goodslistArr)): $i = 0; $__LIST__ = $goodslistArr;if( count($__LIST__)==0 ) : echo "暂时没有商品" ;else: foreach($__LIST__ as $key=>$goodslist): $mod = ($i % 2 );++$i;?><li>
-							<div>
-								<a href="">
-									<div>
-										<a href="" style="display:inline-block;width:200px;height:200px"><img width="200px" height="200px" src="<?php echo (GOODSIMGPATH); echo ($goodslist['imgurl']); ?>" alt=""></a>	
-									</div>
-									<p class="listPrice">¥<?php echo ($goodslist['price']); ?></p>
-									<p class="listName">
-										<a href=""><?php echo ($goodslist['spuname']); ?></a>
-									</p>
-									<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-									<!-- <p class="star">
-										<span>
-											<span></span>
-										</span>
-									</p> -->
-									<!-- <p class="link">
-										<img src="/ddEle/Public/home/img/2016-11-08_141851.jpg" alt="">
-										<a href="">苹果官方旗舰店</a>
-									</p> -->
-								</a>
-						   </div>
-						</li><?php endforeach; endif; else: echo "暂时没有商品" ;endif; ?>
-	
-			
+				<ul class="threeBox clearFix">
+					<!--商品详情-->
+					<li>商品详情</li>
+
+					<!--商品评论-->
+					<li>商品评论(<span>53</span>)</li>
+
+					<!--商品问答-->
+					<li>商品问答(<span>0</span>)</li>
 				</ul>
 			</div>
-		</div><!--商品列表页结束-->
 		
 
-		<!--分页-->
-	    <div class="" name="m4048975_pid0_t3989"><div id="component_4048975"></div><div class="con paginating" name="m4048975_pid0_t3990">
+		<!--装有评论容器和商品详情的容器开始-->
+		<div class="largeContainer">
+			<!--商品详情-->
+			<div id="commodityDetail clearFix">
+				<div>
+					<ul class="clearFix description">
+						<li>品牌:苹果</li>
+						<li>型号iphone</li>
+						<li>机身颜色： 金色 银色 灰色</li>
+						<li>网络： 全网通</li>
+						<li>屏幕尺寸： 5.0-4.6英寸</li>
+						<li>系统： 苹果（IOS）</li>
+					</ul>
+				</div>
+				<div class="clearFix detailTagParent">
+					<span class="detailTag"><div>详情</div></span>
+				</div>
+				<div class="detailTitleParent">
+					<div class="detailTitle"></div>
+					<div>
+						商品详情显示
+					</div>
+				</div>
+			</div>
 
-<ul class="paging" name="Fy">
-            <!-- <li class="prev none"><a>上一页</a></li> -->
-         	<?php echo ($page); ?>
-            <!-- <li class="page_input"><span>共94页 到第</span> -->
-        <!-- <input id="t__cp" class="number" value="1" type="text"> -->
-<!--         <span>页</span>
-        <input class="button" id="click_get_page" value="确定" type="button"></li> -->
-</ul>
-<script type="text/javascript">
-    $(function(){     
-        $('#t__cp').keydown(function(e){
-            if(e.keyCode==13){
-                verifyListPages();
-            }
-        });
-        $('#click_get_page').click(function(){
-            verifyListPages();
-        });
-    });
+			<!--商品评论容器-->
+			<div class="hideNow disscussBox">
+			<!--商品评论-->
+					<div class="clearFix">
+						<div class="tit">
+							<span>商品评论<span>(53条)</span></span>	
+						</div>
 
-    function verifyListPages(){
-        var page=$.trim($('#t__cp').val());
-        var max_page=94;
-        re = /^[1-9]*[0-9]*[0-9]$/i; 
-        if(!re.test(page)||page==0){                  
-            alert('您好，请输入正确页码。');
-            return false;                   
-        }else{
-            if(parseInt(page)>100){
-                alert('您好，请输入正确页码。');
-                return false;
-            }else{       
-                if(parseInt(page)>max_page){
-                    
-                    alert('您好，请输入正确页码。');
-                    return false;
-//                    var href_url = '/pgnone-cid4004279-srsort_score_desc.html';
-//                    //                        end_url = href_url;
-//                    //                    
-//                    window.location.href=end_url;
-//                    return false;
-                }else{
-                     var href_url = '/pgnone-cid4004279-srsort_score_desc.html';
-                                            if (page == 1) {
-                            end_url = href_url.replace('pgnone-','');
-                        }else{
-                            end_url = href_url.replace('pgnone','pg'+page);
-                        }
-                                        
-                    window.location.href=end_url;
-                }
-            }
-        }
-    }
-</script>
+						<!--商品好评率和评论数-->
+						<div class="commentLog">
+							<div class="commentNum">
+								<div class="ratePercentBox">
+									<div class="percent">96.2%</div>
+									<div class="range">好评率</div>
+								</div>
+							</div>
+							<div class="commentLogTotal">共<span>53</span>人评论</div>
+						</div>
+					</div>
+					
 
 
+					<!--评论大盒子-->
+					<div class="clearFix">
+
+						<!--评论分类-->
+						<div class="clearFix">
+							<div class="commentCat clearFix">
+								<ul class="clearFix">
+									<li class="on common">全部<span>(53)</span></li>
+									<li class="common">好评<span>(34)</span></li>
+									<li class="common">中评<span>(10)</span></li>
+									<li class="common">差评<span>(9)</span></li>
+								</ul>
+							</div>
+						</div>
+
+						<!--全部评论内容-->
+						<div class="criticism">
+							<!--评论内容盒子-->
+							<ul>
+								<!--单条评论-->
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+								
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
 
 
+							
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
 
-</div></div>
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
 
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+							</ul>
+						</div>
+						
+
+						<!--好评-->
+						<div class="criticism">
+								<!--评论内容盒子-->
+							<ul>
+								<!--单条评论-->
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+								
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+
+
+							
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+							</ul>
+						</div><!--好评结束-->
+
+						<div class="criticism"><!--中评开始-->
+								<!--评论内容盒子-->
+							<ul>
+								<!--单条评论-->
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											中评开始
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+								
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+
+
+							
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+							</ul>
+						</div><!--中评结束-->
+
+						<div class="criticism"><!--差评结束-->
+								<!--评论内容盒子-->
+							<ul>
+								<!--单条评论-->
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											差评结束
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+								
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+
+
+							
+								<li class="clearFix singleComment">
+									<div class="fl itemLeft">
+
+										<!--用户头像-->
+										<div>
+											<a href="">
+												<img src="/ddEle/Public/home/img/5886651051153-1_d.png.jpg" alt="">
+											</a>
+										</div>
+
+										<!--用户名称-->
+										<div class="leftName">
+											无昵称用户
+										</div>
+
+										<!--用户等级-->
+										<span class="userLevel">V4</span>
+									</div>
+
+									<!--评论内容-->
+									<div class="fl itemRight">
+										<p class="">
+											外观设计得很漂亮
+										</p>
+										<div>
+											<ul>
+												<li class="">颜色：黑色</li>
+												<li class="">套餐：iPhone7 256GB</li>
+												<li class="commentTime">2016-11-08 12:24:58</li>
+											</ul>
+										</div>
+									</div>
+								</li><!--单条评论结束-->
+							</ul>
+						</div><!--差评结束-->
+
+					</div><!--评论大盒子结束-->
+		  	   </div><!--评论容器结束-->
+		  	 </div><!--装有评论容器和商品详情的容器结束-->
+		</div>
 	</div>
-	<div class="clear"></div>
 </div>
+
+
+
 <!--网页尾部文件-->
 <div id="footer">
 		<div class="footer" dd_name="页尾">

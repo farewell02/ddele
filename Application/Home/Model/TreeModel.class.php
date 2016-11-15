@@ -165,4 +165,25 @@ class TreeModel extends Model{
         return $info;
     }
 
+        /**
+         * 子类id返回顶级父类
+         */
+        public function getParentTree($id){
+
+                $list = $this->field($field)->select();
+                // return self::$config['parentId'];
+                $tree = [];
+                while($id!=0){
+                    foreach($list as $value){
+                        if($value['id'] == $id){
+                            $tree[] = $value;
+                            $id = $value['pid'];
+                            break;
+                        }
+                    }
+                }
+                 return array_reverse($tree);
+                    
+         }
+
 }

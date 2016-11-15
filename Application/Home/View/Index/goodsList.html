@@ -5,44 +5,69 @@
 <div id ="Goodscontent clearFix" style="margin:0 auto;width:1200px">
 
 	<!--导航详情-->
-	<div class="clearFix">
-		<a href="">当当</a>
-		<span>></span>
+	<div class="clearFix navtop" style="line-height: 26px;
+padding: 10px 0;">
+		<a href="<{:U('index/index')}>">当当</a>
+        <volist name="topcatArr" id="cat">
+        	<span>></span>
+        	<a <?php echo $cid==$cat['id'] ? 'class="atnow" style="color:blue"' : '';?> href="<{:U('index/goodsList',['path'=>$cat['path'],'cid'=>$cat['id']])}>"><{$cat['catname']}></a>
+        </volist>
+		<!-- <a href="">当当</a>
+		
 		<a href="">手机通讯></a>
 		<span>></span>
-		<a href="">手机</a>
+		<a href="">手机</a> -->
 	</div><!--导航详情结束-->
 	
 	<!--左侧-->
-	<div class="leftSide fl clearFix">
+	<div class="leftSide fl clearFix" >
 
 		<!--左侧分类小盒子-->
 		<div id="catBox">
-			<h3>手机通讯</h3>
-			<ul class="firstCatUl">
-			    <li class="firstCat">
-			    	<span class="m"></span>
-			    	<a href="">手机</a>
-			    	<span class="catBtn"></span>
-			    </li>
-			    <li class="firstCat">
-			    	<span class="m"></span>
-			    	<a href="">手机配件</a>
-			    	<span class="catBtn"></span>
-			    	<ul class="secondCatUl hideNow clearFix">
-			    		<li><a href="">电话/移动电源</a></li>
-			    		<li><a href="">蓝牙耳机</a></li>
-			    		<li><a href="">充电器/数据线</a></li>
-			    		<li><a href="">手机贴膜</a></li>
-			    		<li><a href="">手机耳机</a></li>
-			    	</ul>
-			    </li>
-				<li class="firstCat ">
-					<span class="m"></span>
-					<a href="">对讲机</a>
-					<span class="catBtn"></span>
-				</li>	
-			</ul>
+
+			<!--左侧分类导航盒子遍历-->
+				<notempty name="catArr">
+				<h3><{$catArr['catname']}></h3>
+				<ul class="firstCatUl">
+					<volist name="catArr['child']" id="seccat" empty=''>
+					    <li class="firstCat <if condition="$seccat['id'] eq $cid">on<else/>''</if>" >
+					    	<span class="m"></span>
+					    	<a href="<{:U('index/goodsList',['path'=>$seccat['path'],'cid'=>$seccat['id']])}>">     <{$seccat['catname']}></a>
+					    	<span class="catBtn"></span>
+					    	<notempty name="seccat['child']">
+					    		<ul class="secondCatUl hideNow clearFix">
+					    		  <volist name="seccat['child']" id="thcat">
+						    		<li class="<if condition="$thcat['id'] eq $cid">now<else/>''</if>"><a href="<{:U('index/goodsList',['path'=>$thcat['path'],'cid'=>$thcat['id']])}>">       <{$thcat['catname']}></a></li>
+						    	  </volist>
+						    		<!-- <li><a href="">蓝牙耳机</a></li>
+						    		<li><a href="">充电器/数据线</a></li>
+						    		<li><a href="">手机贴膜</a></li>
+						    		<li><a href="">手机耳机</a></li> -->
+					    		</ul>
+					    	</notempty>	
+					    </li>
+				    </volist>
+				  <!--   <li class="firstCat">
+				    	<span class="m"></span>
+				    	<a href="">手机配件</a>
+				    	<span class="catBtn"></span>
+				    	<ul class="secondCatUl hideNow clearFix">
+				    		<li><a href="">电话/移动电源</a></li>
+				    		<li><a href="">蓝牙耳机</a></li>
+				    		<li><a href="">充电器/数据线</a></li>
+				    		<li><a href="">手机贴膜</a></li>
+				    		<li><a href="">手机耳机</a></li>
+				    	</ul>
+				    </li> -->
+		<!-- 			<li class="firstCat ">
+						<span class="m"></span>
+						<a href="">对讲机</a>
+						<span class="catBtn"></span>
+					</li>	 -->
+					
+				</ul>
+		   </notempty>	
+			
 		</div><!--左侧分类小盒子结束-->
 		
 
@@ -83,7 +108,7 @@
 		<div class="AdBox saleRankBox">
 			<!--标题头-->
 			<div class="AdBoxHeader rankHeader">
-				<span>一周销量排行榜</span>
+				<span>推广产品</span>
 			</div>
 
 			<!--推广内容-->
@@ -137,11 +162,11 @@
 	</div>
 
 	<!--右侧商品搜索和列表页-->	
-	<div class="rightSide fl clearFix">
+	<div class="rightSide fl clearFix" style="margin-left:20px" >
 
 		<div class="clearFix">
 			<!--品牌分类开始-->
-			<div class="clearFix lgCatBox">
+			<div class="clearFix lgCatBox" style="border:1px solid #ccc">
 				<div class="fl brandCat listLeft">
 					品牌
 				</div>
@@ -149,9 +174,21 @@
 				<!--品牌图标-->
 				<div class="fl brandCatUl">
 					<ul>
-					    <volist name="brandArr" id="brand">
-					    	<li><a title="<{$brand['brandname']}>" href="/cid4001075-a1:1066.html"><font style="display: none;"><{$brand['brandname']}></font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
-					    </volist>
+						<empty name="searchstring['brandid']">
+							 <volist name="brandArr" id="brand">
+						    	<li class="defaultBrand" data-brandid="<{$brand['id']}>"><a title="<{$brand['brandname']}>" href="javascript:void(0)"><font style="display: none;"><{$brand['brandname']}></font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li>
+					        </volist>
+					        <else />
+							<volist name="brandArr" id="brand">
+								<li class="user_selected">
+								    <span class="bn">品牌：</span>
+								    <span class="block" title="美图meitu">
+									    <span class="t"><{$brand['brandname']}></span>
+									    <span class="close"></span>
+			                 		</span>
+                				</li>
+							</volist>								
+						</empty>
 					</ul>
 				</div>
 			</div><!--品牌分类结束-->
@@ -176,7 +213,7 @@
 		</div>
 
 		<!--排序 销量、价格、最新-->
-		<div class="sortBox clearFix" data-path="<{$searchstring['path']}>" data-brandid='<{$searchstring["brandid"]}>'>
+		<div class="sortBox clearFix" data-path="<{$searchstring['path']}>" data-brandid='<{$searchstring["brandid"]}>' data-cid="<{$cid}>">
 			<h4 class="fl">排序</h4>
 			<ul class="sortMenu clearFix">
 				<li id="default" class=" <?php echo $orderflag['defaultorder']=='yes'?'on clicked':''; ?>">
@@ -256,79 +293,23 @@
 						   </div>
 						</li>
 					</volist>
-					<volist name="goodslistArr" id="goodslist" empty="暂时没有商品">	
-						<li>
-							<div>
-								<a href="">
-									<div>
-										<a href="" style="display:inline-block;width:200px;height:200px"><img width="200px" height="200px" src="<{$Think.const.GOODSIMGPATH}><{$goodslist['imgurl']}>" alt=""></a>	
-									</div>
-									<p class="listPrice">¥<{$goodslist['price']}></p>
-									<p class="listName">
-										<a href=""><{$goodslist['spuname']}></a>
-									</p>
-									<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-									<!-- <p class="star">
-										<span>
-											<span></span>
-										</span>
-									</p> -->
-									<!-- <p class="link">
-										<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
-										<a href="">苹果官方旗舰店</a>
-									</p> -->
-								</a>
-						   </div>
-						</li>
-					</volist>
-					<volist name="goodslistArr" id="goodslist" empty="暂时没有商品">	
-						<li>
-							<div>
-								<a href="">
-									<div>
-										<a href="" style="display:inline-block;width:200px;height:200px"><img width="200px" height="200px" src="<{$Think.const.GOODSIMGPATH}><{$goodslist['imgurl']}>" alt=""></a>	
-									</div>
-									<p class="listPrice">¥<{$goodslist['price']}></p>
-									<p class="listName">
-										<a href=""><{$goodslist['spuname']}></a>
-									</p>
-									<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-									<!-- <p class="star">
-										<span>
-											<span></span>
-										</span>
-									</p> -->
-									<!-- <p class="link">
-										<img src="__PUBLIC__/home/img/2016-11-08_141851.jpg" alt="">
-										<a href="">苹果官方旗舰店</a>
-									</p> -->
-								</a>
-						   </div>
-						</li>
-					</volist>
+	
+			
 				</ul>
 			</div>
 		</div><!--商品列表页结束-->
 		
 
 		<!--分页-->
-	    <div class="" name="m4048975_pid0_t3989"><div id="component_4048975"></div><div class="con paginating" name="m4048975_pid0_t3990"><script type="text/javascript" src="js/jquery/lazyload181.js"></script>
-<script type="text/javascript"> $("img[data-original]").lazyload(); </script>
+	    <div class="" name="m4048975_pid0_t3989"><div id="component_4048975"></div><div class="con paginating" name="m4048975_pid0_t3990">
 
 <ul class="paging" name="Fy">
-            <li class="prev none"><a>上一页</a></li>
-                    <li><a href="/cid4004279-srsort_score_desc.html" class=" current">1</a></li>
-                        <li><a href="/pg2-cid4004279-srsort_score_desc.html" class="null">2</a></li>
-                        <li><a href="/pg3-cid4004279-srsort_score_desc.html" class="null">3</a></li>
-                        <li><a href="/pg4-cid4004279-srsort_score_desc.html" class="null">4</a></li>
-                        <li><a href="/pg5-cid4004279-srsort_score_desc.html" class="null">5</a></li>
-                        <li><a href="/pg6-cid4004279-srsort_score_desc.html" class="null">6</a></li>
-                        <li><span>...<span></span></span></li>
-                    <li class="next"><a href="/pg2-cid4004279-srsort_score_desc.html">下一页</a></li>
-            <li class="page_input"><span>共94页 到第</span>
-        <input id="t__cp" class="number" value="1" type="text">
-        <span>页</span>
-        <input class="button" id="click_get_page" value="确定" type="button"></li>
+            <!-- <li class="prev none"><a>上一页</a></li> -->
+         	<{$page}>
+            <!-- <li class="page_input"><span>共94页 到第</span> -->
+        <!-- <input id="t__cp" class="number" value="1" type="text"> -->
+<!--         <span>页</span>
+        <input class="button" id="click_get_page" value="确定" type="button"></li> -->
 </ul>
 <script type="text/javascript">
     $(function(){     

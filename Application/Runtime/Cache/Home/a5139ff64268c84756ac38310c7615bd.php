@@ -186,358 +186,410 @@
 </div><!--头部文件结束-->
 
 
-<link rel="stylesheet" href="/ddEle/Public/Home/css/goodsList.css" />
+<link rel="stylesheet" href="/ddEle/Public/Home/css/goodsCollect.css" />
+
 <!--引入了js文件-->
-<script src="/ddEle/Public/Home/js/goodsList.js"></script>
+<script src="/ddEle/Public/Home/js/city.js"></script>
+<script src="/ddEle/Public/Home/js/goodsCollect.js"></script>
+
+
 <!--页面主要内容-->
-<div id ="Goodscontent clearFix" style="margin:0 auto;width:1200px">
+<style>
+/*模态框样式*/
+	.mask{
+		transition: opacity .15s linear;
+	}
+</style>
+<!--遮罩层-->
+<div class="mask" style="width:1900px;opacity:0.5;background:#DEE1E2;position:fixed;height:100%;height:2000px;top:0px;right:0px;z-index:1000;display:none">
+</div>
+<div style="position:fixed;left:50%;z-index:100000;display:none;" class="loadingBox">
+	<img src="/ddEle/Public/Home/img/loading3.gif" style="position:absolute;top:0px;z-index:300;">
+</div>
+<div id="mainContent">
 
-	<!--导航详情-->
-	<div class="clearFix navtop" style="line-height: 26px;
-padding: 10px 0;">
-		<a href="<?php echo U('index/index');?>">当当</a>
-        <?php if(is_array($topcatArr)): $i = 0; $__LIST__ = $topcatArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><span>></span>
-        	<a <?php echo $cid==$cat['id'] ? 'class="atnow" style="color:blue"' : '';?> href="<?php echo U('index/goodsList',['path'=>$cat['path'],'cid'=>$cat['id']]);?>"><?php echo ($cat['catname']); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
-		<!-- <a href="">当当</a>
-		
-		<a href="">手机通讯></a>
-		<span>></span>
-		<a href="">手机</a> -->
-	</div><!--导航详情结束-->
+	<!--首页导航-->
+	<div class="clearFix">
+		<a href="">当当</a>
+		<span>&gt;</span>
+		<a href="">手机通讯&gt;</a>
+		<span>&gt;</span>
+		<a href="">手机</a>
+	</div>
 	
-	<!--左侧-->
-	<div class="leftSide fl clearFix" >
-
-		<!--左侧分类小盒子-->
-		<div id="catBox">
-
-			<!--左侧分类导航盒子遍历-->
-				<?php if(!empty($catArr)): ?><h3><?php echo ($catArr['catname']); ?></h3>
-				<ul class="firstCatUl">
-					<?php if(is_array($catArr['child'])): $i = 0; $__LIST__ = $catArr['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$seccat): $mod = ($i % 2 );++$i;?><li class="firstCat <?php if($seccat['id'] == $cid): ?>on<?php else: ?>''<?php endif; ?>" >
-					    	<span class="m"></span>
-					    	<a href="<?php echo U('index/goodsList',['path'=>$seccat['path'],'cid'=>$seccat['id']]);?>">     <?php echo ($seccat['catname']); ?></a>
-					    	<span class="catBtn"></span>
-					    	<?php if(!empty($seccat['child'])): ?><ul class="secondCatUl hideNow clearFix">
-					    		  <?php if(is_array($seccat['child'])): $i = 0; $__LIST__ = $seccat['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$thcat): $mod = ($i % 2 );++$i;?><li class="<?php if($thcat['id'] == $cid): ?>now<?php else: ?>''<?php endif; ?>"><a href="<?php echo U('index/goodsList',['path'=>$thcat['path'],'cid'=>$thcat['id']]);?>">       <?php echo ($thcat['catname']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-						    		<!-- <li><a href="">蓝牙耳机</a></li>
-						    		<li><a href="">充电器/数据线</a></li>
-						    		<li><a href="">手机贴膜</a></li>
-						    		<li><a href="">手机耳机</a></li> -->
-					    		</ul><?php endif; ?>	
-					    </li><?php endforeach; endif; else: echo "" ;endif; ?>
-				  <!--   <li class="firstCat">
-				    	<span class="m"></span>
-				    	<a href="">手机配件</a>
-				    	<span class="catBtn"></span>
-				    	<ul class="secondCatUl hideNow clearFix">
-				    		<li><a href="">电话/移动电源</a></li>
-				    		<li><a href="">蓝牙耳机</a></li>
-				    		<li><a href="">充电器/数据线</a></li>
-				    		<li><a href="">手机贴膜</a></li>
-				    		<li><a href="">手机耳机</a></li>
-				    	</ul>
-				    </li> -->
-		<!-- 			<li class="firstCat ">
-						<span class="m"></span>
-						<a href="">对讲机</a>
-						<span class="catBtn"></span>
-					</li>	 -->
-					
-				</ul><?php endif; ?>	
-			
-		</div><!--左侧分类小盒子结束-->
-		
-
-		<!--排行-->
-		<div class="saleRankBox">
-			<!--标题头-->
-			<div class="rankHeader">
-				<span>一周销量排行榜</span>
-			</div>
-
-			<!--排行内容-->
-			<div class="rankDetail">
-				<ul class="clearFix">
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name"><a href="">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</a></p>
-						<p class="price">¥50.00</p>
-					</li>
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name"><a href="">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</a></p>
-						<p class="price">¥50.00</p>
-					</li>
-					<li class="clearFix">
-						<span class="number">1</span>
-						<a href="" class="rankImg"><img src="/ddEle/Public/Home/img/1256696539-1_l.jpg" width='56px' height='56px'></a>
-						<p class="name">中国电信 19元飞Young4G上网版套餐 300MB省内流量 电信4G上网卡 全国号卡</p>
-						<p class="price">¥50.00</p>
-					</li>
-				</ul>
-			</div>
-		</div>	<!--排行结束-->
-
-		
-		<!--推广开始-->
-		<div class="AdBox saleRankBox">
-			<!--标题头-->
-			<div class="AdBoxHeader rankHeader">
-				<span>推广产品</span>
-			</div>
-
-			<!--推广内容-->
-			<div class="AdContent">
-				<ul class="clearFix">
-					<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-						<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-						<li>
-						<div>
-							<a href=""><img src="/ddEle/Public/Home/img/60627209-1_l_1.jpg" alt=""></a>
-						</div>
-						<p class="AdName">
-							<a href="">当当优品 中国风双人加大四件套</a>
-						</p>
-						<p class="Addesc">
-							60贡缎 酒店品质
-						</p>
-						<p class="Adprice">
-							¥399.00
-						</p>		
-					</li>
-				</ul>
-			</div>
-		</div>	<!--推广结束-->
+	<!--左侧菜单-->
+	<div class="fl clearFix">
+		<div id="nav" style="float:left;margin-top:20px;">
+			<h3>我的交易<a href="javascript:void(0)" class="slide_down" ></a></h3>
+			<ul>
+				<li><a href="#" class="zi on">我的账单</a></li>
+				<li><a href="#" class="zi">我的订单</a></li>
+			</ul>
+			<h3>我的收藏<a href="javascript:void(0)" class="slide_down" ></a></a></h3>
+			<ul>
+				<li><a href="<?php echo U('goodsCollect',['show'=>'goodsCollect']);?>" class="zi collectGoodsA">商品收藏</a></li>
+				<li><a href="#" class="zi">店铺收藏</a></li>
+			</ul>
+			<h3>个人中心<a href="javascript:void(0)" class="slide_down" ></a></h3>
+			<ul>
+				<li><a href="#" class="zi">个人信息</a></li>
+				<li><a href="<?php echo U('goodsCollect',['show'=>'address']);?>" class="zi buyaddressA">收货地址</a></li>
+			</ul>
+		</div>
 	</div>
 
-	<!--右侧商品搜索和列表页-->	
-	<div class="rightSide fl clearFix" style="margin-left:20px" >
+	<!--右侧收藏商品信息-->
+	<!--rightFlag是标识符用于js隐藏-->
+	<div class="fl clearFix rightBox <?php echo $show=='goodsCollect'?'':'hideNow';?> collectGoodsBox rightFlag">
+		<!--商品收藏头-->
+		<div class="head">
+			<div>商品收藏</div>
+		</div>
+	
+		<!--排序-->
+		<div class='orderBox'>
 
-		<div class="clearFix">
-			<!--品牌分类开始-->
-			<div class="clearFix lgCatBox" style="border:1px solid #ccc">
-				<div class="fl brandCat listLeft">
-					品牌
-				</div>
-				
-				<!--品牌图标-->
-				<div class="fl brandCatUl">
-					<ul>
-						<?php if(empty($searchstring['brandid'])): if(is_array($brandArr)): $i = 0; $__LIST__ = $brandArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><li class="defaultBrand" data-brandid="<?php echo ($brand['id']); ?>"><a title="<?php echo ($brand['brandname']); ?>" href="javascript:void(0)"><font style="display: none;"><?php echo ($brand['brandname']); ?></font><img style="height: 40px; width: 80px; display: block;" alt="Lenovo联想" src="http://img38.ddimg.cn/imgother/201506/03_0/20150603104516248.jpg"><span></span></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-					        <?php else: ?>
-							<?php if(is_array($brandArr)): $i = 0; $__LIST__ = $brandArr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$brand): $mod = ($i % 2 );++$i;?><li class="user_selected">
-								    <span class="bn">品牌：</span>
-								    <span class="block" title="美图meitu">
-									    <span class="t"><?php echo ($brand['brandname']); ?></span>
-									    <span class="close"></span>
-			                 		</span>
-                				</li><?php endforeach; endif; else: echo "" ;endif; endif; ?>
+			<!--选项排序-->
+			<div class="filter">
+				<ul class="clearFix">
+					<li class="">排序<span class=""></span></li>
+					<li class="iconHover on">时间<span class="icon"></span></li>
+					<li class="iconHover">价格<span class="icon"></span></li>
+				</ul>
+			</div>
+			
+
+			<!--有商品才显示-->
+			<!--全选,批量删除,批量购买-->
+			<div class="clearFix collectMenuBox">
+				<div class="fl">
+					<ul class="">
+						<li class="label selectAll"><input type="checkBox">全选</li>
+						<li><span class="btn btnNone batchDel">批量删除</span></li>
+						<li><span class="btn">批量购买</span></li>
 					</ul>
 				</div>
-			</div><!--品牌分类结束-->
-
-			<!--价格排序-->
-			<!-- <div class="clearFix">
-				<div class="clearFix listLeft">价格</div>
-				<div class="listRight">
-					<div class="list_content"><div class="width_515"><span><a title="0-3259" name="price_segments" href="/cid4001075-lp0-hp3259.html">0-3259</a></span><span><a title="3259-4099" name="price_segments" href="/cid4001075-lp3259-hp4099.html">3259-4099</a></span><span><a title="4099-5199" name="price_segments" href="/cid4001075-lp4099-hp5199.html">4099-5199</a></span><span><a title="5199-7149" name="price_segments" href="/cid4001075-lp5199-hp7149.html">5199-7149</a></span><span><a title="7149以上" name="price_segments" href="/cid4001075-lp7149-hp.html">7149以上</a></span></div></div>
+				<!--分页样式的输出-->
+				<div class="fr goodscollectpage">
+					<?php echo ($page); ?>
 				</div>
 			</div>
- -->
-			<!--网络-->
-			
-			<!--价格-->
-			<!-- <div class="clearFix">
-				<div class="clearFix listLeft">价格</div>
-				<div class="listRight">
-					<div class="list_content"><div class="width_515"><span><a title="0-3259" name="price_segments" href="/cid4001075-lp0-hp3259.html">0-3259</a></span><span><a title="3259-4099" name="price_segments" href="/cid4001075-lp3259-hp4099.html">3259-4099</a></span><span><a title="4099-5199" name="price_segments" href="/cid4001075-lp4099-hp5199.html">4099-5199</a></span><span><a title="5199-7149" name="price_segments" href="/cid4001075-lp5199-hp7149.html">5199-7149</a></span><span><a title="7149以上" name="price_segments" href="/cid4001075-lp7149-hp.html">7149以上</a></span></div></div>
-				</div>
-			</div> -->
 		</div>
 
-		<!--排序 销量、价格、最新-->
-		<div class="sortBox clearFix" data-path="<?php echo ($searchstring['path']); ?>" data-brandid='<?php echo ($searchstring["brandid"]); ?>' data-cid="<?php echo ($cid); ?>">
-			<h4 class="fl">排序</h4>
-			<ul class="sortMenu clearFix">
-				<li id="default" class=" <?php echo $orderflag['defaultorder']=='yes'?'on clicked':''; ?>">
-					默认排序
-					<span class=""></span>
-				</li>
-				<li id="priceorder" class="<?php echo $clicked['clicked']=='priceorder'?'on clicked':'' ?>">
-					价格
-					<span class="<?php echo $orderflag['priceorder']=='desc'?'icon':'upicon'; ?>"></span>
-				</li>
-			<!-- 	<li>
-					好评
-					<span class="icon"></span>
-				</li> -->
-				<li id="saleorder" class="<?php echo $clicked['clicked']=='saleorder'?'on clicked':'' ?>">
-					销量
-					<span class="<?php echo $orderflag['saleorder']=='desc'?'icon':'upicon'; ?>"></span>
+		<!--商品头信息-->
+		<div class="opBox">
+			<span class="r1">商品信息</span>
+			<span class="r2">金额</span>
+			<span class="r3">操作</span>
+		</div>
+		
+		<!--具体商品信息-->
+		<div clas="clearFix marginRight">
+				<ul class="myfavo_list clearFix">
+
+				<!--商品遍历开始-->
+				 <?php if(is_array($goodsCollect)): $i = 0; $__LIST__ = $goodsCollect;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$collectInfo): $mod = ($i % 2 );++$i;?><li>
+						<!--商品详细信息-->
+				       <div class="r1">
+						<input class="chosen" data-id="<?php echo ($collectInfo['gcid']); ?>" name="CheckAll" id="CheckAll" value="1236855336" type="checkbox">
+
+						<!--商品图片-->
+						<div class="things">
+							<a title="三星/Samsung Galaxy A7 4G手机 (A7000/A7009) 电信版_电信版-白色" class="pic" href="http://product.dangdang.com/1236855336.html?ref=customer-0-B" target="_blank"><img class="lazyload" alt="" original="http://img36.ddimg.cn/24/22/1236855336-1_t.jpg" src="http://img36.ddimg.cn/24/22/1236855336-1_t.jpg"></a>
+						</div>
+						<div class="details">
+							<p>
+								<!--商品名-->
+								<span class="icon icon_shop"></span>
+								<a class="title"><?php echo ($collectInfo['goodsname']); ?>
+								</a>
+							</p>
+
+							<!--已有多少人评论-->
+						 	 <p class="gray">
+							  	<span class="space">已有
+							  		<a target="_blank" href="http://product.dangdang.com/1236855336.html#comment"><?php echo ($collectInfo['comment']); ?></a>人评论
+							  	</span>
+						 	 </p>
+							 
+							 <!--收藏时间-->
+						 	 <p class="gray">收藏时间：<?php echo ($collectInfo['ctime']); ?></p>	
+						</div>     
+					</div><!--商品详细信息结束-->
+					
+
+					<!--商品价格-->
+					<div class="r2 center">
+                        <p><span class="price"><?php echo ($collectInfo['price']); ?>&nbsp;(36折)</span></p>
+                        <!-- <p>比放入时降低了<span class="price red">¥50.00</span></p> -->
+                    </div>
+
+                    <!--商品库存-->
+					<div class="r3 center">
+                        <p>现货</p><p><span class="tag tag_ylyx">余量有限</span></p>
+                    </div>
+
+					<!--操作-->
+                    <div>
+                    	 <p>
+                    	 	<a id="go_cart" class="btn btn_buy" href="javascript:void(0);" dd_name="加入购物车">加入购物车</a>
+                    	 	<a class="del" data-id="<?php echo ($collectInfo['gcid']); ?>" href="javascript:void(0)">删除</a>
+                    	 </p> 
+                    </div>                    
+				</li><?php endforeach; endif; else: echo "" ;endif; ?>
+				
+
+				<!--备用遍历-->
+				<!--单个商品遍历尝试-->
+				<li>
+						<!--商品详细信息-->
+				       <div class="r1">
+						<input class="chosen" name="CheckAll" id="CheckAll" value="1236855336" type="checkbox">
+
+						<!--商品图片-->
+						<div class="things">
+							<a title="三星/Samsung Galaxy A7 4G手机 (A7000/A7009) 电信版_电信版-白色" class="pic" href="http://product.dangdang.com/1236855336.html?ref=customer-0-B" target="_blank"><img class="lazyload" alt="" original="http://img36.ddimg.cn/24/22/1236855336-1_t.jpg" src="http://img36.ddimg.cn/24/22/1236855336-1_t.jpg"></a>
+						</div>
+						<div class="details">
+							<p>
+								<!--商品名-->
+								<span class="icon icon_shop"></span>
+								<a class="title">三星/Samsung&nbsp;Galaxy&nbsp;A7&nbsp;4G手机&nbsp;(A7000/A70
+								</a>
+							</p>
+
+							<!--已有多少人评论-->
+						 	 <p class="gray">
+							  	<span class="space">已有
+							  		<a target="_blank" href="http://product.dangdang.com/1236855336.html#comment">0</a>人评论
+							  	</span>
+						 	 </p>
+							 
+							 <!--收藏时间-->
+						 	 <p class="gray">收藏时间：2016-11-04</p>	
+						</div>     
+					</div><!--商品详细信息结束-->
+					
+
+					<!--商品价格-->
+					<div class="r2 center">
+                        <p><span class="price">¥800.00&nbsp;(36折)</span></p>
+                        <!-- <p>比放入时降低了<span class="price red">¥50.00</span></p> -->
+                    </div>
+
+                    <!--商品库存-->
+					<div class="r3 center">
+                        <p>现货</p><p><span class="tag tag_ylyx">余量有限</span></p>
+                    </div>
+
+					<!--操作-->
+                    <div>
+                    	 <p>
+                    	 	<a id="go_cart" class="btn btn_buy" href="javascript:void(0);" dd_name="加入购物车">加入购物车</a>
+
+                    	 	<a class="del" href="javascript:void(0)">删除</a>
+                    	 </p> 
+                    </div>                    
 				</li>
 			</ul>
-		</div><!--排序 销量、价格、最新结束-->
-
+			<!--弹出框-->
+				<div id="locListDiv" class="window_100" style="opacity:1;left:30%; top:30%; display: none;z-index:1000"><div class="my_pop" id="win_title_bar"><div class="tit"><a class="close" href="javascript:;" id="win_close_bar"></a>删除收藏</div><div class="content"><p>您确定删除该收藏吗？</p><p class="btn_p"><a class="btn btn_yes" href="javascript:;" id="single_del_con">确 定</a><a class="btn btn_no" href="javascript:;" id="single_cancel">取 消</a></p></div></div></div>
+				<!--遮罩层 防止点击-->
+				<div id="div_shield" style="display: none; height: 2188px;"></div>
+		</div>
 		
-		<div class="checkBox"><!--收货地、促销，商品类型-->
-			<!-- <span class="fl">收货地址:</span> -->
-			<!-- <div class="fl selectBox">
-				全部地区
-				<div class="provinceDetail clearFix hideNow">
-					<div class="clearFix">
-						请保存库存地区
-					</div>
-					<ul class="clearFix">
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
-						<li><a href="">北京</a></li>
+		<!--有商品才显示全选,批量删除,批量购买-->
+		<div class='orderBox'>
+			<!--全选,批量删除,批量购买-->
+			<div class="clearFix collectMenuBox">
+				<div class="fl">
+					<ul class="">
+						<li class="label"><input type="checkBox" class="selectAll">全选</li>
+						<li><span class="btn btnNone batchDel">批量删除</span></li>
+						<li><span class="btn">批量购买</span></li>
 					</ul>
 				</div>
-				<span class="arrow"></span>
-			</div> -->
-		</div><!--收货地、促销，商品类型结束-->
-		
-
-		<!--商品列表页-->
-		<div>
-			<div>
-				<ul id="goodsListUl">
-					<?php if(is_array($goodslistArr)): $i = 0; $__LIST__ = $goodslistArr;if( count($__LIST__)==0 ) : echo "暂时没有商品" ;else: foreach($__LIST__ as $key=>$goodslist): $mod = ($i % 2 );++$i;?><li>
-							<div>
-								<a href="">
-									<div>
-										<a href="" style="display:inline-block;width:200px;height:200px"><img width="200px" height="200px" src="<?php echo (GOODSIMGPATH); echo ($goodslist['imgurl']); ?>" alt=""></a>	
-									</div>
-									<p class="listPrice">¥<?php echo ($goodslist['price']); ?></p>
-									<p class="listName">
-										<a href=""><?php echo ($goodslist['spuname']); ?></a>
-									</p>
-									<p class="listAdd">支持礼品卡 正品行货 顺丰包邮</p>
-									<!-- <p class="star">
-										<span>
-											<span></span>
-										</span>
-									</p> -->
-									<!-- <p class="link">
-										<img src="/ddEle/Public/home/img/2016-11-08_141851.jpg" alt="">
-										<a href="">苹果官方旗舰店</a>
-									</p> -->
-								</a>
-						   </div>
-						</li><?php endforeach; endif; else: echo "暂时没有商品" ;endif; ?>
-	
-			
-				</ul>
+				<div class="fr goodscollectpage">
+					<?php echo ($page); ?>
+				</div>
 			</div>
-		</div><!--商品列表页结束-->
-		
+		</div>
+	</div><!--右侧商品收藏结束-->
+	
+	
+	<!--**************************************************************************************************************-->
 
-		<!--分页-->
-	    <div class="" name="m4048975_pid0_t3989"><div id="component_4048975"></div><div class="con paginating" name="m4048975_pid0_t3990">
+	<!--右侧收货地址开始--><!--rightFlag是标识符用于js隐藏-->
+	<div class="fl clearFix account_right rightFlag buyaddressBox <?php echo $show=='address'?'':'hideNow';?>">
+		<div id="list">
+			<div class="problem"></div>
+			<h2>收货地址簿</h2>
 
-<ul class="paging" name="Fy">
-            <!-- <li class="prev none"><a>上一页</a></li> -->
-         	<?php echo ($page); ?>
-            <!-- <li class="page_input"><span>共94页 到第</span> -->
-        <!-- <input id="t__cp" class="number" value="1" type="text"> -->
-<!--         <span>页</span>
-        <input class="button" id="click_get_page" value="确定" type="button"></li> -->
-</ul>
-<script type="text/javascript">
-    $(function(){     
-        $('#t__cp').keydown(function(e){
-            if(e.keyCode==13){
-                verifyListPages();
-            }
-        });
-        $('#click_get_page').click(function(){
-            verifyListPages();
-        });
-    });
+			<!--收货地址列表-->
+			<div id="orderList">
+				<div class="my_address_info">
+						<?php if(is_array($addressData)): $i = 0; $__LIST__ = $addressData;if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$address): $mod = ($i % 2 );++$i;?><!--收货地址1-->
+							<div id="div_addrs_1" class="other_address">
+								<ul class="clearFix">
+									
+									<!--收货地址显示栏-->
+									<li>
+										<span class="address_num"><?php echo ($address['id']); ?>、</span>
+										<span class="address_text"><?php echo ($address['name']); ?>,&nbsp;中国,&nbsp;<?php echo ($address['pname']); ?>,&nbsp;<?php echo ($address['cname']); ?>,&nbsp;<?php echo ($address['tname']); ?>,&nbsp;<?php echo ($address['road']); ?>,&nbsp;<?php echo ($address['postcode']); ?>,&nbsp;<?php echo ($address['phone']); ?></span>		
+									</li>
 
-    function verifyListPages(){
-        var page=$.trim($('#t__cp').val());
-        var max_page=94;
-        re = /^[1-9]*[0-9]*[0-9]$/i; 
-        if(!re.test(page)||page==0){                  
-            alert('您好，请输入正确页码。');
-            return false;                   
-        }else{
-            if(parseInt(page)>100){
-                alert('您好，请输入正确页码。');
-                return false;
-            }else{       
-                if(parseInt(page)>max_page){
-                    
-                    alert('您好，请输入正确页码。');
-                    return false;
-//                    var href_url = '/pgnone-cid4004279-srsort_score_desc.html';
-//                    //                        end_url = href_url;
-//                    //                    
-//                    window.location.href=end_url;
-//                    return false;
-                }else{
-                     var href_url = '/pgnone-cid4004279-srsort_score_desc.html';
-                                            if (page == 1) {
-                            end_url = href_url.replace('pgnone-','');
-                        }else{
-                            end_url = href_url.replace('pgnone','pg'+page);
-                        }
-                                        
-                    window.location.href=end_url;
-                }
-            }
-        }
-    }
-</script>
+									<!--收货地址按钮栏-->
+									<li class="my_address_btn">
+										<a data-addrid="<?php echo ($address['id']); ?>" data-default="<?php echo ($address['isdefault']); ?>" data-name="<?php echo ($address['name']); ?>" data-phone="<?php echo ($address['phone']); ?>" data-postid="<?php echo ($address['postcode']); ?>" data-road="<?php echo ($address['road']); ?>" data-proid="<?php echo ($address['proId']); ?>" data-cityid="<?php echo ($address['cityId']); ?>" data-countyid="<?php echo ($address['countyId']); ?>" href="javascript:void(0)" value="修 改" name="button_update" class="button_delete button_update" type="button" style="height:20px;line-height:20px;border:1px solid #ccc;background:#0088CC;color:white;text-align:center">修改</a>
+										<a href="<?php echo U('delAddres',['id'=>$address['id']]);?>" style="height:20px;line-height:20px;border:1px solid #ccc;background:#0088CC;color:white;text-align:center;" value="删 除" name="button_delete" class="button_delete" type="button" style="">删除</a>
 
+										<!--设为默认收货地址-->
+										<span>
+											<?php if($address['isdefault'] == 0): ?><a class="set" href="<?php echo U('chAddres',['id'=>$address['id']]);?>" >设为默认收货地址</a>
+												<?php else: ?>
+												<font color="#ccc">默认收货地址</font><?php endif; ?>
+										</span>
+									</li>
+								</ul>
+							</div><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
 
+					
+					
+					<!--收货地址1-->
+					<!-- <div id="div_addrs_1" class="other_address">
+						<ul class="clearFix"> -->
+						
+							<!--收货地址显示栏-->
+							<!-- <li>
+								<span class="address_num">1、</span>
+								<span class="address_text">注册,&nbsp;中国,&nbsp;河北,&nbsp;秦皇岛市,&nbsp;北戴河区,&nbsp;**打算,&nbsp;212323,&nbsp;123,&nbsp;132****2323</span>		
+							</li>
+ -->
+							<!--收货地址按钮栏-->
+							<!-- <li class="my_address_btn">
+								<input value="修 改" name="button_update" class="button_delete" type="button">
+								<input value="删 除" name="button_delete" class="button_delete" type="button"> -->
 
+								<!--设为默认收货地址-->
+							<!-- 	<span><a href="javascript:set_default(145672784)">设为默认地址</a></span>
+							</li> -->
+						<!-- </ul> -->
+					</div>
+					<div class="my_address_dashed"></div>
+				</div>
+			</div><!--收货地址列表结束-->
 
+			<!--分页样式输出-->
+			<div class="fanye" id="div_paging">
 
-</div></div>
+				<?php echo ($page); ?>
+				<!-- <a class="fanye_page fanye_none" href="javascript:void(0);"><span>下一页</span></a><a class="nonce"><span>1</span></a><a class="fanye_page fanye_none" href="javascript:void(0);"><span>上一页</span></a> -->
+		     </div>	<!--分页样式输出结束-->
 
-	</div>
-	<div class="clear"></div>
-</div>
+		     <!--修改收货地址的容器-->
+		     <div class="my_address_info my_address_add" id="myaddress_container">
+		     	<h5>新增收货地址</h5>
+
+		     	<!--提交收货地址的表单-->
+		     	<form action="<?php echo U('addAddress');?>" id="myaddress" method="post" name="myaddress">
+		     		<div class="my_address_add_info">
+		     			<p>
+		     				<label for="">
+		     					<strong>*</strong>
+		     					收货人
+		     				</label>
+		     				<input name="ship_man" id="ship_man" maxlength="40" type="text" class="checkInput">
+
+		     				<!--身份证备用-->
+		     				<!-- <label style="display:none">身份证：</label>
+		     				<input style="display:none" name="id_card" id="id_card" maxlength="18" type="text"> -->
+
+		     				<!--tip-->
+		     				<span id="spn_ship_man" class="hint new_tip" style="display:none">请填写收货人姓名</span>
+		     			</p>
+
+		     			<!--地区选项框-->
+		     			<p id="area">
+		     				<label for="">
+		     					<strong>*</strong>
+		     					地区
+		     				</label>
+
+		     				<!--多级联动-->
+		     				<select name="province" id="province">
+								<option value="0">1</option>
+								<option value="0">2</option>
+		     				</select>
+		     				<select name="city" id="city">
+		     				</select>
+		     				<select name="county" id="county">	
+		     				</select>
+
+		     				<!--tip-->
+		     				<span id="spn_country_province_city" class="hint new_tip" style="display:none">请选择完整的收货地址信息</span>
+		     			</p>
+
+		     			<!--是否更新的标识符-->
+						<input type="hidden" name="issave" value="0">
+
+						<!--要更新的具体id 需要配合标识符使用-->
+						<input type="hidden" name="addid" value="">
+
+		     			<!--街道地址-->
+		     			<p>
+		     				<label for="">
+		     					<strong>*</strong>
+		     					街道地址
+		     				</label>
+		     				<input id="addr_detail" name="addr_detail" maxlength="200" size="50" type="text" class="checkInput">
+
+                             <!--tip-->
+                             <span id="spn_addr_detail" class="hint new_tip" style="display:none">请填写街道地址</span>
+		     			</p>
+
+		     			<!--邮政编码选项-->
+		     			<p>
+		     				<label for="">
+		     					<strong>*</strong>
+		     					邮政编码
+		     				</label>
+		     				<input id="ship_zip" name="ship_zip" type="text" class="checkInput">
+
+		     				 <!--tip-->
+		     				<span id="spn_ship_zip" class="hint new_tip" style="display:none">请填写您的邮编 正确的邮编有助于加快送货速度</span>
+		     			</p>
+
+						<!--手机号码验证-->
+		     			<p>
+		     				<label for="">
+		     					<strong>*</strong>
+		     					手机
+		     				</label>
+		     				<input id="ship_phone" name="ship_phone" type="text" class="checkInput">
+
+		     				<!--tip-->
+		     				<span id="spn_ship_mb" class="hint new_tip" style="display:none"><span class="icon icon-warn"></span>手机号码不正确</span>
+		     			</p>
+
+		     			<!--设为默认收货地址-->
+		     			<p class="address_add_checkoux">
+		     				<p class="address_add_checkbox">
+                                   <input value="1" name="default_flg" id="default_flg" type="checkbox" ><span>设为默认地址</span>
+                             </p>
+		     			</p>
+
+		     			<!--保存按钮-->
+		     			<p class="address_add_btn">
+                            <button id="saveBtn">保存</button>
+                        </p>
+		     		</div>
+		     	</form>
+		     </div>
+		</div>
+	</div><!--右侧收货地址管理结束-->
+
+</div><!--右侧整个大盒子结束-->
+
 <!--网页尾部文件-->
 <div id="footer">
 		<div class="footer" dd_name="页尾">
